@@ -1,0 +1,34 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	h1 {
+		@apply font-ubuntuSans text-xl font-bold antialiased;
+	}
+	h2 {
+		@apply font-firaMono text-4xl-a leading-4xl-a font-normal antialiased;
+	}
+	h3 {
+		@apply font-ubuntuSans text-2xl font-normal antialiased;
+	}
+	h4 {
+		@apply font-firaMono text-2xl font-normal antialiased;
+	}
+	h5 {
+		@apply font-ubuntuSans text-lg font-medium antialiased;
+	}
+	h6 {
+		@apply font-firaMono text-base font-normal antialiased;
+	}
+	p {
+		@apply font-ubuntuSans text-base font-normal antialiased;
+	}
+	.sm-title {
+		@apply font-ubuntuSans text-xs font-medium uppercase tracking-wide antialiased;
+	}
+	.caption {
+		@apply font-firaMono text-sm font-normal antialiased;
+	}
+}
