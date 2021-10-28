@@ -1,12 +1,13 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	import gitHubIcon from '../../images/icons/github-icon.svg';
-	import openLinkIcon from '../../images/icons/open-link-icon.svg';
 	import cornerIconTL from '../../images/icons/dev-card-corners/card-corner-tl.svg';
 	import cornerIconTR from '../../images/icons/dev-card-corners/card-corner-tr.svg';
 	import cornerIconBL from '../../images/icons/dev-card-corners/card-corner-bl.svg';
 	import cornerIconBR from '../../images/icons/dev-card-corners/card-corner-br.svg';
+
+	import gitHubIcon from '../../images/icons/github-icon.svg';
+	import openLinkIcon from '../../images/icons/open-link-icon.svg';
 
 	export let title: string;
 	export let description: string;
