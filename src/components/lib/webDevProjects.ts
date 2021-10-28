@@ -1,5 +1,5 @@
-import bbsCoverImage from '../images/bbs-build-beautiful-spaces.jpg';
-import deltaNorthCoverImage from '../images/delta-north-trading-journal-cover-image.png';
+import bbsCoverImage from '../../images/bbs-build-beautiful-spaces.jpg';
+import deltaNorthCoverImage from '../../images/delta-north-trading-journal-cover-image.png';
 
 const webDevProjects: {
 		title: string;

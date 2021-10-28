@@ -45,9 +45,9 @@
 			{/each}
 		</div>
 		<div class="titles mx-auto text-center mb-20">
-			<h3>Sole Web Design</h3>
+			<h3>Web Design</h3>
 		</div>
-		<div>
+		<div class="web-design-grid grid grid-cols-3">
 			{#each webDesignProjects as webDesignProject (webDesignProject.title)}
 				<WebDesignCard {webDesignProject} />
 			{/each}
