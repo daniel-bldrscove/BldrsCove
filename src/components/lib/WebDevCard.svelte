@@ -17,17 +17,19 @@
 	let techHolder = JSON.stringify(techStack);
 </script>
 
-<div class="relative parallax-card bg-gray-100 p-12 shadow-2xl">
-	<div class="card-corners">
+<div class="relative parallax-card shadow-2xl bg-gray-100 p-12 dark:bg-ashenLowContrast-dark">
+	<div class="card-corners dark:opacity-10">
 		<img src={cornerIconTL} alt="GitHub Icon" class="absolute top-4 left-4" />
 		<img src={cornerIconTR} alt="GitHub Icon" class="absolute top-4 right-4" />
 		<img src={cornerIconBL} alt="GitHub Icon" class="absolute bottom-4 left-4" />
 		<img src={cornerIconBR} alt="GitHub Icon" class="absolute bottom-4 right-4" />
 	</div>
-	<h4 class="text-ashenHighContrast-light mb-4">{title}</h4>
-	<p class="text-ashenMidContrast-light mb-4">{description}</p>
+	<h4 class="text-ashenHighContrast-light mb-4 dark:text-ashenHighContrast-dark">{title}</h4>
+	<p class="text-ashenMidContrast-light mb-4 dark:text-bldrsCoveLtGray">{description}</p>
 	<p class="sm-title text-ashenLowContrast-light mb-4">Technologies Used</p>
-	<p class="caption text-ashenMidContrast-light mb-4">{`${techHolder}`}</p>
+	<p class="caption text-ashenMidContrast-light mb-4 dark:text-bldrsCoveLtGray">
+		{`${techHolder}`}
+	</p>
 	<span>
 		<a href={gitHubLink} class="inline-block">
 			<img src={gitHubIcon} alt="GitHub Icon" />

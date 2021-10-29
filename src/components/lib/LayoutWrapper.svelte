@@ -1,3 +1,3 @@
-<div class="w-11/12 mx-auto">
-  <slot />
+<div class="w-10/12 mx-auto">
+	<slot />
 </div>

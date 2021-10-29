@@ -25,7 +25,13 @@ module.exports = {
 				ashenHighContrast: {
 					light: '#333742',
 					dark: '#EDF0F6'
-				}
+				},
+				bldrsCoveDeepBlue: '#090d1a',
+				bldrsCoveCoolGray: '#252936',
+				bldrsCoveBrightBlue: '#38aaff',
+				bldrsCoveMidBlue: '#2f75d6',
+				bldrsCovePureBlue: '#1a1a7a',
+				bldrsCoveLtGray: '#cccccc'
 			},
 			fontSize: {
 				'4xl-a': '2.375rem'

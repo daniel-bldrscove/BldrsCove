@@ -19,6 +19,6 @@
 			alt="generic placeholder graphic"
 			class="w-full h-56 object-cover object-center"
 		/>
-		<a href="/web-design/{title}"><p>{title}</p></a>
+		<a href="/web-design/{title}" class="dark:text-bldrsCoveLtGray"><p>{title}</p></a>
 	</div>
 </LayoutWrapper>

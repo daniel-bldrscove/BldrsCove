@@ -4,13 +4,15 @@
 	import downloadDocIcon from '../images/icons/download-doc-icon.svg';
 </script>
 
-<div class="w-full bg-gray-200">
+<div class="w-full bg-gray-200 dark:bg-bldrsCoveDeepBlue">
 	<LayoutWrapper>
 		<div class="grid grid-cols-12 grid-rows-4 pt-15 pb-15">
 			<div class="about-image col-start-2 col-span-4 row-start-2 row-span-2">
 				<img src={abstractImage} alt="Developer coding away" class="opacity-30" />
 			</div>
-			<div class="about-content-wrapper col-end-12 col-span-5 row-start-2 row-span-2">
+			<div
+				class="about-content-wrapper col-end-12 col-span-5 row-start-2 row-span-2 dark:text-bldrsCoveLtGray"
+			>
 				<h2>About me</h2>
 				<p class="p-spacing">I’m a builder and tinkerer at heart.</p>
 				<p class="p-spacing">
@@ -32,7 +34,7 @@
 			<div class="col-start-7 col-span-3 row-start-4 row-span-1 grid content-start">
 				<span class="mt-8">
 					<img src={downloadDocIcon} alt="Computer icon" class="inline-block" />
-					<h6 class="inline-block ml-2">Recent work</h6>
+					<h6 class="inline-block ml-2 dark:text-bldrsCoveLtGray">Recent work</h6>
 				</span>
 			</div>
 		</div>

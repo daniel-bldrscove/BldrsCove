@@ -29,31 +29,33 @@
 
 <svelte:window on:scroll={parseScroll} />
 
-<LayoutWrapper>
-	<div class="mt-44 mb-44 project-container h-auto" id="projects-section" bind:this={box}>
-		<div class="titles mx-auto text-center mb-20">
-			<h2 class="mb-12">Recent Projects</h2>
-			<h3>Web Dev</h3>
-		</div>
-		<!-- <div class="report mt-96">
+<div class="pt-44 pb-44 dark:bg-bldrsCoveCoolGray">
+	<LayoutWrapper>
+		<div class="project-container h-auto" id="projects-section" bind:this={box}>
+			<div class="titles mx-auto text-center mb-20 dark:text-bldrsCoveLtGray">
+				<h2 class="mb-12">Featured Work</h2>
+				<h3>Web Dev</h3>
+			</div>
+			<!-- <div class="report mt-96">
 			<p>{yVals}</p>
 			<div>vertical: {yTop} from top, box is {yHeight}px high, ({yScroll} total scroll height)</div>
 		</div> -->
-		<div>
-			{#each webDevProjects as webDevProject (webDevProject.title)}
-				<WebDevProject {webDevProject} />
-			{/each}
+			<div>
+				{#each webDevProjects as webDevProject (webDevProject.title)}
+					<WebDevProject {webDevProject} />
+				{/each}
+			</div>
+			<div class="titles mx-auto text-center mb-20 dark:text-bldrsCoveLtGray">
+				<h3>Web Design</h3>
+			</div>
+			<div class="web-design-grid grid grid-cols-3">
+				{#each webDesignProjects as webDesignProject (webDesignProject.title)}
+					<WebDesignCard {webDesignProject} />
+				{/each}
+			</div>
 		</div>
-		<div class="titles mx-auto text-center mb-20">
-			<h3>Web Design</h3>
-		</div>
-		<div class="web-design-grid grid grid-cols-3">
-			{#each webDesignProjects as webDesignProject (webDesignProject.title)}
-				<WebDesignCard {webDesignProject} />
-			{/each}
-		</div>
-	</div>
-</LayoutWrapper>
+	</LayoutWrapper>
+</div>
 
 <style>
 	.project-container {
