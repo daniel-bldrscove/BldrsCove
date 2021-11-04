@@ -13,10 +13,10 @@
 		formData[target.name] = target.value;
 	}
 
-	$: console.log('FormData: ', formData);
+	// $: console.log('FormData: ', formData);
 </script>
 
-<div class="bg-gray-100 dark:bg-bldrsCovePureBlue">
+<div id="contact" class="bg-gray-100 dark:bg-bldrsCovePureBlue">
 	<LayoutWrapper>
 		<div class="pt-48 pb-48">
 			<div class="mx-auto text-center">

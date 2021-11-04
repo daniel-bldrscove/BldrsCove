@@ -1,29 +1,23 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { fly } from 'svelte/transition';
 
-	import cornerIconTL from '../../images/icons/dev-card-corners/card-corner-tl.svg';
-	import cornerIconTR from '../../images/icons/dev-card-corners/card-corner-tr.svg';
-	import cornerIconBL from '../../images/icons/dev-card-corners/card-corner-bl.svg';
-	import cornerIconBR from '../../images/icons/dev-card-corners/card-corner-br.svg';
-
-	import gitHubIcon from '../../images/icons/github-icon.svg';
-	import openLinkIcon from '../../images/icons/open-link-icon.svg';
+	import Icon from '$lib/Icon.svelte';
+	import GithubIcon from '$lib/icons/GithubIcon.svelte';
+	import OpenLinkIcon from '$lib/icons/OpenLinkIcon.svelte';
 
 	export let title: string;
 	export let description: string;
 	export let techStack: string[];
 	export let gitHubLink: string;
 	export let projectLink: string;
+
 	let techHolder = JSON.stringify(techStack);
 </script>
 
-<div class="relative parallax-card shadow-2xl bg-gray-100 p-12 dark:bg-ashenLowContrast-dark">
-	<div class="card-corners dark:opacity-10">
-		<img src={cornerIconTL} alt="GitHub Icon" class="absolute top-4 left-4" />
-		<img src={cornerIconTR} alt="GitHub Icon" class="absolute top-4 right-4" />
-		<img src={cornerIconBL} alt="GitHub Icon" class="absolute bottom-4 left-4" />
-		<img src={cornerIconBR} alt="GitHub Icon" class="absolute bottom-4 right-4" />
-	</div>
+<div
+	class="shadow-2xl bg-gray-100 p-12 dark:bg-ashenLowContrast-dark"
+	transition:fly={{ y: 100, duration: 500, delay: 500 }}
+>
 	<h4 class="text-ashenHighContrast-light mb-4 dark:text-ashenHighContrast-dark">{title}</h4>
 	<p class="text-ashenMidContrast-light mb-4 dark:text-bldrsCoveLtGray">{description}</p>
 	<p class="sm-title text-ashenLowContrast-light mb-4">Technologies Used</p>
@@ -32,16 +26,31 @@
 	</p>
 	<span>
 		<a href={gitHubLink} class="inline-block">
-			<img src={gitHubIcon} alt="GitHub Icon" />
+			<Icon
+				strokeColor="transparent"
+				fillColor="#656870"
+				width="32"
+				height="32"
+				name="github-icon"
+				svgClass="inline-block"
+			>
+				<GithubIcon />
+			</Icon>
 		</a>
 		<a href={projectLink} class="inline-block ml-4">
-			<img src={openLinkIcon} alt="Open external link icon" />
+			<Icon
+				strokeColor="#656870"
+				fillColor="transparent"
+				width="32"
+				height="32"
+				name="open-link-icon"
+				svgClass="inline-block"
+			>
+				<OpenLinkIcon />
+			</Icon>
 		</a>
 	</span>
 </div>
 
 <style>
-	.parallax-card {
-		transform: translateZ(3px);
-	}
 </style>

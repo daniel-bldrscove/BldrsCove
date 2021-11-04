@@ -2,17 +2,20 @@
 	import { onMount } from 'svelte';
 	import footerLogoLight from '../images/bldrscove-secondary-logo-light-md.png';
 	import footerLogoDark from '../images/bldrscove-secondary-logo-dark-md.png';
-	let currentTheme: string;
+	let theme: string;
+	$: currentTheme = theme;
+
+	// TODO: theme needs to go inside a store
 
 	onMount(() => {
-		const theme =
+		const colorTheme =
 			document.documentElement.className === 'dark' ||
 			window.localStorage.theme === 'dark' ||
 			window.matchMedia('(prefers-color-scheme: dark)').matches
 				? 'dark'
 				: 'light';
 
-		currentTheme = theme;
+		theme = colorTheme;
 	});
 </script>
 
@@ -21,7 +24,7 @@
 >
 	<div class="self-center justify-self-center">
 		<img
-			src={currentTheme === 'dark' ? footerLogoLight : footerLogoDark}
+			src={currentTheme === 'dark' ? footerLogoDark : footerLogoLight}
 			alt="BldrsCove secondary logo"
 			class="w-20"
 		/>

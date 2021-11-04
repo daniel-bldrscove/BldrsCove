@@ -1,17 +1,22 @@
 <script>
+	import { fade } from 'svelte/transition';
 	import LayoutWrapper from './lib/LayoutWrapper.svelte';
 	import abstractImage from '../images/abstract-top-hero-image.png';
-	import downloadDocIcon from '../images/icons/download-doc-icon.svg';
+	import Icon from '$lib/Icon.svelte';
+	import DownloadDocIcon from '$lib/icons/DownloadDocIcon.svelte';
 </script>
 
-<div class="w-full bg-gray-200 dark:bg-bldrsCoveDeepBlue">
+<div
+	id="about"
+	class="w-full bg-gray-200 dark:bg-bldrsCoveDeepBlue flex justify-center items-center pt-28 pb-28"
+>
 	<LayoutWrapper>
-		<div class="grid grid-cols-12 grid-rows-4 pt-15 pb-15">
-			<div class="about-image col-start-2 col-span-4 row-start-2 row-span-2">
+		<div class="grid grid-cols-12">
+			<div class="about-image col-start-1 col-span-4 row-start-1 row-span-2">
 				<img src={abstractImage} alt="Developer coding away" class="opacity-30" />
 			</div>
 			<div
-				class="about-content-wrapper col-end-12 col-span-5 row-start-2 row-span-2 dark:text-bldrsCoveLtGray"
+				class="about-content-wrapper col-end-13 col-span-6 row-start-1 row-span-2 dark:text-bldrsCoveLtGray"
 			>
 				<h2>About me</h2>
 				<p class="p-spacing">I’m a builder and tinkerer at heart.</p>
@@ -31,9 +36,18 @@
 					that communicate functionality and clarity to the end user.
 				</p>
 			</div>
-			<div class="col-start-7 col-span-3 row-start-4 row-span-1 grid content-start">
+			<div class="col-end-13 col-span-6 row-start-3 row-span-1 grid content-start">
 				<span class="mt-8">
-					<img src={downloadDocIcon} alt="Computer icon" class="inline-block" />
+					<Icon
+						strokeColor="#656870"
+						fillColor="transparent"
+						width="32"
+						height="32"
+						name="download-icon"
+						svgClass="inline-block"
+					>
+						<DownloadDocIcon />
+					</Icon>
 					<h6 class="inline-block ml-2 dark:text-bldrsCoveLtGray">Recent work</h6>
 				</span>
 			</div>

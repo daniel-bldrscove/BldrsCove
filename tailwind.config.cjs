@@ -31,6 +31,7 @@ module.exports = {
 				bldrsCoveBrightBlue: '#38aaff',
 				bldrsCoveMidBlue: '#2f75d6',
 				bldrsCovePureBlue: '#1a1a7a',
+				bldrsCoveLtBabyBlue: '#d3edff',
 				bldrsCoveLtGray: '#cccccc'
 			},
 			fontSize: {
@@ -41,6 +42,9 @@ module.exports = {
 			},
 			screens: {
 				xs: '425px'
+			},
+			dropShadow: {
+				xlLight: '0 10px 15px rgba(0, 0, 0, 0.06)'
 			},
 			spacing: {
 				106: '30rem',

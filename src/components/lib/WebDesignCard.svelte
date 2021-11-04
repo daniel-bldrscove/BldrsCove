@@ -1,24 +1,51 @@
 <script lang="ts">
-	import LayoutWrapper from './LayoutWrapper.svelte';
-	import deltaNorthImage from '../../images/delta-north-trading-journal-cover-image.png';
+	interface Project {
+		title: string;
+		coverImage: {
+			alt: string;
+			asset: {
+				assetId: string;
+				originalFilename: string;
+				size: number;
+				url: string;
+			};
+			_type: string;
+		};
+		description: [];
+		projectLink: string;
+		slug: { current: string; _type: string };
+	}
 
-	export let webDesignProject = {
+	export let webDesignProject: Project = {
 		title: '',
-		coverImage: '',
-		coverImageAlt: '',
-		description: ''
+		coverImage: {
+			alt: '',
+			asset: {
+				assetId: '',
+				originalFilename: '',
+				size: null,
+				url: ''
+			},
+			_type: ''
+		},
+		description: [],
+		projectLink: '',
+		slug: {
+			current: '',
+			_type: ''
+		}
 	};
 
-	let { title, coverImage, coverImageAlt, description } = webDesignProject;
+	let { title, coverImage, slug } = webDesignProject;
 </script>
 
-<LayoutWrapper>
-	<div class="mb-12">
+<div class="mb-2 mt-2">
+	<a href="/web-design/{slug.current}" class="dark:text-bldrsCoveLtGray col-span-1">
 		<img
-			src={deltaNorthImage}
-			alt="generic placeholder graphic"
+			src={coverImage && coverImage.asset.url}
+			alt={coverImage.alt}
 			class="w-full h-56 object-cover object-center"
 		/>
-		<a href="/web-design/{title}" class="dark:text-bldrsCoveLtGray"><p>{title}</p></a>
-	</div>
-</LayoutWrapper>
+		<h5 class="mt-2 text-ashenMidContrast-light">{title}</h5>
+	</a>
+</div>

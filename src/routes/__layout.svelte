@@ -4,10 +4,9 @@
 	import '../app.css';
 </script>
 
-<!-- page content slot -->
 <div class="flex flex-wrap flex-shrink-0 h-screen">
 	<div class="w-full flex flex-col">
-		<header class="w-full self-start">
+		<header class="w-full self-start fixed top-0 z-50">
 			<Nav aria-label="primary-navigation" />
 		</header>
 		<body>
@@ -18,4 +17,3 @@
 		<Footer />
 	</footer>
 </div>
-<!-- page content slot -->

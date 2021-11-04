@@ -1,9 +1,10 @@
 <script lang="ts">
 	export let width: string | number = 14;
 	export let height: string | number = 14;
-	export let name = '';
-	export let fillColor = '';
-	export let strokeColor = 'currentColor';
+	export let name: string = '';
+	export let fillColor: string = '';
+	export let strokeColor: string = 'currentColor';
+	export let svgClass: string = '';
 </script>
 
 <svg
@@ -13,6 +14,7 @@
 	viewBox="0 0 38 38"
 	aria-labelledby={name}
 	role="presentation"
+	class={svgClass}
 >
 	<title id={name} lang="en">{`${name} icon`}</title>
 	<g fill={fillColor} stroke={strokeColor}>
@@ -21,8 +23,7 @@
 </svg>
 
 <style>
-	svg {
-		display: inline-block;
-		vertical-align: middle;
+	g {
+		position: relative;
 	}
 </style>

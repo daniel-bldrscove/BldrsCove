@@ -1,55 +1,69 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import client from '../sanityClient';
 
 	import WebDevProject from './WebDevProject.svelte';
 	import LayoutWrapper from './lib/LayoutWrapper.svelte';
 	import WebDesignCard from './lib/WebDesignCard.svelte';
 	import webDevProjects from './lib/webDevProjects';
-	import webDesignProjects from './lib/webDesignProjects';
 
-	let box: any;
-	let yTop = 0;
-	let yHeight = 0;
-	let yScroll = 0;
+	let webDesignProjects = [];
+	console.log('webDesignProjects', webDesignProjects);
 
-	function parseScroll() {
-		yTop = box.scrollTop;
-		yHeight = box.clientHeight;
-		yScroll = box.scrollHeight;
-	}
-
-	$: yVals = {
-		yTop: yTop,
-		yHeight: yHeight,
-		yScroll: yScroll
-	};
-
-	onMount(() => parseScroll());
+	onMount(async () => {
+		const query = `*[_type == 'web-design-project']{
+			coverImage{
+				alt,
+				asset->{
+					assetId,
+					originalFilename,
+					url,
+					size
+				},
+				_type,
+			},
+			description,
+			project_link,
+			slug,
+			title,
+			_createdAt,
+			_id,
+			_type,
+			_updatedAt,
+		}`;
+		await client
+			.fetch(query)
+			.then((data) => {
+				// console.log('Data: ', data);
+				if (data.length > 0) {
+					console.log('Incoming data: ', data);
+					webDesignProjects = data;
+				}
+			})
+			.catch((error) => {
+				console.log('Encountered error when fetching content: ', error);
+				throw new Error(error);
+			});
+	});
 </script>
 
-<svelte:window on:scroll={parseScroll} />
+<!-- <svelte:window on:scroll={parseScroll} /> -->
 
-<div class="pt-44 pb-44 dark:bg-bldrsCoveCoolGray">
+<div class="pt-28 pb-28 dark:bg-bldrsCoveCoolGray">
 	<LayoutWrapper>
-		<div class="project-container h-auto" id="projects-section" bind:this={box}>
-			<div class="titles mx-auto text-center mb-20 dark:text-bldrsCoveLtGray">
-				<h2 class="mb-12">Featured Work</h2>
-				<h3>Web Dev</h3>
-			</div>
-			<!-- <div class="report mt-96">
-			<p>{yVals}</p>
-			<div>vertical: {yTop} from top, box is {yHeight}px high, ({yScroll} total scroll height)</div>
-		</div> -->
+		<div class="project-container h-auto">
+			<h2 class="mx-auto text-center mb-24 dark:text-bldrsCoveLtGray">Featured Work</h2>
+			<h3 id="web-dev">Web Dev</h3>
+			<hr />
 			<div>
 				{#each webDevProjects as webDevProject (webDevProject.title)}
 					<WebDevProject {webDevProject} />
 				{/each}
 			</div>
-			<div class="titles mx-auto text-center mb-20 dark:text-bldrsCoveLtGray">
-				<h3>Web Design</h3>
-			</div>
-			<div class="web-design-grid grid grid-cols-3">
-				{#each webDesignProjects as webDesignProject (webDesignProject.title)}
+			<h3 class="mt-24" id="web-design">Web Design</h3>
+			<hr />
+			<div class="grid grid-cols-2 gap-6 mt-12">
+				{#each webDesignProjects as webDesignProject, i}
 					<WebDesignCard {webDesignProject} />
 				{/each}
 			</div>

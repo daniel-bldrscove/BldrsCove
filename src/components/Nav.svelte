@@ -2,10 +2,10 @@
 	import { onMount } from 'svelte';
 	import { fly, scale, fade } from 'svelte/transition';
 
-	import LayoutWrapper from './lib/LayoutWrapper.svelte';
-	import Icon from './lib/Icon.svelte';
-	import SunIcon from './lib/icons/SunIcon.svelte';
-	import MoonIcon from './lib/icons/MoonIcon.svelte';
+	import LayoutWrapper from '$lib/LayoutWrapper.svelte';
+	import Icon from '$lib/Icon.svelte';
+	import SunIcon from '$lib/icons/SunIcon.svelte';
+	import MoonIcon from '$lib/icons/MoonIcon.svelte';
 	import bldrsCoveLogoLight from '../images/bldrscove-logo-light-md.png';
 	import bldrsCoveLogoDark from '../images/bldrscove-logo-dark-md.png';
 
@@ -31,22 +31,34 @@
 	};
 </script>
 
-<div class="flex items-center bg-gray-100 h-24 dark:bg-bldrsCoveDeepBlue">
+<div
+	class="flex items-center bg-gray-100 h-24 drop-shadow-xlLight opacity-90 dark:bg-bldrsCoveDeepBlue"
+>
 	<LayoutWrapper>
 		<div class="w-full flex justify-between items-center">
 			<div class="justify-start">
-				<img
-					src={currentTheme === 'dark' ? bldrsCoveLogoDark : bldrsCoveLogoLight}
-					alt="BldrsCove Logo"
-					class="w-44"
-				/>
+				<a href="/">
+					<img
+						src={currentTheme === 'dark' ? bldrsCoveLogoDark : bldrsCoveLogoLight}
+						alt="BldrsCove Logo"
+						class="w-44"
+					/>
+				</a>
 			</div>
 			<div class="justify-end">
 				<nav class="flex justify-center items-center w-full">
-					<h6><a href="/" class="nav-item dark:text-bldrsCoveLtGray">Home</a></h6>
-					<h6><a href="/" class="nav-item dark:text-bldrsCoveLtGray">About</a></h6>
-					<h6><a href="/" class="nav-item dark:text-bldrsCoveLtGray">Projects</a></h6>
-					<h6><a href="/" class="nav-item dark:text-bldrsCoveLtGray">Contact</a></h6>
+					<h6>
+						<a href="/#home" class="nav-item dark:text-bldrsCoveLtGray">Home</a>
+					</h6>
+					<h6>
+						<a href="/#about" class="nav-item dark:text-bldrsCoveLtGray">About</a>
+					</h6>
+					<h6>
+						<a href="/#web-dev" class="nav-item dark:text-bldrsCoveLtGray">Projects</a>
+					</h6>
+					<h6>
+						<a href="/#contact" class="nav-item dark:text-bldrsCoveLtGray">Contact</a>
+					</h6>
 					{#if currentTheme === 'dark'}
 						<button
 							on:click={() => handleTheme('light')}
@@ -61,8 +73,10 @@
 										fillColor="transparent"
 										width="32"
 										height="32"
-										name="sun-icon"><SunIcon /></Icon
+										name="sun-icon"
 									>
+										<SunIcon />
+									</Icon>
 								</div>
 							{:else}
 								<div in:fly={{ y: -20 }}>
@@ -71,7 +85,7 @@
 										fillColor="transparent"
 										width="32"
 										height="32"
-										name="sun-icon"
+										name="moon-icon"
 									>
 										<MoonIcon />
 									</Icon>
