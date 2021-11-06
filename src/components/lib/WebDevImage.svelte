@@ -4,7 +4,7 @@
 	export let coverImageAlt: string;
 </script>
 
-<div class="parallax-img" transition:fly={{ y: -100, duration: 500 }}>
+<div class="parallax-img" transition:fly={{ y: -20, duration: 500 }}>
 	<img src={coverImage} alt={coverImageAlt} class="w-full h-106 object-cover object-center" />
 </div>
 

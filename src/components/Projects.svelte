@@ -47,22 +47,19 @@
 	});
 </script>
 
-<!-- <svelte:window on:scroll={parseScroll} /> -->
-
-<div class="pt-28 pb-28 dark:bg-bldrsCoveCoolGray">
+<div class="pt-32 pb-32 dark:bg-bldrsCoveCoolGray">
 	<LayoutWrapper>
 		<div class="project-container h-auto">
-			<h2 class="mx-auto text-center mb-24 dark:text-bldrsCoveLtGray">Featured Work</h2>
-			<h3 id="web-dev">Web Dev</h3>
-			<hr />
+			<h2 class="mx-auto mb-2 text-bldrsCoveDeepBlue dark:text-bldrsCoveLtGray">Featured Work</h2>
+			<h3 id="web-dev" class="p-spacing mb-14 text-bldrsCoveMidBlue">Wed Dev</h3>
 			<div>
 				{#each webDevProjects as webDevProject (webDevProject.title)}
 					<WebDevProject {webDevProject} />
 				{/each}
 			</div>
-			<h3 class="mt-24" id="web-design">Web Design</h3>
-			<hr />
-			<div class="grid grid-cols-2 gap-6 mt-12">
+			<h2 class="mx-auto mt-32 mb-2 dark:text-bldrsCoveLtGray">Other Work</h2>
+			<h3 id="web-design" class="mb-8 text-bldrsCoveMidBlue">Web Design</h3>
+			<div class="grid grid-cols-2 gap-6">
 				{#each webDesignProjects as webDesignProject, i}
 					<WebDesignCard {webDesignProject} />
 				{/each}

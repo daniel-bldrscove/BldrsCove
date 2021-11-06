@@ -4,8 +4,9 @@ module.exports = {
 	purge: [
 		// purge out css that isn't being used
 		'./src/**/*.svelte',
-		// may also want to include HTML files
-		'./src/**/*.html'
+		'./src/**/*.html',
+		'./src/**/*.ts',
+		'./src/**/*.js'
 	],
 	theme: {
 		fontFamily: {
@@ -27,15 +28,21 @@ module.exports = {
 					dark: '#EDF0F6'
 				},
 				bldrsCoveDeepBlue: '#090d1a',
+				bldrsCoveCoolSlate: '#141928',
 				bldrsCoveCoolGray: '#252936',
 				bldrsCoveBrightBlue: '#38aaff',
 				bldrsCoveMidBlue: '#2f75d6',
-				bldrsCovePureBlue: '#1a1a7a',
+				bldrsCovePureBlue: '#093bc7',
 				bldrsCoveLtBabyBlue: '#d3edff',
-				bldrsCoveLtGray: '#cccccc'
+				bldrsCoveLtGray: '#cccccc',
+				bldrsCovePaleStone: '#e0eaf0'
 			},
 			fontSize: {
 				'4xl-a': '2.375rem'
+			},
+			gridTemplateColumns: {
+				// Simple 16 column grid
+				16: 'repeat(16, minmax(0, 1fr))'
 			},
 			lineHeight: {
 				'4xl-a': '2.875rem'

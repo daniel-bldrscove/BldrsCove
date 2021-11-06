@@ -26,7 +26,8 @@ const config = {
 			template: 'src/app.html'
 		},
 		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte'
+		target: '#svelte',
+		vite: {}
 	}
 };
 

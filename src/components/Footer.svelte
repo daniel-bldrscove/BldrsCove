@@ -1,30 +1,15 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import footerLogoLight from '../images/bldrscove-secondary-logo-light-md.png';
-	import footerLogoDark from '../images/bldrscove-secondary-logo-dark-md.png';
-	let theme: string;
-	$: currentTheme = theme;
-
-	// TODO: theme needs to go inside a store
-
-	onMount(() => {
-		const colorTheme =
-			document.documentElement.className === 'dark' ||
-			window.localStorage.theme === 'dark' ||
-			window.matchMedia('(prefers-color-scheme: dark)').matches
-				? 'dark'
-				: 'light';
-
-		theme = colorTheme;
-	});
+	import { themeMode } from '../stores';
+	import footerLogoLightMode from '../images/bldrscove-secondary-logo-light-mode-md.png';
+	import footerLogoDarkMode from '../images/bldrscove-secondary-logo-dark-mode-md.png';
 </script>
 
 <div
-	class="w-full grid grid-cols-1 justify-center content-center bg-gray-200 h-32 pt-2 dark:bg-bldrsCoveDeepBlue"
+	class="w-full grid grid-cols-1 justify-center content-center h-32 pt-2 bg-bldrsCovePaleStone dark:bg-bldrsCoveDeepBlue"
 >
 	<div class="self-center justify-self-center">
 		<img
-			src={currentTheme === 'dark' ? footerLogoDark : footerLogoLight}
+			src={$themeMode === 'dark' ? footerLogoDarkMode : footerLogoLightMode}
 			alt="BldrsCove secondary logo"
 			class="w-20"
 		/>

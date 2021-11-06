@@ -36,3 +36,78 @@
 html {
 	scroll-behavior: smooth;
 }
+
+.slide-left-right {
+	text-decoration: none;
+	display: inline-block;
+	color: black;
+}
+/* add a empty string after the elment with class .slide-left-right */
+.slide-left-right:after {
+	content: '';
+	display: block;
+	height: 1px;
+	width: 0;
+	background: transparent;
+	transition: width 0.35s ease, background-color 0.35s ease; /* .5 seonds for changes to the width and background-color */
+	-webkit-transition: width 0.35s ease, background-color 0.35s ease; /* Chrome and Safari */
+	-moz-transition: width 0.35s ease, background-color 0.35s ease; /* FireFox */
+}
+/* Change the width and background on hover, aka sliding out */
+.slide-left-right:hover:after {
+	width: 100%;
+	background: #2f75d6;
+}
+
+.slide-left-right:hover {
+	color: #2f75d6;
+}
+
+input {
+	@apply w-full block h-8 align-bottom border-b border-ashenLowContrast-light dark:border-b dark:border-ashenLowContrast-dark pt-3 font-firaMono bg-transparent;
+}
+
+input:focus {
+	@apply focus:outline-none focus:border-b focus:border-bldrsCoveMidBlue;
+}
+
+label {
+	@apply text-xs tracking-wider uppercase text-ashenMidContrast-light mb-2 block opacity-60;
+}
+
+textarea {
+	background-image: linear-gradient(to right, transparent 10px, transparent 10px),
+		linear-gradient(to left, transparent 10px, transparent 10px),
+		repeating-linear-gradient(
+			transparent 0rem,
+			transparent 1.6rem,
+			#9ca6b6 1.6rem,
+			transparent 1.7rem,
+			transparent 2rem /*This needs to match the lineheight*/
+		);
+}
+
+textarea.dark {
+	background-image: linear-gradient(to right, transparent 10px, transparent 10px),
+		linear-gradient(to left, transparent 10px, transparent 10px),
+		repeating-linear-gradient(
+			transparent 0rem,
+			transparent 1.6rem,
+			#545866 1.6rem,
+			transparent 1.7rem,
+			transparent 2rem /*This needs to match the lineheight*/
+		);
+}
+
+textarea:focus {
+	outline: transparent;
+	background-image: linear-gradient(to right, transparent 10px, transparent 10px),
+		linear-gradient(to left, transparent 10px, transparent 10px),
+		repeating-linear-gradient(
+			transparent 0rem,
+			transparent 1.6rem,
+			#2f75d6 1.6rem,
+			transparent 1.7rem,
+			transparent 2rem /*This needs to match the lineheight*/
+		);
+}

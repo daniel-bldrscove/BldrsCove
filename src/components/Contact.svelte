@@ -1,6 +1,7 @@
 <script lang="ts">
 	import LayoutWrapper from './lib/LayoutWrapper.svelte';
 	import Button from './lib/Button.svelte';
+	import { themeMode, colors } from '../stores';
 
 	let formData = {};
 
@@ -12,17 +13,17 @@
 		console.log('Value: ', e.currentTarget.value);
 		formData[target.name] = target.value;
 	}
-
-	// $: console.log('FormData: ', formData);
 </script>
 
-<div id="contact" class="bg-gray-100 dark:bg-bldrsCovePureBlue">
+<div id="contact" class="bg-bldrsCovePaleStone dark:bg-bldrsCoveCoolSlate">
 	<LayoutWrapper>
-		<div class="pt-48 pb-48">
+		<div class="pt-32 pb-32">
 			<div class="mx-auto text-center">
-				<h2 class="mb-16">Drop me a line</h2>
-				<h5 class="mb-4">Thanks for checking out my website</h5>
-				<p class="w-106 mx-auto">
+				<h2 class="mb-16 text-bldrsCoveDeepBlue dark:text-bldrsCoveLtGray">Drop me a line</h2>
+				<h5 class="mb-4 text-ashenMidContrast-light dark:text-bldrsCoveMidBlue">
+					Thanks for checking out my website
+				</h5>
+				<p class="w-106 mx-auto text-ashenMidContrast-light dark:text-ashenMidContrast-dark">
 					If you have a question or would like to inquire about a project, shoot me an email. I do
 					my best to respond within 24hrs.
 				</p>
@@ -31,7 +32,6 @@
 						<div class="col-span-1">
 							<label for="fullname">Full Name</label>
 							<input
-								class="w-full block"
 								on:change={(e) => handleChange(e)}
 								name="fullname"
 								type="text"
@@ -42,7 +42,6 @@
 						<div class="col-span-1">
 							<label for="email">Email</label>
 							<input
-								class="w-full block"
 								on:change={(e) => handleChange(e)}
 								name="email"
 								type="text"
@@ -53,7 +52,9 @@
 						<div class="col-span-2 flex flex-wrap mt-4">
 							<label for="message">Message</label>
 							<textarea
-								class="w-full leading-8 resize-none bg-local font-firaMono align-text-bottom textarea-hr bg-transparent"
+								class={`${
+									$themeMode === 'dark' && 'dark'
+								} w-full leading-8 resize-none bg-local font-firaMono align-text-bottom bg-transparent`}
 								on:change={(e) => handleChange(e)}
 								name="message"
 								type="text"
@@ -74,23 +75,4 @@
 </div>
 
 <style>
-	input {
-		@apply h-8 align-bottom border-b border-ashenLowContrast-light pt-3 font-firaMono bg-transparent;
-	}
-
-	label {
-		@apply text-xs tracking-wider uppercase text-ashenMidContrast-light mb-2 block opacity-60;
-	}
-
-	.textarea-hr {
-		background-image: linear-gradient(to right, transparent 10px, transparent 10px),
-			linear-gradient(to left, transparent 10px, transparent 10px),
-			repeating-linear-gradient(
-				transparent 0rem,
-				transparent 1.6rem,
-				rgba(51, 55, 66, 0.4) 1.6rem,
-				transparent 1.7rem,
-				transparent 2rem /*This needs to match the lineheight*/
-			);
-	}
 </style>
