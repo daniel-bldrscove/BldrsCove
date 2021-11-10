@@ -13,7 +13,7 @@
 	import { onMount } from 'svelte';
 	import client from '../../sanityClient';
 	import PortableText from '@portabletext/svelte';
-	import LayoutWrapper from '$lib/LayoutWrapper.svelte';
+	import LayoutWrapper from '$lib/subComponents/LayoutWrapper.svelte';
 	import DescLinkBlock from '$lib/portableText/DescLinkBlock.svelte';
 
 	export let pageSlug: string;

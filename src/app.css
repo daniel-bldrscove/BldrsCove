@@ -37,6 +37,10 @@ html {
 	scroll-behavior: smooth;
 }
 
+.grecaptcha-badge {
+	visibility: hidden;
+}
+
 .slide-left-right {
 	text-decoration: none;
 	display: inline-block;
@@ -64,7 +68,7 @@ html {
 }
 
 input {
-	@apply w-full block h-8 align-bottom border-b border-ashenLowContrast-light dark:border-b dark:border-ashenLowContrast-dark pt-3 font-firaMono bg-transparent;
+	@apply w-full block h-8 align-bottom border-b border-ashenLowContrast-light dark:border-b pt-3 font-firaMono bg-transparent dark:text-ashenMidContrast-dark dark:border-ashenLowContrast-dark;
 }
 
 input:focus {

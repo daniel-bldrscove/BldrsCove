@@ -20,7 +20,7 @@ const config = {
 		files: {
 			assets: 'static',
 			hooks: 'src/hooks',
-			lib: 'src/components/lib',
+			lib: 'src/lib',
 			routes: 'src/routes',
 			serviceWorker: 'src/service-worker',
 			template: 'src/app.html'

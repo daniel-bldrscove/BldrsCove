@@ -1,7 +1,7 @@
 <script>
 	import { fade } from 'svelte/transition';
-	import LayoutWrapper from './lib/LayoutWrapper.svelte';
-	import Icon from '$lib/Icon.svelte';
+	import LayoutWrapper from '$lib/subComponents/LayoutWrapper.svelte';
+	import Icon from '$lib/subComponents/Icon.svelte';
 	import DownloadDocIcon from '$lib/icons/DownloadDocIcon.svelte';
 	import { themeMode, colors } from '../stores';
 </script>

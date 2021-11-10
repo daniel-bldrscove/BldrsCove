@@ -5,13 +5,14 @@
 	export let fillColor: string = '';
 	export let strokeColor: string = 'currentColor';
 	export let svgClass: string = '';
+	export let viewBox: string = '0 0 38 38';
 </script>
 
 <svg
 	xmlns="http://www.w3.org/2000/svg"
 	{width}
 	{height}
-	viewBox="0 0 38 38"
+	{viewBox}
 	aria-labelledby={name}
 	role="presentation"
 	class={svgClass}

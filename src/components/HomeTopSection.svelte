@@ -2,11 +2,10 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { themeMode, colors } from '../stores';
-	import LayoutWrapper from '$lib/LayoutWrapper.svelte';
-	import Icon from '$lib/Icon.svelte';
+	import LayoutWrapper from '$lib/subComponents/LayoutWrapper.svelte';
+	import Icon from '$lib/subComponents/Icon.svelte';
 	import ArrowCursorIcon from '$lib/icons/ArrowCursorIcon.svelte';
 	import ComputerIcon from '$lib/icons/ComputerIcon.svelte';
-	import { browser } from '$app/env';
 	import HALO from 'vanta/dist/vanta.halo.min';
 	let vantaContainer;
 	let haloEffect = null;
@@ -32,8 +31,8 @@
 			gyroControls: false,
 			minHeight: 200.0,
 			minWidth: 200.0,
-			baseColor: $colors.brightBlue,
-			backgroundColor: $colors.paleStone,
+			baseColor: $themeMode === 'dark' ? $colors.deepBlue : $colors.brightBlue,
+			backgroundColor: $themeMode === 'dark' ? $colors.deepBlue : '#b9cdd7',
 			amplitudeFactor: 2,
 			xOffset: 0.18,
 			yOffset: 0.12,
@@ -55,7 +54,7 @@
 			<div class="text-container col-span-12 row-start-1 row-span-2 grid content-center">
 				<div class="text-content">
 					<h1
-						class="mb-6 text-white dark:text-bldrsCoveBrightBlue"
+						class="mb-6 text-bldrsCoveMidBlue dark:text-bldrsCoveBrightBlue"
 						transition:fade={{ delay: 100, duration: 100 }}
 					>
 						Hello, I'm Daniel.
@@ -74,7 +73,7 @@
 			<span class="cta-link" transition:fade={{ delay: 200, duration: 300 }}>
 				<a href="#about">
 					<Icon
-						strokeColor={$themeMode === 'dark' ? $colors.brightBlue : '#fff'}
+						strokeColor={$themeMode === 'dark' ? $colors.brightBlue : $colors.midBlue}
 						fillColor="transparent"
 						width="32"
 						height="32"
@@ -93,7 +92,7 @@
 			<span class="ml-14 cta-link" transition:fade={{ delay: 300, duration: 600 }}>
 				<a href="#web-dev">
 					<Icon
-						strokeColor={$themeMode === 'dark' ? $colors.brightBlue : '#fff'}
+						strokeColor={$themeMode === 'dark' ? $colors.brightBlue : $colors.midBlue}
 						fillColor="transparent"
 						width="32"
 						height="32"

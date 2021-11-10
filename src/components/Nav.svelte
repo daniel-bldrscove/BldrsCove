@@ -1,17 +1,17 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { fly, scale, fade } from 'svelte/transition';
+	import { fly } from 'svelte/transition';
 	import { themeMode } from '../stores';
 
-	import LayoutWrapper from '$lib/LayoutWrapper.svelte';
+	import LayoutWrapper from '$lib/subComponents/LayoutWrapper.svelte';
 	import CarrotIcon from '$lib/icons/CarrotIcon.svelte';
-	import Icon from '$lib/Icon.svelte';
+	import Icon from '$lib/subComponents/Icon.svelte';
 	import CarrotDownIcon from '$lib/icons/CarrotDownIcon.svelte';
 	import SunIcon from '$lib/icons/SunIcon.svelte';
 	import MoonIcon from '$lib/icons/MoonIcon.svelte';
 	import bldrsCoveLogoLight from '../images/bldrscove-logo-light-md.png';
 	import bldrsCoveLogoDark from '../images/bldrscove-logo-dark-md.png';
-	import DropDownNav from './lib/DropDownNav.svelte';
+	import DropDownNav from '$lib/subComponents/DropDownNav.svelte';
 
 	let prevThemeIcon = null;
 
@@ -34,7 +34,7 @@
 	};
 </script>
 
-<div
+<nav
 	class="flex items-center bg-gray-100 h-24 drop-shadow-xlLight opacity-90 dark:bg-bldrsCoveDeepBlue"
 >
 	<LayoutWrapper>
@@ -159,7 +159,7 @@
 			</div>
 		</div>
 	</LayoutWrapper>
-</div>
+</nav>
 
 <style>
 	.nav-item {

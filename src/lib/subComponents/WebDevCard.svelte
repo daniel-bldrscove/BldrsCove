@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
 
-	import Icon from '$lib/Icon.svelte';
+	import Icon from '$lib/subComponents/Icon.svelte';
 	import GithubIcon from '$lib/icons/GithubIcon.svelte';
 	import OpenLinkIcon from '$lib/icons/OpenLinkIcon.svelte';
 

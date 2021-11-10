@@ -1,8 +1,8 @@
 <script>
-	import WebDevImage from './lib/WebDevImage.svelte';
-	import WebDevCard from './lib/WebDevCard.svelte';
+	import WebDevImage from '$lib/subComponents/WebDevImage.svelte';
+	import WebDevCard from '$lib/subComponents/WebDevCard.svelte';
 
-	export let webDevProject = {
+	export let devProject = {
 		title: '',
 		coverImage: '',
 		coverImageAlt: '',
@@ -12,7 +12,7 @@
 		projectLink: ''
 	};
 	let { title, coverImage, coverImageAlt, description, techStack, gitHubLink, projectLink } =
-		webDevProject;
+		devProject;
 
 	// import IntersectionObserver from 'svelte-intersection-observer';
 	// let devProjectImage;
