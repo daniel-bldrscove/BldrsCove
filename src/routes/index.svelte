@@ -9,9 +9,7 @@
 	<title>BldrsCove Portfolio</title>
 </svelte:head>
 
-<div>
-	<section><HomeTopSection /></section>
-	<section><About /></section>
-	<section><Projects /></section>
-	<section><Contact /></section>
-</div>
+<section><HomeTopSection /></section>
+<section><About /></section>
+<section><Projects /></section>
+<section><Contact /></section>

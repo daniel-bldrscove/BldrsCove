@@ -3,6 +3,7 @@
 	import { fade } from 'svelte/transition';
 	import { themeMode, colors } from '../stores';
 	import LayoutWrapper from '$lib/subComponents/LayoutWrapper.svelte';
+	import LayoutContainLg from '$lib/subComponents/LayoutContainLg.svelte';
 	import Icon from '$lib/subComponents/Icon.svelte';
 	import ArrowCursorIcon from '$lib/icons/ArrowCursorIcon.svelte';
 	import ComputerIcon from '$lib/icons/ComputerIcon.svelte';
@@ -17,7 +18,7 @@
 				backgroundColor: $themeMode === 'dark' ? $colors.deepBlue : '#b9cdd7',
 				xOffset: $themeMode === 'dark' ? 0 : 0.18,
 				yOffset: $themeMode === 'dark' ? -0.48 : 0.12,
-				size: $themeMode === 'dark' ? 0.65 : 1.25
+				size: $themeMode === 'dark' ? 0.9 : 1.25
 			});
 	};
 
@@ -43,74 +44,85 @@
 	});
 </script>
 
+<!-- svelte-ignore a11y-missing-content -->
+<a id="home-top-section" class="anchor-tag" />
 <div
-	id="home-top-section"
-	class="dark:bg-bldrsCoveCoolGray h-screen flex justify-center items-center"
+	class="dark:bg-bldrsCoveCoolGray flex justify-center items-center"
 	bind:this={vantaContainer}
 	transition:fade={{ delay: 100, duration: 100 }}
 >
 	<LayoutWrapper>
-		<div class="grid grid-cols-12 grid-rows-2 mt-20">
-			<div class="text-container col-span-12 row-start-1 row-span-2 grid content-center">
-				<div class="text-content">
-					<h1
-						class="mb-6 text-bldrsCoveMidBlue dark:text-bldrsCoveBrightBlue"
-						transition:fade={{ delay: 100, duration: 100 }}
-					>
-						Hello, I'm Daniel.
-					</h1>
-					<h2
-						class="text-bldrsCoveDeepBlue dark:text-bldrsCoveLtGray"
-						transition:fade={{ delay: 100, duration: 1200 }}
-					>
-						I build interactive experiences on the web through UI and modern javascript
-						technologies.
-					</h2>
+		<LayoutContainLg>
+			<div class="hero-container relative flex justify-center items-center">
+				<div class="flex-wrapper">
+					<div class="text-container">
+						<h1
+							class="mb-6 text-bldrsCoveMidBlue dark:text-bldrsCoveBrightBlue"
+							transition:fade={{ delay: 100, duration: 100 }}
+						>
+							Hello, I'm Daniel.
+						</h1>
+						<h2
+							class="text-2xl sm:text-4xl-a sm:leading-4xl-a text-bldrsCoveDeepBlue dark:text-bldrsCoveLtGray md:w-10/12 xl:w-9/12 2xl:w-5/12"
+							transition:fade={{ delay: 100, duration: 1200 }}
+						>
+							I build interactive experiences on the web through UI and modern javascript
+							technologies.
+						</h2>
+					</div>
+					<div class="mt-20 flex flex-wrap">
+						<span class="cta-link" transition:fade={{ delay: 200, duration: 300 }}>
+							<a href="#about">
+								<Icon
+									strokeColor={$themeMode === 'dark' ? $colors.brightBlue : $colors.midBlue}
+									fillColor="transparent"
+									width="32"
+									height="32"
+									name="arrow-cursor-icon"
+									svgClass="inline-block"
+								>
+									<ArrowCursorIcon />
+								</Icon>
+								<h6
+									class="inline-block text-bldrsCoveDeepBlue dark:text-bldrsCoveLtGray slide-left-right"
+								>
+									About me
+								</h6>
+							</a>
+						</span>
+						<span
+							class="w-full mt-6 sm:w-auto sm:mt-0 sm:ml-14 cta-link"
+							transition:fade={{ delay: 300, duration: 600 }}
+						>
+							<a href="#web-dev">
+								<Icon
+									strokeColor={$themeMode === 'dark' ? $colors.brightBlue : $colors.midBlue}
+									fillColor="transparent"
+									width="32"
+									height="32"
+									name="computer-icon"
+									svgClass="inline-block"
+								>
+									<ComputerIcon />
+								</Icon>
+								<h6
+									class="inline-block text-bldrsCoveDeepBlue dark:text-bldrsCoveLtGray ml-2 slide-left-right"
+								>
+									Recent work
+								</h6>
+							</a>
+						</span>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="mt-20">
-			<span class="cta-link" transition:fade={{ delay: 200, duration: 300 }}>
-				<a href="#about">
-					<Icon
-						strokeColor={$themeMode === 'dark' ? $colors.brightBlue : $colors.midBlue}
-						fillColor="transparent"
-						width="32"
-						height="32"
-						name="arrow-icon"
-						svgClass="inline-block"
-					>
-						<ArrowCursorIcon />
-					</Icon>
-					<h6
-						class="inline-block text-bldrsCoveDeepBlue dark:text-bldrsCoveLtGray slide-left-right"
-					>
-						About me
-					</h6>
-				</a>
-			</span>
-			<span class="ml-14 cta-link" transition:fade={{ delay: 300, duration: 600 }}>
-				<a href="#web-dev">
-					<Icon
-						strokeColor={$themeMode === 'dark' ? $colors.brightBlue : $colors.midBlue}
-						fillColor="transparent"
-						width="32"
-						height="32"
-						name="computer-icon"
-						svgClass="inline-block"
-					>
-						<ComputerIcon />
-					</Icon>
-					<h6
-						class="inline-block text-bldrsCoveDeepBlue dark:text-bldrsCoveLtGray ml-2 slide-left-right"
-					>
-						Recent work
-					</h6>
-				</a>
-			</span>
-		</div>
+		</LayoutContainLg>
 	</LayoutWrapper>
 </div>
 
 <style>
+	.hero-container {
+		height: calc(100vh - 6rem);
+	}
+
+	/* @media (max-width); */
 </style>

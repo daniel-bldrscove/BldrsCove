@@ -2,6 +2,7 @@
 	import { fly } from 'svelte/transition';
 	import { Jellyfish } from 'svelte-loading-spinners';
 	import LayoutWrapper from '$lib/subComponents/LayoutWrapper.svelte';
+	import LayoutContainLg from '$lib/subComponents/LayoutContainLg.svelte';
 	import { themeMode, colors } from '../stores';
 	import { variables } from '$lib/variables';
 	import Icon from '$lib/subComponents/Icon.svelte';
@@ -106,119 +107,133 @@
 	};
 </script>
 
-<div id="contact" class="bg-bldrsCovePaleStone dark:bg-bldrsCoveCoolSlate">
+<!-- svelte-ignore a11y-missing-content -->
+<a id="contact" class="anchor-tag" />
+<div class="bg-bldrsCovePaleStone dark:bg-bldrsCoveCoolSlate">
 	<LayoutWrapper>
-		<div class="pt-32 pb-32">
-			<div class="mx-auto text-center">
-				<h2 class="mb-16 text-bldrsCoveDeepBlue dark:text-bldrsCoveLtGray">Hey there!</h2>
-				<h5 class="mb-4 text-bldrsCoveMidBlue">Thanks for checking out my website</h5>
-				<p class="w-106 mx-auto text-ashenMidContrast-light dark:text-ashenMidContrast-dark">
-					If you have a question or would like to inquire about a project, shoot me an email. I do
-					my best to respond within 24hrs.
-				</p>
-				<div class="form-wrapper mt-20 sm:w-120 mx-auto">
-					<form
-						on:submit|preventDefault={handleSubmit}
-						class="grid grid-cols-2 gap-6 text-left"
-						accept-charset="UTF-8"
+		<LayoutContainLg>
+			<div class="pt-16 pb-16 sm:pt-32 sm:pb-32">
+				<div class="mx-auto text-center">
+					<h2
+						class="mb-6 sm:mb-16 text-4xl sm:text-current text-bldrsCoveDeepBlue dark:text-bldrsCoveLtGray"
 					>
-						<div class="col-span-1">
-							<label for="fullname">Full Name</label>
-							<input
-								bind:value={fullName}
-								name="fullname"
-								type="text"
-								placeholder="Enter full name"
-							/>
-						</div>
-						<div class="col-span-1">
-							<label for="email">Email</label>
-							<input bind:value={email} name="email" type="email" placeholder="Enter email" />
-						</div>
-						<div class="col-span-2 flex flex-wrap mt-4">
-							<span class="w-full flex justify-between">
-								<label for="message" class="inline-block">Message</label>
-								<RemainingCharacters bind:messageLength />
-							</span>
-							<textarea
-								bind:value={message}
-								class={`${
-									$themeMode === 'dark' && 'dark'
-								} w-full leading-8 resize-none bg-local font-firaMono align-text-bottom bg-transparent dark:text-ashenMidContrast-dark`}
-								name="message"
-								type="text"
-								placeholder="Enter message"
-								rows="5"
-								cols="60"
-							/>
-						</div>
-						<div class="w-full inline col-span-2">
-							<p
-								class="inline caption text-[11px] text-ashenLowContrast-light dark:text-ashenLowContrast-dark"
-							>
-								This site is protected by reCAPTCHA and the Google
-								<a href="https://policies.google.com/privacy" class="inline underline">
-									Privacy Policy
-								</a>
-								and
-								<a href="https://policies.google.com/terms" class="inline underline">
-									Terms of Service
-								</a>{' '}
-								apply.
-							</p>
-						</div>
-						<div class="col-span-2 mt-4 group">
-							<button
-								class="g-recaptcha bg-bldrsCovePureBlue h-14 w-full drop-shadow-xl rounded-2xl group-hover:bg-bldrsCoveMidBlue transition duration-300 ease-in-out group-hover:scale-105 dark:group-hover:text-white disabled:bg-ashenLowContrast-light disabled:opacity-60 group-hover:disabled:scale-100 group-hover:disabled:bg-ashenLowContrast-light group-hover:disabled:cursor-default"
-								data-sitekey={variables.recaptchaSiteKey}
-								data-callback="handleSubmit"
-								data-action="submit"
-								disabled={!isValid}
-							>
-								{#if submitting}
-									<div class="flex justify-center items-center">
-										<Jellyfish size="55" color="white" unit="px" duration="1s" />
-									</div>
-								{:else}
-									<h6 class="text-white">Submit</h6>
-								{/if}
-							</button>
-						</div>
-					</form>
-					<div class="form-feedback relative">
-						{#if submitted}
-							<div
-								class="submission-feedback w-full absolute mt-6 mb-6 mx-auto"
-								transition:fly={{ y: 10, duration: 150 }}
-							>
-								<span
-									class="inline-block text-ashenMidContrast-light dark:text-ashenMidContrast-dark"
-								>
-									<Icon
-										strokeColor={$themeMode === 'dark' ? $colors.brightBlue : $colors.pureBlue}
-										fillColor="transparent"
-										width="32"
-										height="32"
-										viewBox="0 0 256 256"
-										name="hand-wave-icon"
-										svgClass="inline-block mr-2"
-									>
-										<HandWavingIcon />
-									</Icon>
-									<p
-										class={`${
-											$themeMode === 'dark' ? 'text-bldrsCoveBrightBlue' : 'text-bldrsCovePureBlue'
-										} inline-block text-lg`}
-									>
-										Thanks for your submission. Your message has been sent!
-									</p>
-								</span>
+						Drop me a line
+					</h2>
+					<h5 class="w-8/12 sm:w-11/12 mx-auto mb-6 sm:mb-4 text-bldrsCoveMidBlue">
+						Thanks for checking out my website
+					</h5>
+					<p
+						class="w-full mx-auto text-ashenMidContrast-light dark:text-ashenMidContrast-dark md:w-7/12 2xl:w-5/12"
+					>
+						If you have a question or would like to inquire about a project, shoot me an email. I do
+						my best to respond within 24hrs.
+					</p>
+					<div class="w-full form-wrapper mt-20 mx-auto">
+						<form
+							on:submit|preventDefault={handleSubmit}
+							class="grid grid-cols-2 gap-6 text-left"
+							accept-charset="UTF-8"
+						>
+							<div class="col-span-1">
+								<label for="fullname">Full Name</label>
+								<input
+									bind:value={fullName}
+									name="fullname"
+									type="text"
+									placeholder="Enter full name"
+								/>
 							</div>
-						{/if}
+							<div class="col-span-1">
+								<label for="email">Email</label>
+								<input bind:value={email} name="email" type="email" placeholder="Enter email" />
+							</div>
+							<div class="col-span-2 flex flex-wrap mt-4">
+								<span class="w-full flex justify-between">
+									<label for="message" class="inline-block">Message</label>
+									<RemainingCharacters bind:messageLength />
+								</span>
+								<textarea
+									bind:value={message}
+									class={`${
+										$themeMode === 'dark' && 'dark'
+									} w-full leading-8 resize-none bg-local font-firaMono align-text-bottom bg-transparent dark:text-ashenMidContrast-dark`}
+									name="message"
+									type="text"
+									placeholder="Enter message"
+									rows="5"
+									cols="60"
+								/>
+							</div>
+							<div class="w-full inline col-span-2">
+								<p
+									class="inline caption text-[11px] text-ashenLowContrast-light dark:text-ashenLowContrast-dark"
+								>
+									This site is protected by reCAPTCHA and the Google
+									<a href="https://policies.google.com/privacy" class="inline underline">
+										Privacy Policy
+									</a>
+									and
+									<a href="https://policies.google.com/terms" class="inline underline">
+										Terms of Service
+									</a>{' '}
+									apply.
+								</p>
+							</div>
+							<div class="col-span-2 mt-4 group">
+								<button
+									class="g-recaptcha bg-bldrsCovePureBlue h-14 w-full drop-shadow-xl rounded-2xl group-hover:bg-bldrsCoveMidBlue transition duration-300 ease-in-out group-hover:scale-105 dark:group-hover:text-white disabled:bg-ashenLowContrast-light disabled:opacity-60 group-hover:disabled:scale-100 group-hover:disabled:bg-ashenLowContrast-light group-hover:disabled:cursor-default"
+									data-sitekey={variables.recaptchaSiteKey}
+									data-callback="handleSubmit"
+									data-action="submit"
+									disabled={!isValid}
+								>
+									{#if submitting}
+										<div class="flex justify-center items-center">
+											<Jellyfish size="55" color="white" unit="px" duration="1s" />
+										</div>
+									{:else}
+										<h6 class="text-white">Submit</h6>
+									{/if}
+								</button>
+							</div>
+						</form>
+						<div class="form-feedback relative">
+							{#if submitted}
+								<div
+									class="submission-feedback w-full absolute mt-3 sm:mt-6 sm:mb-6 mx-auto"
+									transition:fly={{ y: 10, duration: 150 }}
+								>
+									<span
+										class="inline-block text-ashenMidContrast-light dark:text-ashenMidContrast-dark"
+									>
+										<Icon
+											strokeColor={$themeMode === 'dark' ? $colors.brightBlue : $colors.pureBlue}
+											fillColor="transparent"
+											width="32"
+											height="32"
+											viewBox="0 0 256 256"
+											name="hand-wave-icon"
+											svgClass="hidden sm:inline-block mr-2"
+										>
+											<HandWavingIcon />
+										</Icon>
+										<p
+											class={`${
+												$themeMode === 'dark'
+													? 'text-bldrsCoveBrightBlue'
+													: 'text-bldrsCovePureBlue'
+											} inline-block text-sm sm:text-lg`}
+										>
+											Thanks for your submission. Your message has been sent!
+										</p>
+									</span>
+								</div>
+							{/if}
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</LayoutContainLg>
 	</LayoutWrapper>
 </div>
 

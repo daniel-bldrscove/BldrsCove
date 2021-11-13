@@ -61,10 +61,10 @@
 </script>
 
 <LayoutWrapper>
-	<div>
+	<div class="mt-4 mb-8">
 		<img src={coverImage} alt={altText && altText} class="w-full object-cover object-center" />
-		<h1>{title && title}</h1>
-		<h5>{projectLink && `${projectLink}`}</h5>
+		<h1 class="mt-4 mb-4">{title && title}</h1>
+		<p class="sm-title mb-4">{projectLink && `${projectLink}`}</p>
 		<!-- description is an array incoming from the sanity client fetch call -->
 		<PortableText
 			blocks={description}

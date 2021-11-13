@@ -15,41 +15,43 @@
 </script>
 
 <div
-	class="shadow-2xl bg-gray-100 p-12 dark:bg-bldrsCoveDeepBlue"
+	class="shadow-2xl bg-gray-100 p-6 sm:p-12 dark:bg-bldrsCoveDeepBlue h-full flex justify-center items-center"
 	transition:fly={{ y: 100, duration: 500, delay: 500 }}
 >
-	<h4 class="text-bldrsCoveDeepBlue mb-4 dark:text-ashenHighContrast-dark">{title}</h4>
-	<p class="text-ashenMidContrast-light mb-6 dark:text-ashenMidContrast-dark">{description}</p>
-	<p class="sm-title text-bldrsCoveMidBlue mb-2">Technologies Used</p>
-	<p class="caption text-ashenMidContrast-light mb-6 dark:text-ashenMidContrast-dark">
-		{`${techHolder}`}
-	</p>
-	<span>
-		<a href={gitHubLink} class="inline-block">
-			<Icon
-				strokeColor="transparent"
-				fillColor="#2f75d6"
-				width="32"
-				height="32"
-				name="github-icon"
-				svgClass="inline-block"
-			>
-				<GithubIcon />
-			</Icon>
-		</a>
-		<a href={projectLink} class="inline-block ml-2">
-			<Icon
-				strokeColor="#2f75d6"
-				fillColor="transparent"
-				width="32"
-				height="32"
-				name="open-link-icon"
-				svgClass="inline-block"
-			>
-				<OpenLinkIcon />
-			</Icon>
-		</a>
-	</span>
+	<div>
+		<h4 class="text-bldrsCoveDeepBlue mb-4 dark:text-ashenHighContrast-dark">{title}</h4>
+		<p class="text-ashenMidContrast-light mb-6 dark:text-ashenMidContrast-dark">{description}</p>
+		<p class="sm-title text-bldrsCoveMidBlue mb-2">Technologies Used</p>
+		<p class="caption text-ashenMidContrast-light mb-6 dark:text-ashenMidContrast-dark">
+			{`${techHolder}`}
+		</p>
+		<span>
+			<a href={gitHubLink} class="inline-block">
+				<Icon
+					strokeColor="transparent"
+					fillColor="#2f75d6"
+					width="32"
+					height="32"
+					name="github-icon"
+					svgClass="inline-block"
+				>
+					<GithubIcon />
+				</Icon>
+			</a>
+			<a href={projectLink} class="inline-block ml-2">
+				<Icon
+					strokeColor="#2f75d6"
+					fillColor="transparent"
+					width="32"
+					height="32"
+					name="open-link-icon"
+					svgClass="inline-block"
+				>
+					<OpenLinkIcon />
+				</Icon>
+			</a>
+		</span>
+	</div>
 </div>
 
 <style>

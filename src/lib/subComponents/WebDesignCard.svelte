@@ -39,13 +39,13 @@
 	let { title, coverImage, slug } = webDesignProject;
 </script>
 
-<div class="mb-2 mt-2">
+<div class="sm:mb-2 sm:mt-2">
 	<a href="/web-design/{slug.current}" class="col-span-1">
 		<img
 			src={coverImage && coverImage.asset.url}
 			alt={coverImage.alt}
-			class="w-full h-56 object-cover object-center"
+			class="w-full h-48 sm:h-44 md:h-72 lg:w-106 2xl:h-96 2xl:w-full object-cover object-center"
 		/>
-		<h6 class="mt-2 text-ashenMidContrast-light dark:text-ashenMidContrast-dark">{title}</h6>
+		<h5 class="mt-2 text-ashenMidContrast-light dark:text-ashenMidContrast-dark">{title}</h5>
 	</a>
 </div>

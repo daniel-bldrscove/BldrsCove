@@ -48,14 +48,16 @@ module.exports = {
 				'4xl-a': '2.875rem'
 			},
 			screens: {
-				xs: '425px'
+				xs: '475px',
+				ultraWide: '2000px'
 			},
 			dropShadow: {
 				xlLight: '0 10px 15px rgba(0, 0, 0, 0.06)'
 			},
 			spacing: {
 				106: '30rem',
-				120: '40.75rem'
+				120: '40.75rem',
+				135: '70rem'
 			},
 			zIndex: {
 				'-10': '-10'
