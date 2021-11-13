@@ -123,6 +123,4 @@
 	.hero-container {
 		height: calc(100vh - 6rem);
 	}
-
-	/* @media (max-width); */
 </style>

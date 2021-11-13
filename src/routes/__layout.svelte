@@ -4,7 +4,7 @@
 	import '../app.css';
 </script>
 
-<div class="flex flex-wrap flex-shrink-0 hero-container">
+<div class="flex flex-wrap flex-shrink-0 h-screen">
 	<div class="w-full flex flex-col">
 		<header class="w-full block self-start sticky top-0 z-50">
 			<Nav aria-label="primary-navigation" />
