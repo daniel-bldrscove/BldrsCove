@@ -82,7 +82,7 @@ body.modal-open {
 }
 
 input {
-	@apply w-full block h-8 align-bottom border-b border-ashenLowContrast-light dark:border-b pt-3 font-firaMono bg-transparent dark:text-ashenMidContrast-dark dark:border-ashenLowContrast-dark;
+	@apply w-full block h-8 align-bottom border-b border-ashenLowContrast-light rounded-none dark:border-b pt-3 font-firaMono bg-transparent dark:text-ashenMidContrast-dark dark:border-ashenLowContrast-dark;
 }
 
 input:focus {

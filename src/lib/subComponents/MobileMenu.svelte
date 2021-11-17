@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
 	import LayoutWrapper from './LayoutWrapper.svelte';
-	export let scrollToSection;
+	export let scrollToSection: any;
 </script>
 
 <div
@@ -15,41 +15,41 @@
 		<LayoutWrapper>
 			<div class="mobile-nav-items w-full flex flex-wrap">
 				<button
-					class="nav-btn text-ashenHighContrast-light dark:text-bldrsCoveLtGray"
+					class="nav-btn text-ashenHighContrast-light"
 					on:click|preventDefault={() => {
-						scrollToSection('#home-top-section');
+						scrollToSection('/#home-top-section');
 					}}
 				>
 					<h5 class="nav-item">Home</h5>
 				</button>
 				<button
-					class="nav-btn text-ashenHighContrast-light dark:text-bldrsCoveLtGray"
+					class="nav-btn text-ashenHighContrast-light"
 					on:click|preventDefault={() => {
-						scrollToSection('#about');
+						scrollToSection('/#about');
 					}}
 				>
 					<h5 class="nav-item">About</h5>
 				</button>
 				<button
-					class="nav-btn text-ashenHighContrast-light dark:text-bldrsCoveLtGray"
+					class="nav-btn text-ashenHighContrast-light"
 					on:click|preventDefault={() => {
-						scrollToSection('#web-dev');
+						scrollToSection('/#web-dev');
 					}}
 				>
 					<h5 class="nav-item">Web Dev Projects</h5>
 				</button>
 				<button
-					class="nav-btn text-ashenHighContrast-light dark:text-bldrsCoveLtGray"
+					class="nav-btn text-ashenHighContrast-light"
 					on:click|preventDefault={() => {
-						scrollToSection('#web-design');
+						scrollToSection('/#web-design');
 					}}
 				>
 					<h5 class="nav-item">Web Design Projects</h5>
 				</button>
 				<button
-					class="nav-btn text-ashenHighContrast-light dark:text-bldrsCoveLtGray"
+					class="nav-btn text-ashenHighContrast-light"
 					on:click|preventDefault={() => {
-						scrollToSection('#contact');
+						scrollToSection('/#contact');
 					}}
 				>
 					<h5 class="nav-item">Contact</h5>

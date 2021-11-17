@@ -15,29 +15,25 @@
 
 	let isMobileMenuOpen: boolean = false;
 
-	let scrollToSection = (route: string) => {
+	let scrollToSection = (route: string): void => {
 		window.location.href = route;
 		handleMobileMenu();
 	};
 
 	let scrollY: string;
-	// $: scrollY = scrolled;
 
 	browser &&
 		window.addEventListener('scroll', () => {
 			document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
-			// scrolled = window.scrollY;
 		});
 
 	// maintain scroll location on desktop and mobile when modal is open or hidden
-	let handleMobileMenu = () => {
+	let handleMobileMenu = (): void => {
 		// close modal
 		if (isMobileMenuOpen) {
 			// window.scrollTo(0, parseInt(scrollY || '0'));
 			document.body.style.top = '';
 			document.body.classList.remove('modal-open');
-			// document.documentElement.classList.remove('scroll-auto');
-			// document.documentElement.classList.add('scroll-smooth');
 			isMobileMenuOpen = false;
 		} else {
 			// open modal
@@ -151,7 +147,7 @@
 
 <!-- Mobile menu, show/hide based on menu state. -->
 {#if isMobileMenuOpen}
-	<MobileMenu {handleMobileMenu} {scrollToSection} />
+	<MobileMenu {scrollToSection} />
 {/if}
 
 <style>

@@ -32,8 +32,6 @@
 			gyroControls: false,
 			minHeight: 200.0,
 			minWidth: 200.0,
-			baseColor: $themeMode === 'dark' ? $colors.deepBlue : $colors.brightBlue,
-			backgroundColor: $themeMode === 'dark' ? $colors.deepBlue : '#b9cdd7',
 			amplitudeFactor: 2,
 			xOffset: 0.18,
 			yOffset: 0.12,

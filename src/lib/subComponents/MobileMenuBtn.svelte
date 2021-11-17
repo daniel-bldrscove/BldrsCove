@@ -3,7 +3,7 @@
 	import MenuIcon from '$lib/icons/MenuIcon.svelte';
 	import { themeMode, colors } from '../../stores';
 
-	export let handleMobileMenu;
+	export let handleMobileMenu: any;
 </script>
 
 <button
