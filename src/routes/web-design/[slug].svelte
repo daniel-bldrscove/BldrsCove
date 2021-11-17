@@ -55,7 +55,7 @@
 			.fetch(query)
 			.then((data) => {
 				if (data.length > 0) {
-					console.log('Incoming data: ', data);
+					// console.log('Incoming data: ', data);
 					const project = data[0];
 					coverImage = project.coverImage.asset;
 					altText = project.coverImage.alt;

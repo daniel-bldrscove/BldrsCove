@@ -23,7 +23,6 @@
 		await client
 			.fetch(query)
 			.then((data) => {
-				console.log('Data: ', data);
 				if (data.length > 0) {
 					// console.log('Incoming data: ', data);
 					webDesignProjects = data;
