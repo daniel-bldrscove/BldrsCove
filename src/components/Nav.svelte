@@ -96,14 +96,16 @@
 									<a
 										href="/#home-top-section"
 										rel="external"
-										class="nav-item dark:text-bldrsCoveLtGray">Home</a
+										class="nav-item slide-left-right dark:text-bldrsCoveLtGray">Home</a
 									>
 								</h6>
 							</li>
 							<li class="ml-4 md:ml-6 lg:ml-10">
 								<h6>
-									<a href="/#about" rel="external" class="nav-item dark:text-bldrsCoveLtGray"
-										>About</a
+									<a
+										href="/#about"
+										rel="external"
+										class="nav-item slide-left-right dark:text-bldrsCoveLtGray">About</a
 									>
 								</h6>
 							</li>
@@ -130,8 +132,10 @@
 							</li>
 							<li class="ml-4 md:ml-6 lg:ml-10">
 								<h6>
-									<a href="/#contact" rel="external" class="nav-item dark:text-bldrsCoveLtGray"
-										>Contact</a
+									<a
+										href="/#contact"
+										rel="external"
+										class="nav-item slide-left-right dark:text-bldrsCoveLtGray">Contact</a
 									>
 								</h6>
 							</li>
