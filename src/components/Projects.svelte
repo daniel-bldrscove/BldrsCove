@@ -9,7 +9,7 @@
 	import devProjects from '$lib/devProjects';
 
 	let webDesignProjects = [];
-	$: console.log('Web Design Projects: ', webDesignProjects);
+	// $: console.log('Web Design Projects: ', webDesignProjects);
 
 	onMount(async () => {
 		const query = `*[_type == 'web-design-project'] | order(projectOrder asc){

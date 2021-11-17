@@ -31,7 +31,7 @@ export async function post(req:Record<string, string> ):Promise<{
 		});
 
 		const captcha = await captchaRes.json();
-		console.log('Recaptcha response: ', captcha);
+		// console.log('Recaptcha response: ', captcha);
 
 		if (captcha.success || captcha.score > 0.4) {
 			return {

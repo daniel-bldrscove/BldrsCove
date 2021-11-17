@@ -26,7 +26,7 @@
 			{`${techHolder}`}
 		</p>
 		<span>
-			<a href={gitHubLink} class="inline-block">
+			<a href={gitHubLink} target="_blank" rel="external" class="inline-block">
 				<Icon
 					strokeColor="transparent"
 					fillColor="#2f75d6"
@@ -38,7 +38,7 @@
 					<GithubIcon />
 				</Icon>
 			</a>
-			<a href={projectLink} class="inline-block ml-2">
+			<a href={projectLink} target="_blank" rel="external" class="inline-block ml-2">
 				<Icon
 					strokeColor="#2f75d6"
 					fillColor="transparent"

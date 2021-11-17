@@ -58,12 +58,10 @@
 				document.documentElement.className === 'dark'
 					? 'dark'
 					: 'light';
-			console.log('On mount theme: ', theme);
 			themeMode.update((val) => (val = theme));
 		} else {
 			// decide according to whats been set in local storage
 			const theme = window.localStorage.theme === 'dark' ? 'dark' : 'light';
-			console.log('On mount theme: ', theme);
 			themeMode.update((val) => (val = theme));
 		}
 	});
