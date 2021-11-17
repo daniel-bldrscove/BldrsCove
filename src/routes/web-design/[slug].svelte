@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-	export async function load({ page, fetch, session, stuff }) {
+	export async function load({ page }) {
 		const pageSlug = page.params.slug;
 		return {
 			props: {
@@ -14,43 +14,58 @@
 	import client from '../../sanityClient';
 	import PortableText from '@portabletext/svelte';
 	import LayoutWrapper from '$lib/subComponents/LayoutWrapper.svelte';
-	import DescLinkBlock from '$lib/portableText/DescLinkBlock.svelte';
+	import MarkProps from '$lib/portableText/MarkProps.svelte';
+	import ImageSerializer from '$lib/portableText/ImageSerializer.svelte';
+	import StyleProps from '$lib/portableText/StyleProps.svelte';
+	import imageUrlBuilder from '@sanity/image-url';
 
-	export let pageSlug: string;
-
-	let coverImage: string = '';
+	let coverImage: {
+		_ref: string;
+		_type: string;
+	} = null;
 	let altText: string = '';
 	let title: string = '';
-	let projectLink: string = '';
 	let description: [] = [];
+	let projectLink: string = '';
+	let disclaimer: string = '';
+	let projectImages: [] = [];
+
+	export let pageSlug: string;
+	const shortSlug = pageSlug.replace('-website-design', '');
+
+	const builder = imageUrlBuilder(client);
+
+	function urlFor(source: { _ref: string; _type: string }) {
+		return builder.image(source);
+	}
 
 	onMount(async () => {
 		const query = `*[_type == 'web-design-project' && slug.current == '${pageSlug}']{
 			coverImage{
 				alt,
-				asset->{
-					assetId,
-					url,
-				},
+				asset
 			},
+			title,
 			description,
 			projectLink,
-			title,
-			_id,
+			disclaimer,
+			projectImages,
 		}`;
 		await client
 			.fetch(query)
 			.then((data) => {
-				// console.log('Data: ', data);
 				if (data.length > 0) {
 					console.log('Incoming data: ', data);
 					const project = data[0];
-
-					coverImage = project.coverImage.asset.url;
+					coverImage = project.coverImage.asset;
 					altText = project.coverImage.alt;
 					title = project.title;
-					projectLink = project.projectLink;
 					description = project.description;
+					projectLink = project.projectLink;
+					projectImages = project.projectImages;
+					if (project.disclaimer) {
+						disclaimer = project.disclaimer;
+					}
 				}
 			})
 			.catch((error) => {
@@ -60,21 +75,74 @@
 	});
 </script>
 
-<LayoutWrapper>
-	<div class="mt-4 mb-8">
-		<img src={coverImage} alt={altText && altText} class="w-full object-cover object-center" />
-		<h1 class="mt-4 mb-4">{title && title}</h1>
-		<p class="sm-title mb-4">{projectLink && `${projectLink}`}</p>
-		<!-- description is an array incoming from the sanity client fetch call -->
-		<PortableText
-			blocks={description}
-			serializers={{
-				types: {},
-				marks: {
-					link: DescLinkBlock
-				},
-				blockStyles: {}
-			}}
-		/>
-	</div>
-</LayoutWrapper>
+<div class="dark:bg-bldrsCoveCoolSlate h-full">
+	<LayoutWrapper>
+		<div class="pt-8 pb-8">
+			{#if coverImage}
+				<img
+					src={urlFor(coverImage).format('webp').url()}
+					srcset={`
+					${urlFor(coverImage).format('webp').width(640).url()} 640w, 
+					${urlFor(coverImage).format('webp').width(768).url()} 768w, 
+					${urlFor(coverImage).format('webp').width(1024).url()} 1024w, 
+					${urlFor(coverImage).format('webp').width(1280).url()} 1280w, 
+					${urlFor(coverImage).format('webp').width(1536).url()} 1536w, 
+					${urlFor(coverImage).format('webp').width(2000).url()} 2000w, 
+				`}
+					width="100%"
+					height="100%"
+					alt={altText}
+					class="w-full object-cover object-center"
+				/>
+			{/if}
+			<div class="mt-8 mb-8">
+				<h1 class="mb-4 text-3xl text-bldrsCoveCoolGray dark:text-bldrsCoveLtGray">
+					{title && title}
+				</h1>
+				<!--Description-->
+				<div class="text-ashenMidContrast-light dark:text-ashenMidContrast-dark">
+					<PortableText
+						blocks={description}
+						serializers={{
+							types: {
+								image: ImageSerializer
+							},
+							marks: {
+								link: MarkProps
+							},
+							blockStyles: {
+								caption: StyleProps,
+								breakBefore: StyleProps
+							}
+						}}
+					/>
+				</div>
+			</div>
+			<!--Images-->
+			<PortableText
+				blocks={projectImages}
+				serializers={{
+					types: {
+						image: ImageSerializer
+					}
+				}}
+			/>
+			<!--Project Link-->
+			<span class="block mt-8 text-ashenMidContrast-light dark:text-ashenMidContrast-dark">
+				<!--Disclaimer-->
+				<p class="text-xs leading-4">{disclaimer ? disclaimer : ''}</p>
+				<p class="text-xs leading-4">
+					(Website appearance may have changed since the completion of this project)
+				</p>
+				<p>
+					<a
+						class="text-xs font-bold slide-left-right text-ashenMidContrast-light dark:text-ashenMidContrast-dark dark:hover:text-bldrsCoveMidBlue"
+						href={projectLink && `${projectLink}`}
+						target="_blank"
+						rel="noopener">{`www.${shortSlug}.com`}</a
+					>
+				</p>
+			</span>
+		</div>
+	</LayoutWrapper>
+</div>

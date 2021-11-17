@@ -15,7 +15,7 @@
 </script>
 
 <div
-	class="shadow-2xl bg-gray-100 p-6 sm:p-12 dark:bg-bldrsCoveDeepBlue h-full flex justify-center items-center"
+	class="shadow-2xl bg-gray-100 p-6 rounded-b-lg sm:rounded-lg sm:p-12 lg:rounded-l-none dark:bg-bldrsCoveDeepBlue h-full flex justify-center items-center"
 	transition:fly={{ y: 100, duration: 500, delay: 500 }}
 >
 	<div>

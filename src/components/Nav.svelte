@@ -14,7 +14,6 @@
 	import ThemeButton from '$lib/subComponents/ThemeButton.svelte';
 
 	let isMobileMenuOpen: boolean = false;
-	$: console.log('Is mobile menu open?: ', isMobileMenuOpen);
 
 	let scrollToSection = (route: string) => {
 		window.location.href = route;
@@ -34,7 +33,6 @@
 	let handleMobileMenu = () => {
 		// close modal
 		if (isMobileMenuOpen) {
-			console.log('scrollY on close: ', scrollY);
 			// window.scrollTo(0, parseInt(scrollY || '0'));
 			document.body.style.top = '';
 			document.body.classList.remove('modal-open');
@@ -52,15 +50,22 @@
 	};
 
 	onMount(() => {
-		// document.documentElement.classList.add('scroll-smooth');
-		const theme =
-			document.documentElement.className === 'dark' ||
-			window.localStorage.theme === 'dark' ||
-			window.matchMedia('(prefers-color-scheme: dark)').matches
-				? 'dark'
-				: 'light';
-
-		themeMode.update((val) => (val = theme));
+		// if theme hasn't been already set in local storage
+		// decide according to user theme preference or theme class
+		if (!window.localStorage.theme) {
+			const theme =
+				window.matchMedia('(prefers-color-scheme: dark)').matches ||
+				document.documentElement.className === 'dark'
+					? 'dark'
+					: 'light';
+			console.log('On mount theme: ', theme);
+			themeMode.update((val) => (val = theme));
+		} else {
+			// decide according to whats been set in local storage
+			const theme = window.localStorage.theme === 'dark' ? 'dark' : 'light';
+			console.log('On mount theme: ', theme);
+			themeMode.update((val) => (val = theme));
+		}
 	});
 </script>
 
@@ -76,7 +81,7 @@
 			<div class="w-full flex items-center justify-between">
 				<!--Logo-->
 				<div class="logo-wrapper mx-auto sm:mx-0 sm:self-start">
-					<a href="/">
+					<a href="/#" rel="external">
 						<img
 							src={$themeMode === 'dark' ? bldrsCoveLogoDark : bldrsCoveLogoLight}
 							alt="BldrsCove Logo"
@@ -90,12 +95,18 @@
 						<ul class="flex justify-between items-center w-full">
 							<li>
 								<h6>
-									<a href="#home-top-section" class="nav-item dark:text-bldrsCoveLtGray">Home</a>
+									<a
+										href="/#home-top-section"
+										rel="external"
+										class="nav-item dark:text-bldrsCoveLtGray">Home</a
+									>
 								</h6>
 							</li>
 							<li class="ml-4 md:ml-6 lg:ml-10">
 								<h6>
-									<a href="#about" class="nav-item dark:text-bldrsCoveLtGray">About</a>
+									<a href="/#about" rel="external" class="nav-item dark:text-bldrsCoveLtGray"
+										>About</a
+									>
 								</h6>
 							</li>
 							<li class="relative group block h-auto ml-4 md:ml-6 lg:ml-10">
@@ -121,7 +132,9 @@
 							</li>
 							<li class="ml-4 md:ml-6 lg:ml-10">
 								<h6>
-									<a href="#contact" class="nav-item dark:text-bldrsCoveLtGray">Contact</a>
+									<a href="/#contact" rel="external" class="nav-item dark:text-bldrsCoveLtGray"
+										>Contact</a
+									>
 								</h6>
 							</li>
 						</ul>

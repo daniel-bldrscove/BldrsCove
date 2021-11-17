@@ -13,28 +13,7 @@
 	};
 	let { title, coverImage, coverImageAlt, description, techStack, gitHubLink, projectLink } =
 		devProject;
-
-	// import IntersectionObserver from 'svelte-intersection-observer';
-	// let devProjectImage;
-	// let intersectingDevImage;
-	// let devProjectCard;
-	// let intersectingDevCard;
 </script>
-
-<!-- <IntersectionObserver element={devProjectImage} once bind:intersecting={intersectingDevImage}>
-	<div bind:this={devProjectImage}>
-		{#if intersectingDevImage}
-			<WebDevImage {coverImage} {coverImageAlt} />
-		{/if}
-	</div>
-</IntersectionObserver> -->
-<!-- <IntersectionObserver element={devProjectCard} once bind:intersecting={intersectingDevCard}>
-	<div bind:this={devProjectCard}>
-		{#if intersectingDevCard}
-			<WebDevCard {title} {description} {techStack} {gitHubLink} {projectLink} />
-		{/if}
-	</div>
-</IntersectionObserver> -->
 
 <div class="flex flex-wrap sm:justify-end mb-20 md:grid md:grid-cols-12 md:grid-rows-6">
 	<div

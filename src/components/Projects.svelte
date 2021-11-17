@@ -9,35 +9,23 @@
 	import devProjects from '$lib/devProjects';
 
 	let webDesignProjects = [];
-	console.log('webDesignProjects', webDesignProjects);
+	$: console.log('Web Design Projects: ', webDesignProjects);
 
 	onMount(async () => {
-		const query = `*[_type == 'web-design-project']{
+		const query = `*[_type == 'web-design-project'] | order(projectOrder asc){
 			coverImage{
 				alt,
-				asset->{
-					assetId,
-					originalFilename,
-					url,
-					size
-				},
-				_type,
+				asset
 			},
-			description,
-			project_link,
 			slug,
 			title,
-			_createdAt,
-			_id,
-			_type,
-			_updatedAt,
 		}`;
 		await client
 			.fetch(query)
 			.then((data) => {
-				// console.log('Data: ', data);
+				console.log('Data: ', data);
 				if (data.length > 0) {
-					console.log('Incoming data: ', data);
+					// console.log('Incoming data: ', data);
 					webDesignProjects = data;
 				}
 			})

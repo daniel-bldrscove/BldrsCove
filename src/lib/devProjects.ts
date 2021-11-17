@@ -1,9 +1,17 @@
-import bbsCoverImage from '../images/bbs-build-beautiful-spaces.jpg';
-import deltaNorthCoverImage from '../images/delta-north-trading-journal-cover-image.png';
+import bbsFeatImgLg from '../images/bbs-feat-image-1276px.jpg';
+import bbsFeatImgMd from '../images/bbs-feat-image-768px.jpg';
+import bbsFeatImgSm from '../images/bbs-feat-image-530px.jpg';
+import tradingJournalFeatImgLg from '../images/trading-journal-feat-image-1276px.jpg';
+import tradingJournalFeatImgMd from '../images/trading-journal-feat-image-768px.jpg';
+import tradingJournalFeatImgSm from '../images/trading-journal-feat-image-530px.jpg';
 
 const webDevProjects: {
 		title: string;
-		coverImage: string;
+		coverImage: {
+			lg: string;
+			md: string;
+			sm: string;
+		}
 		coverImageAlt: string;
 		description: string;
 		techStack: string[];
@@ -12,7 +20,11 @@ const webDevProjects: {
 	}[] = [
 		{
 			title: 'BBS Portfolio Website',
-			coverImage: bbsCoverImage,
+			coverImage: {
+				lg: bbsFeatImgLg,
+				md: bbsFeatImgMd,
+				sm: bbsFeatImgSm,
+			},
 			coverImageAlt: 'BBS logo overlaid on beautiful wall',
 			description:
 				'Clean and snappy photo portfolio for a small restoration and renovation company. Due to the site being image heavy, a fast solution that leveraged caching and lazy loading was used along with pagination for the main work page. File upload and email integration was also added for ease of contact.',
@@ -22,7 +34,11 @@ const webDevProjects: {
 		},
 		{
 			title: 'Delta North Trading Journal',
-			coverImage: deltaNorthCoverImage,
+			coverImage: {
+				lg: tradingJournalFeatImgLg,
+				md: tradingJournalFeatImgMd,
+				sm: tradingJournalFeatImgSm,
+			},
 			coverImageAlt: 'Woman working the Delta North trading journal app',
 			description:
 				'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',

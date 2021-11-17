@@ -5,7 +5,7 @@
 	class="w-52 shadow-2xl pt-6 pb-6 bg-white dark:text-bldrsCoveLtGray dark:bg-bldrsCoveCoolGray rounded-xl"
 >
 	<div class="group">
-		<a href="#web-dev">
+		<a href="/#web-dev" rel="external">
 			<div
 				class="dropdown-nav-item dark:text-ashenMidContrast-dark dark:hover:text-white dark:hover:bg-bldrsCoveMidBlue"
 			>
@@ -14,7 +14,7 @@
 		</a>
 	</div>
 	<div class="group">
-		<a href="#web-design">
+		<a href="/#web-design" rel="external">
 			<div
 				class=" dropdown-nav-item dark:text-ashenMidContrast-dark dark:hover:text-white dark:hover:bg-bldrsCoveMidBlue"
 			>

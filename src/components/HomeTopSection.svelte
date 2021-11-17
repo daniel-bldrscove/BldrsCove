@@ -72,7 +72,7 @@
 					</div>
 					<div class="mt-20 flex flex-wrap">
 						<span class="cta-link" transition:fade={{ delay: 200, duration: 300 }}>
-							<a href="#about">
+							<a href="#about" rel="external">
 								<Icon
 									strokeColor={$themeMode === 'dark' ? $colors.brightBlue : $colors.midBlue}
 									fillColor="transparent"
@@ -94,7 +94,7 @@
 							class="w-full mt-6 sm:w-auto sm:mt-0 sm:ml-14 cta-link"
 							transition:fade={{ delay: 300, duration: 600 }}
 						>
-							<a href="#web-dev">
+							<a href="#web-dev" rel="external">
 								<Icon
 									strokeColor={$themeMode === 'dark' ? $colors.brightBlue : $colors.midBlue}
 									fillColor="transparent"

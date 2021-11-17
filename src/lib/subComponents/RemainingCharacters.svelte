@@ -1,7 +1,6 @@
 <script lang="ts">
 	const characterLimit = 220;
 	export let messageLength: number;
-	$: console.log(messageLength);
 	$: remainingCharacters = characterLimit - messageLength;
 </script>
 

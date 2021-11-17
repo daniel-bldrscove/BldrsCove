@@ -1,18 +1,16 @@
 <script lang="ts">
+	import imageUrlBuilder from '@sanity/image-url';
+	import client from '../../sanityClient';
+
 	interface Project {
 		title: string;
 		coverImage: {
 			alt: string;
 			asset: {
-				assetId: string;
-				originalFilename: string;
-				size: number;
-				url: string;
+				_ref: string;
+				_type: string;
 			};
-			_type: string;
 		};
-		description: [];
-		projectLink: string;
 		slug: { current: string; _type: string };
 	}
 
@@ -21,20 +19,21 @@
 		coverImage: {
 			alt: '',
 			asset: {
-				assetId: '',
-				originalFilename: '',
-				size: null,
-				url: ''
-			},
-			_type: ''
+				_ref: '',
+				_type: ''
+			}
 		},
-		description: [],
-		projectLink: '',
 		slug: {
 			current: '',
 			_type: ''
 		}
 	};
+
+	const builder = imageUrlBuilder(client);
+
+	function urlFor(source: { _ref: string; _type: string }) {
+		return builder.image(source);
+	}
 
 	let { title, coverImage, slug } = webDesignProject;
 </script>
@@ -42,9 +41,20 @@
 <div class="sm:mb-2 sm:mt-2">
 	<a href="/web-design/{slug.current}" class="col-span-1">
 		<img
-			src={coverImage && coverImage.asset.url}
+			src={urlFor(coverImage.asset).format('webp').url()}
+			srcset={`
+				${urlFor(coverImage.asset).width(640).format('webp').url()} 640w, 
+				${urlFor(coverImage.asset).width(768).format('webp').url()} 768w, 
+				${urlFor(coverImage.asset).width(1024).format('webp').url()} 1024w, 
+				${urlFor(coverImage.asset).width(1280).format('webp').url()} 1280w, 
+				${urlFor(coverImage.asset).width(1536).format('webp').url()} 1536w, 
+				${urlFor(coverImage.asset).width(2000).format('webp').url()} 2000w, 
+			`}
 			alt={coverImage.alt}
-			class="w-full h-48 sm:h-44 md:h-72 lg:w-106 2xl:h-96 2xl:w-full object-cover object-center"
+			loading="lazy"
+			width="100%"
+			height="100%"
+			class="w-full h-48 rounded-lg sm:h-44 md:h-72 lg:w-106 2xl:h-96 2xl:w-full object-cover object-center shadow-md"
 		/>
 		<h5 class="mt-2 text-ashenMidContrast-light dark:text-ashenMidContrast-dark">{title}</h5>
 	</a>

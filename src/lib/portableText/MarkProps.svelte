@@ -7,15 +7,18 @@
 		href?: string;
 	}>;
 
-	$: mark = portableText.mark;
-	$: href = mark?.href || false;
+	// console.log('Mark PT: ', portableText);
 
-	$: console.log('href: ', href); // false
-	$: console.log('mark: ', mark); // undefined
+	$: mark = portableText.mark;
 </script>
 
-{#if mark}
-	<a href={mark.href} target="_blank"><slot /></a>
+{#if mark.href}
+	<a
+		href={mark.href}
+		target="_blank"
+		rel="noopener noreferer"
+		class="underline text-bldrsCoveMidBlue"><slot /></a
+	>
 {:else}
 	<slot />
 {/if}
