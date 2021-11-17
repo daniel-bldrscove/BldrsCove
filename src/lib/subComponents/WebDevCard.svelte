@@ -19,7 +19,9 @@
 	transition:fly={{ y: 100, duration: 500, delay: 500 }}
 >
 	<div>
-		<h4 class="text-bldrsCoveDeepBlue mb-4 dark:text-ashenHighContrast-dark">{title}</h4>
+		<h4 class="text-bldrsCoveDeepBlue mb-4 dark:text-ashenHighContrast-dark">
+			{title}
+		</h4>
 		<p class="text-ashenMidContrast-light mb-6 dark:text-ashenMidContrast-dark">{description}</p>
 		<p class="sm-title text-bldrsCoveMidBlue mb-2">Technologies Used</p>
 		<p class="caption text-ashenMidContrast-light mb-6 dark:text-ashenMidContrast-dark">
