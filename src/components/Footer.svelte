@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { themeMode } from '../stores';
-	import footerLogoLightMode from '../images/bldrscove-secondary-logo-light-mode-md.png';
-	import footerLogoDarkMode from '../images/bldrscove-secondary-logo-dark-mode-md.png';
+	import footerLogoLightMode from '../images/bldrscove-secondary-logo-light-md.png';
+	import footerLogoDarkMode from '../images/bldrscove-secondary-logo-dark-md.png';
 </script>
 
 <div
