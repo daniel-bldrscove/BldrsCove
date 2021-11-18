@@ -59,22 +59,19 @@
 
 		handleCaptcha.then(async (captchaResult) => {
 			// console.log('Captcha Result: ', captchaResult);
-
 			try {
-				// let res = await fetch('https://usebasin.com/f/694d15cb7f69', {
-				// 	method: 'POST',
-				// 	headers: {
-				// 		Accept: 'application/json',
-				// 		'Content-Type': 'application/json'
-				// 	},
-				// 	body: JSON.stringify({
-				// 		fullName,
-				// 		email,
-				// 		message
-				// 	})
-				// });
-
-				let res = { ok: true, status: 200 };
+				let res = await fetch('https://usebasin.com/f/694d15cb7f69', {
+					method: 'POST',
+					headers: {
+						Accept: 'application/json',
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({
+						fullName,
+						email,
+						message
+					})
+				});
 
 				if (res.ok || res.status === 200) {
 					setTimeout(() => {

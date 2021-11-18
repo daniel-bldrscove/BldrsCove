@@ -46,18 +46,17 @@
 	};
 
 	onMount(() => {
-		// if theme hasn't been already set in local storage
-		// decide according to user theme preference or theme class
-		if (!window.localStorage.theme) {
+		if (window.localStorage.theme) {
+			// decide according to whats been set in local storage
+			const theme = window.localStorage.theme === 'dark' ? 'dark' : 'light';
+			themeMode.update((val) => (val = theme));
+		} else {
+			// decide according to user theme preference or theme class
 			const theme =
 				window.matchMedia('(prefers-color-scheme: dark)').matches ||
 				document.documentElement.className === 'dark'
 					? 'dark'
 					: 'light';
-			themeMode.update((val) => (val = theme));
-		} else {
-			// decide according to whats been set in local storage
-			const theme = window.localStorage.theme === 'dark' ? 'dark' : 'light';
 			themeMode.update((val) => (val = theme));
 		}
 	});
