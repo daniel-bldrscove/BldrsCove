@@ -76,12 +76,10 @@
 </script>
 
 <div class="dark:bg-bldrsCoveCoolSlate h-full">
-	<LayoutWrapper>
-		<div class="pt-8 pb-8">
-			{#if coverImage}
-				<img
-					src={urlFor(coverImage).format('webp').url()}
-					srcset={`
+	{#if coverImage}
+		<img
+			src={urlFor(coverImage).format('webp').url()}
+			srcset={`
 					${urlFor(coverImage).format('webp').width(640).url()} 640w, 
 					${urlFor(coverImage).format('webp').width(768).url()} 768w, 
 					${urlFor(coverImage).format('webp').width(1024).url()} 1024w, 
@@ -89,12 +87,14 @@
 					${urlFor(coverImage).format('webp').width(1536).url()} 1536w, 
 					${urlFor(coverImage).format('webp').width(2000).url()} 2000w, 
 				`}
-					width="100%"
-					height="100%"
-					alt={altText}
-					class="w-full object-cover object-center"
-				/>
-			{/if}
+			width="100%"
+			height="100%"
+			alt={altText}
+			class="w-full h-96 md:h-106 2xl:w-10/12 2xl:mx-auto 2xl:rounded-lg object-cover object-center"
+		/>
+	{/if}
+	<LayoutWrapper>
+		<div class="pt-8 pb-8">
 			<div class="mt-8 mb-8">
 				<h1 class="mb-4 text-3xl text-bldrsCoveCoolGray dark:text-bldrsCoveLtGray">
 					{title && title}

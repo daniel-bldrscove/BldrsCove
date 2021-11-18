@@ -37,6 +37,7 @@
 		loading="lazy"
 		width="100%"
 		height="100%"
+		class="rounded-lg"
 	/>
 </figure>
 
