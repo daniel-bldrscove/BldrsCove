@@ -4,7 +4,7 @@
 
 	export let devProject = {
 		title: '',
-		coverImage: '',
+		coverImage: {},
 		coverImageAlt: '',
 		description: '',
 		techStack: [],
@@ -15,7 +15,9 @@
 		devProject;
 </script>
 
-<div class="flex flex-wrap sm:justify-end mb-20 md:grid md:grid-cols-12 md:grid-rows-6">
+<div
+	class="flex flex-wrap lg:shadow-2xl lg:rounded-lg sm:justify-end mb-20 md:grid md:grid-cols-12 md:grid-rows-6"
+>
 	<div
 		class="w-full -z-10 md:col-start-1 md:col-span-9 md:row-start-1 md:row-span-4 lg:col-span-6 lg:row-span-6"
 	>

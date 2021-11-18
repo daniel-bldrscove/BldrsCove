@@ -22,7 +22,10 @@
 	});
 </script>
 
-<div class="parallax-img" transition:fly={{ y: -20, duration: 500 }}>
+<div
+	class="shadow-2xl rounded-lg lg:shadow-none lg:rounded-none"
+	transition:fly={{ y: -20, duration: 500 }}
+>
 	{#if lgImg && mdImg && smImg}
 		<img
 			src={lgImg}
@@ -32,7 +35,7 @@
 			${lgImg} 2000w,
 		`}
 			alt={coverImageAlt}
-			class="w-full h-80 rounded-t-lg sm:rounded-lg sm:h-106 lg:rounded-r-none object-cover object-center"
+			class="w-full h-80 rounded-t-lg bg-transparent sm:rounded-lg sm:h-106 lg:rounded-r-none object-cover object-center"
 			width="100%"
 			height="100%"
 			loading="lazy"
@@ -41,7 +44,4 @@
 </div>
 
 <style>
-	.parallax-img {
-		transform: translateZ(0px);
-	}
 </style>
