@@ -17,7 +17,7 @@
 				<button
 					class="nav-btn text-ashenHighContrast-light"
 					on:click|preventDefault={() => {
-						scrollToSection('/#home-top-section');
+						scrollToSection('#home-top-section');
 					}}
 				>
 					<h5 class="nav-item">Home</h5>
@@ -25,7 +25,7 @@
 				<button
 					class="nav-btn text-ashenHighContrast-light"
 					on:click|preventDefault={() => {
-						scrollToSection('/#about');
+						scrollToSection('#about');
 					}}
 				>
 					<h5 class="nav-item">About</h5>
@@ -33,7 +33,7 @@
 				<button
 					class="nav-btn text-ashenHighContrast-light"
 					on:click|preventDefault={() => {
-						scrollToSection('/#web-dev');
+						scrollToSection('#web-dev');
 					}}
 				>
 					<h5 class="nav-item">Web Dev Projects</h5>
@@ -41,7 +41,7 @@
 				<button
 					class="nav-btn text-ashenHighContrast-light"
 					on:click|preventDefault={() => {
-						scrollToSection('/#web-design');
+						scrollToSection('#web-design');
 					}}
 				>
 					<h5 class="nav-item">Web Design Projects</h5>
@@ -49,7 +49,7 @@
 				<button
 					class="nav-btn text-ashenHighContrast-light"
 					on:click|preventDefault={() => {
-						scrollToSection('/#contact');
+						scrollToSection('#contact');
 					}}
 				>
 					<h5 class="nav-item">Contact</h5>

@@ -5,30 +5,39 @@
 
 @layer base {
 	h1 {
+		font-display: swap;
 		@apply font-ubuntuSans text-xl font-bold antialiased;
 	}
 	h2 {
+		font-display: swap;
 		@apply font-firaMono text-4xl-a leading-4xl-a font-normal antialiased;
 	}
 	h3 {
+		font-display: swap;
 		@apply font-ubuntuSans text-2xl font-normal antialiased;
 	}
 	h4 {
+		font-display: swap;
 		@apply font-firaMono text-2xl font-normal antialiased;
 	}
 	h5 {
+		font-display: swap;
 		@apply font-ubuntuSans text-lg font-medium antialiased;
 	}
 	h6 {
+		font-display: swap;
 		@apply font-firaMono text-base font-normal antialiased;
 	}
 	p {
+		font-display: swap;
 		@apply font-ubuntuSans text-base font-normal antialiased;
 	}
 	.sm-title {
+		font-display: swap;
 		@apply font-ubuntuSans text-xs font-medium uppercase tracking-wide antialiased;
 	}
 	.caption {
+		font-display: swap;
 		@apply font-firaMono text-sm font-normal antialiased;
 	}
 }

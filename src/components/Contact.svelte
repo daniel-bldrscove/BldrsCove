@@ -166,11 +166,19 @@
 									class="inline caption text-[11px] text-ashenLowContrast-light dark:text-ashenLowContrast-dark"
 								>
 									This site is protected by reCAPTCHA and the Google
-									<a href="https://policies.google.com/privacy" class="inline underline">
+									<a
+										href="https://policies.google.com/privacy"
+										rel="noopener noreferrer"
+										class="inline underline"
+									>
 										Privacy Policy
 									</a>
 									and
-									<a href="https://policies.google.com/terms" class="inline underline">
+									<a
+										href="https://policies.google.com/terms"
+										rel="noopener noreferrer"
+										class="inline underline"
+									>
 										Terms of Service
 									</a>{' '}
 									apply.

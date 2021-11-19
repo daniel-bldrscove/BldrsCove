@@ -12,6 +12,8 @@
 			src={$themeMode === 'dark' ? footerLogoDarkMode : footerLogoLightMode}
 			alt="BldrsCove secondary logo"
 			class="w-20"
+			width="100%"
+			height="100%"
 		/>
 	</div>
 	<small

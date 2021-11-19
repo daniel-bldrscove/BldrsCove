@@ -38,7 +38,7 @@
 						that communicate functionality and clarity to the end user.
 					</p>
 					<span class="block mt-8 sm:col-start-9 sm:col-span-8 sm:row-start-6 sm:row-span-3">
-						<a href="/#">
+						<a href="/#" rel="noopener noreferrer">
 							<Icon
 								strokeColor={$themeMode === 'dark' ? $colors.brightBlue : $colors.pureBlue}
 								fillColor="transparent"

@@ -1,4 +1,4 @@
-<script lang="ts">
+<script deferr lang="ts">
 	export let width: string | number = 14;
 	export let height: string | number = 14;
 	export let name: string = '';
@@ -17,7 +17,7 @@
 	role="presentation"
 	class={svgClass}
 >
-	<title id={name} lang="en">{`${name} icon`}</title>
+	<title class={name} lang="en">{`${name}`}</title>
 	<g fill={fillColor} stroke={strokeColor}>
 		<slot />
 	</g>

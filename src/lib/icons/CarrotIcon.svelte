@@ -16,7 +16,7 @@
 	role="presentation"
 	class={svgClass}
 >
-	<title id={name} lang="en">{`${name} icon`}</title>
+	<title id={name} lang="en">{`${name}`}</title>
 	<g fill={fillColor} stroke={strokeColor}>
 		<slot />
 	</g>

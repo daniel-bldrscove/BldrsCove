@@ -14,8 +14,8 @@
 	const updateHaloEffect = () => {
 		haloEffect &&
 			haloEffect.setOptions({
-				baseColor: $themeMode === 'dark' ? 0xe071e : 0x1688d9,
-				backgroundColor: $themeMode === 'dark' ? 0xe071e : 0xbad3d7,
+				baseColor: $themeMode === 'dark' ? $colors.deepBlue : $colors.brightBlue,
+				backgroundColor: $themeMode === 'dark' ? $colors.deepBlue : $colors.paleStone,
 				xOffset: $themeMode === 'dark' ? 0 : 0.18,
 				yOffset: $themeMode === 'dark' ? -0.48 : 0.12,
 				size: $themeMode === 'dark' ? 0.9 : 1.25
@@ -37,7 +37,6 @@
 			yOffset: 0.12,
 			size: 1.25
 		});
-
 		return () => haloEffect.destroy();
 	});
 </script>
@@ -45,7 +44,7 @@
 <!-- svelte-ignore a11y-missing-content -->
 <a id="home-top-section" class="anchor-tag" />
 <div
-	class="dark:bg-bldrsCoveCoolGray flex justify-center items-center"
+	class="bg-bldrsCovePaleStone dark:bg-bldrsCoveCoolGray flex justify-center items-center"
 	bind:this={vantaContainer}
 	transition:fade={{ delay: 100, duration: 100 }}
 >
@@ -58,7 +57,7 @@
 							class="mb-6 text-bldrsCoveMidBlue dark:text-bldrsCoveBrightBlue"
 							transition:fade={{ delay: 100, duration: 100 }}
 						>
-							Hello, I'm Daniel.
+							Hello, I'm Daniel Lopez.
 						</h1>
 						<h2
 							class="text-2xl sm:text-4xl-a sm:leading-4xl-a text-bldrsCoveDeepBlue dark:text-bldrsCoveLtGray md:w-10/12 xl:w-9/12 2xl:w-5/12"

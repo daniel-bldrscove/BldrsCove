@@ -139,7 +139,7 @@
 						class="text-xs font-bold slide-left-right text-ashenMidContrast-light dark:text-ashenMidContrast-dark dark:hover:text-bldrsCoveMidBlue"
 						href={projectLink && `${projectLink}`}
 						target="_blank"
-						rel="noopener">{`www.${shortSlug}.com`}</a
+						rel="noopener noreferrer">{`www.${shortSlug}.com`}</a
 					>
 				</p>
 			</span>

@@ -74,11 +74,13 @@
 			<div class="w-full flex items-center justify-between">
 				<!--Logo-->
 				<div class="logo-wrapper mx-auto sm:mx-0 sm:self-start">
-					<a href="/#" rel="external">
+					<a href="/" rel="external">
 						<img
 							src={$themeMode === 'dark' ? bldrsCoveLogoDark : bldrsCoveLogoLight}
 							alt="BldrsCove Logo"
 							class="w-36 md:w-40 ml-12 sm:ml-0"
+							width="100%"
+							height="100%"
 						/>
 					</a>
 				</div>
@@ -89,7 +91,7 @@
 							<li>
 								<h6>
 									<a
-										href="/#home-top-section"
+										href="#home-top-section"
 										rel="external"
 										class="nav-item slide-left-right dark:text-bldrsCoveLtGray">Home</a
 									>
@@ -98,7 +100,7 @@
 							<li class="ml-4 md:ml-6 lg:ml-10">
 								<h6>
 									<a
-										href="/#about"
+										href="#about"
 										rel="external"
 										class="nav-item slide-left-right dark:text-bldrsCoveLtGray">About</a
 									>
@@ -117,7 +119,7 @@
 											fillColor="transparent"
 											width="14"
 											height="14"
-											name="sun-icon"
+											name="carrot-down-icon"
 											svgClass="transform -rotate-90 group-hover:transition group-hover:duration-350 group-hover:ease-in-out group-hover:rotate-0"
 										>
 											<CarrotDownIcon />
@@ -128,7 +130,7 @@
 							<li class="ml-4 md:ml-6 lg:ml-10">
 								<h6>
 									<a
-										href="/#contact"
+										href="#contact"
 										rel="external"
 										class="nav-item slide-left-right dark:text-bldrsCoveLtGray">Contact</a
 									>
