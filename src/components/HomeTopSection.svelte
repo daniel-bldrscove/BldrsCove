@@ -15,7 +15,7 @@
 		haloEffect &&
 			haloEffect.setOptions({
 				baseColor: $themeMode === 'dark' ? $colors.deepBlue : $colors.brightBlue,
-				backgroundColor: $themeMode === 'dark' ? $colors.deepBlue : $colors.paleStone,
+				backgroundColor: $themeMode === 'dark' ? $colors.deepBlue : '#b9cdd7',
 				xOffset: $themeMode === 'dark' ? 0 : 0.18,
 				yOffset: $themeMode === 'dark' ? -0.48 : 0.12,
 				size: $themeMode === 'dark' ? 0.9 : 1.25
@@ -25,18 +25,23 @@
 	$: $themeMode, updateHaloEffect();
 
 	onMount(() => {
-		haloEffect = HALO({
-			el: vantaContainer,
-			mouseControls: true,
-			touchControls: true,
-			gyroControls: false,
-			minHeight: 200.0,
-			minWidth: 200.0,
-			amplitudeFactor: 2,
-			xOffset: 0.18,
-			yOffset: 0.12,
-			size: 1.25
-		});
+		if (themeMode) {
+			haloEffect = HALO({
+				el: vantaContainer,
+				mouseControls: true,
+				touchControls: true,
+				baseColor: $themeMode === 'dark' ? $colors.deepBlue : $colors.brightBlue,
+				backgroundColor: $themeMode === 'dark' ? $colors.deepBlue : '#b9cdd7',
+				gyroControls: false,
+				minHeight: 200.0,
+				minWidth: 200.0,
+				amplitudeFactor: 2,
+				xOffset: 0.18,
+				yOffset: 0.12,
+				size: 1.25
+			});
+		}
+
 		return () => haloEffect.destroy();
 	});
 </script>

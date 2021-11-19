@@ -1,3 +1,5 @@
+declare module 'vanta/dist/vanta.halo.min';
+
 interface ImportMetaEnv {
   VITE_RECAPTCHA_PUBLIC_KEY: string;
 }

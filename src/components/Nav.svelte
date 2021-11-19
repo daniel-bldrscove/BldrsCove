@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { themeMode } from '../stores';
 	import { browser } from '$app/env';
 
@@ -20,8 +19,6 @@
 		handleMobileMenu();
 	};
 
-	let scrollY: string;
-
 	browser &&
 		window.addEventListener('scroll', () => {
 			document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
@@ -31,7 +28,6 @@
 	let handleMobileMenu = (): void => {
 		// close modal
 		if (isMobileMenuOpen) {
-			// window.scrollTo(0, parseInt(scrollY || '0'));
 			document.body.style.top = '';
 			document.body.classList.remove('modal-open');
 			isMobileMenuOpen = false;
@@ -40,26 +36,9 @@
 			const scrolled = document.documentElement.style.getPropertyValue('--scroll-y');
 			document.body.style.top = `-${scrolled}`;
 			document.body.classList.add('modal-open');
-			scrollY = scrolled;
 			isMobileMenuOpen = true;
 		}
 	};
-
-	onMount(() => {
-		if (window.localStorage.theme) {
-			// decide according to whats been set in local storage
-			const theme = window.localStorage.theme === 'dark' ? 'dark' : 'light';
-			themeMode.update((val) => (val = theme));
-		} else {
-			// decide according to user theme preference or theme class
-			const theme =
-				window.matchMedia('(prefers-color-scheme: dark)').matches ||
-				document.documentElement.className === 'dark'
-					? 'dark'
-					: 'light';
-			themeMode.update((val) => (val = theme));
-		}
-	});
 </script>
 
 <nav
