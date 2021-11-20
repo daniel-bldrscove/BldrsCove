@@ -1,6 +1,7 @@
 <script lang="ts">
 	import imageUrlBuilder from '@sanity/image-url';
 	import client from '../../sanityClient';
+	import { navigate } from '../../stores';
 
 	interface Project {
 		title: string;
@@ -39,7 +40,7 @@
 </script>
 
 <div class="sm:mb-2 sm:mt-2">
-	<a href="/web-design/{slug.current}" rel="noopener noreferrer" class="col-span-1">
+	<button class="col-span-1" on:click={() => navigate(`/web-design/${slug.current}`)}>
 		<img
 			src={urlFor(coverImage.asset).format('webp').url()}
 			srcset={`
@@ -59,5 +60,5 @@
 		<p class="mt-2 text-base font-medium text-bldrsCoveDeepBlue dark:text-ashenMidContrast-dark">
 			{title}
 		</p>
-	</a>
+	</button>
 </div>

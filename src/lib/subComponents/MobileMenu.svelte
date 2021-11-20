@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
 	import LayoutWrapper from './LayoutWrapper.svelte';
-	export let scrollToSection: any;
+	export let handleMobileMenu: any;
 </script>
 
 <div
@@ -16,41 +16,31 @@
 			<div class="mobile-nav-items w-full flex flex-wrap">
 				<button
 					class="nav-btn text-ashenHighContrast-light"
-					on:click|preventDefault={() => {
-						scrollToSection('#home-top-section');
-					}}
+					on:click|preventDefault={() => handleMobileMenu(`#home-top-section`)}
 				>
 					<h5 class="nav-item">Home</h5>
 				</button>
 				<button
 					class="nav-btn text-ashenHighContrast-light"
-					on:click|preventDefault={() => {
-						scrollToSection('#about');
-					}}
+					on:click|preventDefault={() => handleMobileMenu(`#about`)}
 				>
 					<h5 class="nav-item">About</h5>
 				</button>
 				<button
 					class="nav-btn text-ashenHighContrast-light"
-					on:click|preventDefault={() => {
-						scrollToSection('#web-dev');
-					}}
+					on:click|preventDefault={() => handleMobileMenu(`#web-dev`)}
 				>
 					<h5 class="nav-item">Web Dev Projects</h5>
 				</button>
 				<button
 					class="nav-btn text-ashenHighContrast-light"
-					on:click|preventDefault={() => {
-						scrollToSection('#web-design');
-					}}
+					on:click|preventDefault={() => handleMobileMenu(`#web-design`)}
 				>
 					<h5 class="nav-item">Web Design Projects</h5>
 				</button>
 				<button
 					class="nav-btn text-ashenHighContrast-light"
-					on:click|preventDefault={() => {
-						scrollToSection('#contact');
-					}}
+					on:click|preventDefault={() => handleMobileMenu(`#contact`)}
 				>
 					<h5 class="nav-item">Contact</h5>
 				</button>

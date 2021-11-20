@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { themeMode } from '../stores';
 	import { browser } from '$app/env';
+	import { navigate } from '../stores';
 
 	import LayoutWrapper from '$lib/subComponents/LayoutWrapper.svelte';
 	import CarrotIcon from '$lib/icons/CarrotIcon.svelte';
@@ -14,30 +15,31 @@
 
 	let isMobileMenuOpen: boolean = false;
 
-	let scrollToSection = (route: string): void => {
-		window.location.href = route;
-		handleMobileMenu();
-	};
-
 	browser &&
 		window.addEventListener('scroll', () => {
 			document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
 		});
 
 	// maintain scroll location on desktop and mobile when modal is open or hidden
-	let handleMobileMenu = (): void => {
-		// close modal
-		if (isMobileMenuOpen) {
-			document.body.style.top = '';
-			document.body.classList.remove('modal-open');
-			isMobileMenuOpen = false;
-		} else {
-			// open modal
-			const scrolled = document.documentElement.style.getPropertyValue('--scroll-y');
-			document.body.style.top = `-${scrolled}`;
-			document.body.classList.add('modal-open');
-			isMobileMenuOpen = true;
-		}
+	let handleMobileMenu = (anchor?: string): void => {
+		const checkMenu = async () => {
+			if (isMobileMenuOpen) {
+				// close modal
+				document.body.style.top = '';
+				document.body.classList.remove('modal-open');
+				isMobileMenuOpen = false;
+			} else {
+				// open modal
+				const scrolled = document.documentElement.style.getPropertyValue('--scroll-y');
+				document.body.style.top = `-${scrolled}`;
+				document.body.classList.add('modal-open');
+				isMobileMenuOpen = true;
+			}
+		};
+
+		checkMenu().then(() => {
+			return anchor && navigate(anchor);
+		});
 	};
 </script>
 
@@ -53,7 +55,7 @@
 			<div class="w-full flex items-center justify-between">
 				<!--Logo-->
 				<div class="logo-wrapper mx-auto sm:mx-0 sm:self-start">
-					<a href="/" rel="external">
+					<button on:click|preventDefault={() => navigate(`/`)}>
 						<img
 							src={$themeMode === 'dark' ? bldrsCoveLogoDark : bldrsCoveLogoLight}
 							alt="BldrsCove Logo"
@@ -61,7 +63,7 @@
 							width="100%"
 							height="100%"
 						/>
-					</a>
+					</button>
 				</div>
 				<div class="w-auto flex items-center flex-shrink-0">
 					<!--Nav Items-->
@@ -69,19 +71,17 @@
 						<ul class="flex justify-between items-center w-full">
 							<li>
 								<h6>
-									<a
-										href="#home-top-section"
-										rel="external"
-										class="nav-item slide-left-right dark:text-bldrsCoveLtGray">Home</a
+									<button
+										on:click|preventDefault={() => navigate(`#home-top-section`)}
+										class="nav-item slide-left-right dark:text-bldrsCoveLtGray">Home</button
 									>
 								</h6>
 							</li>
 							<li class="ml-4 md:ml-6 lg:ml-10">
 								<h6>
-									<a
-										href="#about"
-										rel="external"
-										class="nav-item slide-left-right dark:text-bldrsCoveLtGray">About</a
+									<button
+										on:click={() => navigate(`#about`)}
+										class="nav-item slide-left-right dark:text-bldrsCoveLtGray">About</button
 									>
 								</h6>
 							</li>
@@ -108,10 +108,9 @@
 							</li>
 							<li class="ml-4 md:ml-6 lg:ml-10">
 								<h6>
-									<a
-										href="#contact"
-										rel="external"
-										class="nav-item slide-left-right dark:text-bldrsCoveLtGray">Contact</a
+									<button
+										on:click={() => navigate(`#contact`)}
+										class="nav-item slide-left-right dark:text-bldrsCoveLtGray">Contact</button
 									>
 								</h6>
 							</li>
@@ -127,7 +126,7 @@
 
 <!-- Mobile menu, show/hide based on menu state. -->
 {#if isMobileMenuOpen}
-	<MobileMenu {scrollToSection} />
+	<MobileMenu {handleMobileMenu} {navigate} />
 {/if}
 
 <style>

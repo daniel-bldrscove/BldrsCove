@@ -9,7 +9,7 @@
 <button
 	class="menu-icon sm:hidden absolute left-0 rounded-md"
 	type="button"
-	on:click|preventDefault={handleMobileMenu}
+	on:click|preventDefault={() => handleMobileMenu(null)}
 >
 	<Icon
 		strokeColor={$themeMode === 'dark' ? $colors.brightBlue : $colors.pureBlue}
