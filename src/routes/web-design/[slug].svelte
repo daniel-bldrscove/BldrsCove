@@ -96,11 +96,15 @@
 	<LayoutWrapper>
 		<div class="pt-8 pb-8">
 			<div class="mt-8 mb-8">
-				<h1 class="mb-4 text-3xl text-bldrsCoveCoolGray dark:text-bldrsCoveLtGray">
+				<h1
+					class="mb-4 text-3xl lg:w-10/12 xl:w-8/12 lg:mx-auto text-bldrsCoveCoolGray dark:text-bldrsCoveLtGray"
+				>
 					{title && title}
 				</h1>
 				<!--Description-->
-				<div class="text-ashenMidContrast-light dark:text-ashenMidContrast-dark">
+				<div
+					class="mb-16 lg:w-10/12 xl:w-8/12 lg:mx-auto text-ashenMidContrast-light dark:text-ashenMidContrast-dark"
+				>
 					<PortableText
 						blocks={description}
 						serializers={{
