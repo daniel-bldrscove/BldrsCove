@@ -5,6 +5,10 @@
 	import Icon from '$lib/subComponents/Icon.svelte';
 	import DownloadDocIcon from '$lib/icons/DownloadDocIcon.svelte';
 	import { themeMode, colors } from '../stores';
+
+	import bioImageSm from '../images/dl-bio-photo-128px.jpg';
+	import bioImageMd from '../images/dl-bio-photo-256px.jpg';
+	import bioImageLg from '../images/dl-bio-photo-384px.jpg';
 </script>
 
 <!-- svelte-ignore a11y-missing-content -->
@@ -15,27 +19,50 @@
 	<LayoutWrapper>
 		<LayoutContainLg>
 			<div>
-				<div class="intro-text">
-					<h2 class="mb-2 text-bldrsCoveDeepBlue dark:text-bldrsCoveLtGray">About me</h2>
-					<h3 class="text-bldrsCoveMidBlue">I’m a builder and tinkerer at heart.</h3>
+				<div class="intro-text sm:flex">
+					<div class="bio-photo-container">
+						<img
+							src={bioImageLg}
+							srcset={`
+									${bioImageSm} 640w, 
+									${bioImageMd} 1024w, 
+									${bioImageLg} 2000w,
+								`}
+							alt="Daniel lopez in black and white"
+							class="w-20 h-24 sm:w-32 sm:h-36 rounded-lg bg-ashenLowContrast-light mb-4 sm:mb-0 sm:inline-block object-cover object-center"
+							width="100%"
+							height="100%"
+							loading="lazy"
+						/>
+					</div>
+					<div class="sm:inline-block ml-0 sm:ml-6">
+						<h2 class="text-bldrsCoveDeepBlue dark:text-bldrsCoveLtGray">About me</h2>
+						<h3 class="mt-2 text-bldrsCoveMidBlue">I’m a builder ⚒️ and tinkerer.</h3>
+						<p class="mt-5 sm:mt-3 sm-subhead text-base leading-6">
+							BldrsCove is my little place on the web where I can share projects and writing (coming
+							soon).
+						</p>
+					</div>
 				</div>
 				<div
-					class="p-spacing sm:mt-0 sm:grid sm:grid-cols-16 sm:gap-6 text-ashenMidContrast-light dark:text-ashenMidContrast-dark"
+					class="p-spacing sm:mt-0 sm:grid sm:grid-cols-16 sm:gap-6 text-ashenHighContrast-light dark:text-ashenMidContrast-dark"
 				>
 					<p class="p-spacing sm:col-start-1 sm:col-span-7 sm:row-start-3 sm:row-span-3">
-						Most recently I’ve channeled my web and graphic design experience into web programming
-						as a front-end developer. I like to dig into how the latest web technologies work, in
-						order to deliver a pleasing digital experience.
+						Most recently I’ve channeled my web design and graphic design experience into web
+						programming as a front-end developer. Leveraging the latest technologies, I'm able to
+						combine my visual skills with best practices to develop user-friendly and functional
+						interfaces.
 					</p>
 					<p class="p-spacing sm:col-start-1 sm:col-span-7 sm:row-start-6 sm:row-span-3">
 						I’ve had the privilege of working at design agencies, a well established tech company,
-						and also smaller businesses that focus in niche markets. I’ve also done a fair share of
-						freelancing allowing me to connect with different clients across the states.
+						and also smaller businesses that focus in niche markets. Most of my freelancing consists
+						of website and branding services, and have allowed me to connect with different clients
+						throughout the states.
 					</p>
 					<p class="p-spacing sm:col-start-9 sm:col-span-8 sm:row-start-3 sm:row-span-3">
-						I’m a big fan of concepts like decoupling and headless technologies, which have become
-						even more popular thanks to the Jamstack. My goal is to deliver exceptional interfaces
-						that communicate functionality and clarity to the end user.
+						Some of the technologies I’m most excited about right now are Svelte JS, React, and
+						Tailwind CSS. I’m currently continuing to expand my knowledge with Next JS (building on
+						top of React).
 					</p>
 					<span class="block mt-8 sm:col-start-9 sm:col-span-8 sm:row-start-6 sm:row-span-3">
 						<a href="/#" rel="noopener noreferrer">

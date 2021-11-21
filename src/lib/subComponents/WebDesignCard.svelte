@@ -56,7 +56,9 @@
 			height="100%"
 			class="w-full h-48 rounded-lg sm:h-44 md:h-72 lg:w-106 2xl:h-96 2xl:w-full object-cover object-center shadow-md"
 		/>
-		<p class="mt-2 text-base font-medium text-bldrsCoveDeepBlue dark:text-ashenMidContrast-dark">
+		<p
+			class="mt-2 text-base font-medium text-bldrsCoveDeepBlue slide-left-right dark:text-ashenMidContrast-dark"
+		>
 			{title}
 		</p>
 	</a>

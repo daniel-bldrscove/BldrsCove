@@ -36,6 +36,10 @@
 		font-display: swap;
 		@apply font-ubuntuSans text-xs font-medium uppercase tracking-wide antialiased;
 	}
+	.sm-subhead {
+		font-display: swap;
+		@apply font-ubuntuSans text-xs font-medium antialiased;
+	}
 	.caption {
 		font-display: swap;
 		@apply font-firaMono text-sm font-normal antialiased;

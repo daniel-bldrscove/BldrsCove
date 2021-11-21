@@ -42,7 +42,7 @@
 		<LayoutWrapper>
 			<LayoutContainLg>
 				<h2 class="mx-auto mb-2 text-bldrsCoveDeepBlue dark:text-bldrsCoveLtGray">Featured work</h2>
-				<h3 class="mb-14 text-bldrsCoveMidBlue">Wed Dev</h3>
+				<h3 class="mb-14 text-bldrsCoveMidBlue">Web Dev</h3>
 			</LayoutContainLg>
 		</LayoutWrapper>
 

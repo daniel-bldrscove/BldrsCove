@@ -113,7 +113,7 @@
 					<h2
 						class="mb-6 sm:mb-16 text-4xl sm:text-current text-bldrsCoveDeepBlue dark:text-bldrsCoveLtGray"
 					>
-						Drop me a line
+						Drop me a line ✍🏼
 					</h2>
 					<h5 class="w-8/12 sm:w-11/12 mx-auto mb-6 sm:mb-4 text-bldrsCoveMidBlue">
 						Thanks for checking out my website

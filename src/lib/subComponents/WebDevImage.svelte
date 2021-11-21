@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	export let coverImageAlt: string;
 
+	export let coverImageAlt: string;
 	export let coverImage = {
 		lg: null,
 		md: null,
