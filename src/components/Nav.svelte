@@ -40,7 +40,7 @@
 							<li>
 								<h6>
 									<a
-										href="#home-top-section"
+										href="/#home-top-section"
 										rel="external"
 										class="nav-item slide-left-right dark:text-bldrsCoveLtGray"
 									>
@@ -51,7 +51,7 @@
 							<li class="ml-4 md:ml-6 lg:ml-10">
 								<h6>
 									<a
-										href="#about"
+										href="/#about"
 										rel="external"
 										class="nav-item slide-left-right dark:text-bldrsCoveLtGray"
 									>
@@ -83,7 +83,7 @@
 							<li class="ml-4 md:ml-6 lg:ml-10">
 								<h6>
 									<a
-										href="#contact"
+										href="/#contact"
 										rel="external"
 										class="nav-item slide-left-right dark:text-bldrsCoveLtGray"
 									>
