@@ -1,7 +1,5 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-
-	import { fly } from 'svelte/transition';
 	export let coverImageAlt: string;
 
 	export let coverImage = {
@@ -22,10 +20,7 @@
 	});
 </script>
 
-<div
-	class="shadow-2xl rounded-lg lg:shadow-none lg:rounded-none"
-	transition:fly={{ y: -20, duration: 500 }}
->
+<div class="shadow-2xl rounded-lg lg:shadow-none lg:rounded-none">
 	{#if lgImg && mdImg && smImg}
 		<img
 			src={lgImg}

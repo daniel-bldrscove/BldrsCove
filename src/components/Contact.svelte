@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { fly } from 'svelte/transition';
 	import { Jellyfish } from 'svelte-loading-spinners';
 	import LayoutWrapper from '$lib/subComponents/LayoutWrapper.svelte';
 	import LayoutContainLg from '$lib/subComponents/LayoutContainLg.svelte';
@@ -7,7 +6,7 @@
 	import { variables } from '$lib/variables';
 	import Icon from '$lib/subComponents/Icon.svelte';
 	import HandWavingIcon from '$lib/icons/HandWavingIcon.svelte';
-	import { contactFormSchema } from '$lib/validatorsSchema';
+	import { contactFormSchema } from '$lib/utilities/validatorsSchema';
 	import RemainingCharacters from '$lib/subComponents/RemainingCharacters.svelte';
 
 	let fullName: string = '';
@@ -204,10 +203,7 @@
 						</form>
 						<div class="form-feedback relative">
 							{#if submitted}
-								<div
-									class="submission-feedback w-full absolute mt-3 sm:mt-6 sm:mb-6 mx-auto"
-									transition:fly={{ y: 10, duration: 150 }}
-								>
+								<div class="submission-feedback w-full absolute mt-3 sm:mt-6 sm:mb-6 mx-auto">
 									<span
 										class="inline-block text-ashenMidContrast-light dark:text-ashenMidContrast-dark"
 									>

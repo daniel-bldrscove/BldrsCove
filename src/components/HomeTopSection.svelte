@@ -16,8 +16,8 @@
 			haloEffect.setOptions({
 				baseColor: $themeMode === 'dark' ? $colors.deepBlue : $colors.brightBlue,
 				backgroundColor: $themeMode === 'dark' ? $colors.deepBlue : '#b9cdd7',
-				xOffset: $themeMode === 'dark' ? 0 : 0.18,
-				yOffset: $themeMode === 'dark' ? -0.48 : 0.12,
+				xOffset: $themeMode === 'dark' ? 0.3 : 0.18,
+				yOffset: $themeMode === 'dark' ? -0.28 : 0.12,
 				size: $themeMode === 'dark' ? 0.9 : 1.25
 			});
 	};
@@ -36,9 +36,9 @@
 				minHeight: 200.0,
 				minWidth: 200.0,
 				amplitudeFactor: 2,
-				xOffset: 0.18,
-				yOffset: 0.12,
-				size: 1.25
+				xOffset: $themeMode === 'dark' ? 0.3 : 0.18,
+				yOffset: $themeMode === 'dark' ? -0.28 : 0.12,
+				size: $themeMode === 'dark' ? 0.9 : 1.25
 			});
 		}
 

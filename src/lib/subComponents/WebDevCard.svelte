@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { fly } from 'svelte/transition';
-
 	import Icon from '$lib/subComponents/Icon.svelte';
 	import GithubIcon from '$lib/icons/GithubIcon.svelte';
 	import OpenLinkIcon from '$lib/icons/OpenLinkIcon.svelte';
@@ -16,7 +14,6 @@
 
 <div
 	class="bg-gray-100 p-6 shadow-2xl lg:shadow-none rounded-b-lg sm:rounded-lg sm:p-12 lg:rounded-l-none dark:bg-bldrsCoveDeepBlue h-full flex justify-center items-center"
-	transition:fly={{ y: 100, duration: 500, delay: 500 }}
 >
 	<div>
 		<h4 class="text-bldrsCoveDeepBlue mb-4 dark:text-ashenHighContrast-dark">

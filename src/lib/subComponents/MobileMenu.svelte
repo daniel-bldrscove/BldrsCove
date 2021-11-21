@@ -1,13 +1,42 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
 	import LayoutWrapper from './LayoutWrapper.svelte';
-	export let handleMobileMenu: any;
+	import { isMobileMenuOpen, navigate } from '../../stores';
+	import { browser } from '$app/env';
+
+	browser &&
+		window.addEventListener('scroll', () => {
+			document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
+		});
+
+	// maintain scroll location on desktop and mobile when modal is open or hidden
+	const handleMobileMenu = (anchor?: string): void => {
+		const checkMenu = async () => {
+			if ($isMobileMenuOpen) {
+				// close modal
+				document.body.style.top = '';
+				document.body.classList.remove('modal-open');
+				isMobileMenuOpen.update((val) => (val = !val));
+			} else {
+				// open modal
+				const scrolled = document.documentElement.style.getPropertyValue('--scroll-y');
+				document.body.style.top = `-${scrolled}`;
+				document.body.classList.add('modal-open');
+				isMobileMenuOpen.update((val) => (val = !val));
+			}
+		};
+
+		checkMenu().then(() => {
+			return anchor && navigate(anchor);
+		});
+	};
 </script>
 
 <div
 	id="mobile-menu"
 	class="absolute top-[6rem] sm:hidden w-full drop-shadow-2xl"
-	transition:fly={{ y: -15, duration: 250 }}
+	in:fly={{ y: -15, duration: 250 }}
+	out:fly={{ y: -15, duration: 250 }}
 >
 	<div
 		class="mobile-menu-wrapper bg-[#acbac3] pt-10 pb-10 rounded-b-2xl flex justify-center items-center dark:bg-bldrsCoveCoolGray"

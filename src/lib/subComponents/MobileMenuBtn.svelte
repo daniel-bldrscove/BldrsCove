@@ -1,15 +1,17 @@
 <script lang="ts">
 	import Icon from '$lib/subComponents/Icon.svelte';
 	import MenuIcon from '$lib/icons/MenuIcon.svelte';
-	import { themeMode, colors } from '../../stores';
+	import { themeMode, colors, isMobileMenuOpen } from '../../stores';
 
-	export let handleMobileMenu: any;
+	// export let handleMobileMenu: any;
 </script>
 
 <button
 	class="menu-icon sm:hidden absolute left-0 rounded-md"
 	type="button"
-	on:click|preventDefault={() => handleMobileMenu(null)}
+	on:click|preventDefault={() => {
+		isMobileMenuOpen.update((val) => (val = !val));
+	}}
 >
 	<Icon
 		strokeColor={$themeMode === 'dark' ? $colors.brightBlue : $colors.pureBlue}

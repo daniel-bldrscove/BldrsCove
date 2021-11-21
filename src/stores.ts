@@ -17,3 +17,5 @@ export const navigate = (project: string):void => {
 	prefetch(project);
 	goto(project);
 };
+
+export const isMobileMenuOpen = writable(false)

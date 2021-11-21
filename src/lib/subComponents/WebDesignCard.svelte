@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onDestroy } from 'svelte';
 	import imageUrlBuilder from '@sanity/image-url';
 	import client from '../../sanityClient';
 
@@ -30,12 +31,13 @@
 	};
 
 	const builder = imageUrlBuilder(client);
+	let { title, coverImage, slug } = webDesignProject;
 
 	function urlFor(source: { _ref: string; _type: string }) {
 		return builder.image(source);
 	}
 
-	let { title, coverImage, slug } = webDesignProject;
+	const preventScrollToTop = () => {};
 </script>
 
 <div class="sm:mb-2 sm:mt-2">

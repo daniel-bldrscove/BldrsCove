@@ -1,8 +1,5 @@
 <script lang="ts">
-	import { themeMode } from '../stores';
-	import { browser } from '$app/env';
-	import { navigate } from '../stores';
-
+	import { themeMode, isMobileMenuOpen } from '../stores';
 	import LayoutWrapper from '$lib/subComponents/LayoutWrapper.svelte';
 	import CarrotIcon from '$lib/icons/CarrotIcon.svelte';
 	import CarrotDownIcon from '$lib/icons/CarrotDownIcon.svelte';
@@ -12,35 +9,6 @@
 	import MobileMenu from '$lib/subComponents/MobileMenu.svelte';
 	import MobileMenuBtn from '$lib/subComponents/MobileMenuBtn.svelte';
 	import ThemeButton from '$lib/subComponents/ThemeButton.svelte';
-
-	let isMobileMenuOpen: boolean = false;
-
-	browser &&
-		window.addEventListener('scroll', () => {
-			document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
-		});
-
-	// maintain scroll location on desktop and mobile when modal is open or hidden
-	let handleMobileMenu = (anchor?: string): void => {
-		const checkMenu = async () => {
-			if (isMobileMenuOpen) {
-				// close modal
-				document.body.style.top = '';
-				document.body.classList.remove('modal-open');
-				isMobileMenuOpen = false;
-			} else {
-				// open modal
-				const scrolled = document.documentElement.style.getPropertyValue('--scroll-y');
-				document.body.style.top = `-${scrolled}`;
-				document.body.classList.add('modal-open');
-				isMobileMenuOpen = true;
-			}
-		};
-
-		checkMenu().then(() => {
-			return anchor && navigate(anchor);
-		});
-	};
 </script>
 
 <nav
@@ -49,7 +17,7 @@
 	<LayoutWrapper wrapperClass="relative">
 		<div id="navigation" class="w-full flex justify-center sm:justify-between items-center">
 			<!--Mobile menu button (responsive)-->
-			<MobileMenuBtn {handleMobileMenu} />
+			<MobileMenuBtn />
 
 			<!--Logo & Nav Items-->
 			<div class="w-full flex items-center justify-between">
@@ -82,13 +50,13 @@
 							</li>
 							<li class="ml-4 md:ml-6 lg:ml-10">
 								<h6>
-									<button
+									<a
 										href="#about"
 										rel="external"
 										class="nav-item slide-left-right dark:text-bldrsCoveLtGray"
 									>
 										About
-									</button>
+									</a>
 								</h6>
 							</li>
 							<li class="relative group block h-auto ml-4 md:ml-6 lg:ml-10">
@@ -134,8 +102,8 @@
 </nav>
 
 <!-- Mobile menu, show/hide based on menu state. -->
-{#if isMobileMenuOpen}
-	<MobileMenu {handleMobileMenu} />
+{#if $isMobileMenuOpen}
+	<MobileMenu />
 {/if}
 
 <style>
