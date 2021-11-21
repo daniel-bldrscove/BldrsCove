@@ -55,7 +55,7 @@
 			<div class="w-full flex items-center justify-between">
 				<!--Logo-->
 				<div class="logo-wrapper mx-auto sm:mx-0 sm:self-start">
-					<button on:click|preventDefault={() => navigate(`/`)}>
+					<a href="/" rel="external">
 						<img
 							src={$themeMode === 'dark' ? bldrsCoveLogoDark : bldrsCoveLogoLight}
 							alt="BldrsCove Logo"
@@ -63,7 +63,7 @@
 							width="100%"
 							height="100%"
 						/>
-					</button>
+					</a>
 				</div>
 				<div class="w-auto flex items-center flex-shrink-0">
 					<!--Nav Items-->
@@ -71,18 +71,24 @@
 						<ul class="flex justify-between items-center w-full">
 							<li>
 								<h6>
-									<button
-										on:click|preventDefault={() => navigate(`#home-top-section`)}
-										class="nav-item slide-left-right dark:text-bldrsCoveLtGray">Home</button
+									<a
+										href="#home-top-section"
+										rel="external"
+										class="nav-item slide-left-right dark:text-bldrsCoveLtGray"
 									>
+										Home
+									</a>
 								</h6>
 							</li>
 							<li class="ml-4 md:ml-6 lg:ml-10">
 								<h6>
 									<button
-										on:click={() => navigate(`#about`)}
-										class="nav-item slide-left-right dark:text-bldrsCoveLtGray">About</button
+										href="#about"
+										rel="external"
+										class="nav-item slide-left-right dark:text-bldrsCoveLtGray"
 									>
+										About
+									</button>
 								</h6>
 							</li>
 							<li class="relative group block h-auto ml-4 md:ml-6 lg:ml-10">
@@ -108,10 +114,13 @@
 							</li>
 							<li class="ml-4 md:ml-6 lg:ml-10">
 								<h6>
-									<button
-										on:click={() => navigate(`#contact`)}
-										class="nav-item slide-left-right dark:text-bldrsCoveLtGray">Contact</button
+									<a
+										href="#contact"
+										rel="external"
+										class="nav-item slide-left-right dark:text-bldrsCoveLtGray"
 									>
+										Contact
+									</a>
 								</h6>
 							</li>
 						</ul>
@@ -126,7 +135,7 @@
 
 <!-- Mobile menu, show/hide based on menu state. -->
 {#if isMobileMenuOpen}
-	<MobileMenu {handleMobileMenu} {navigate} />
+	<MobileMenu {handleMobileMenu} />
 {/if}
 
 <style>

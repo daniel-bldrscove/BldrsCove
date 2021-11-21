@@ -49,7 +49,7 @@ a.anchor-tag {
 	visibility: hidden;
 }
 
-html:focus-within {
+html {
 	scroll-behavior: smooth;
 }
 

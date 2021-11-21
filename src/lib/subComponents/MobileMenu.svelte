@@ -16,31 +16,31 @@
 			<div class="mobile-nav-items w-full flex flex-wrap">
 				<button
 					class="nav-btn text-ashenHighContrast-light"
-					on:click|preventDefault={() => handleMobileMenu(`#home-top-section`)}
+					on:click={() => handleMobileMenu(`#home-top-section`)}
 				>
 					<h5 class="nav-item">Home</h5>
 				</button>
 				<button
 					class="nav-btn text-ashenHighContrast-light"
-					on:click|preventDefault={() => handleMobileMenu(`#about`)}
+					on:click={() => handleMobileMenu(`#about`)}
 				>
 					<h5 class="nav-item">About</h5>
 				</button>
 				<button
 					class="nav-btn text-ashenHighContrast-light"
-					on:click|preventDefault={() => handleMobileMenu(`#web-dev`)}
+					on:click={() => handleMobileMenu(`#web-dev`)}
 				>
 					<h5 class="nav-item">Web Dev Projects</h5>
 				</button>
 				<button
 					class="nav-btn text-ashenHighContrast-light"
-					on:click|preventDefault={() => handleMobileMenu(`#web-design`)}
+					on:click={() => handleMobileMenu(`#web-design`)}
 				>
 					<h5 class="nav-item">Web Design Projects</h5>
 				</button>
 				<button
 					class="nav-btn text-ashenHighContrast-light"
-					on:click|preventDefault={() => handleMobileMenu(`#contact`)}
+					on:click={() => handleMobileMenu(`#contact`)}
 				>
 					<h5 class="nav-item">Contact</h5>
 				</button>
