@@ -8,6 +8,10 @@
 	import { themeMode } from '../stores';
 
 	onMount(() => {
+		setTimeout(() => {
+			document.documentElement.style.scrollBehavior = 'smooth';
+		}, 100);
+
 		if (window.localStorage.theme) {
 			// decide according to whats been set in local storage
 			const theme = window.localStorage.theme === 'dark' ? 'dark' : 'light';
@@ -28,7 +32,7 @@
 	<title>BldrsCove Portfolio</title>
 </svelte:head>
 
-<div in:fly={{ y: -100, duration: 500 }} out:fly={{ y: -100, duration: 500 }}>
+<div in:fly={{ y: -100, duration: 500 }} out:fly={{ y: -100, duration: 500 }} class="bg-white">
 	<section><HomeTopSection /></section>
 	<section><About /></section>
 	<section><Projects /></section>

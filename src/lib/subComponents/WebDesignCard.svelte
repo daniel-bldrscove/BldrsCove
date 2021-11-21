@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onDestroy } from 'svelte';
+	import { fade } from 'svelte/transition';
 	import imageUrlBuilder from '@sanity/image-url';
 	import client from '../../sanityClient';
 
@@ -36,12 +36,10 @@
 	function urlFor(source: { _ref: string; _type: string }) {
 		return builder.image(source);
 	}
-
-	const preventScrollToTop = () => {};
 </script>
 
-<div class="sm:mb-2 sm:mt-2">
-	<a href={`/web-design/${slug.current}`} sveltekit:prefetch class="col-span-1">
+<div class="sm:mb-2 sm:mt-2" in:fade={{ duration: 400 }} out:fade={{ duration: 500 }}>
+	<a href={`/web-design/${slug.current}`} sveltekit:prefetch sveltekit:noscroll class="col-span-1">
 		<img
 			src={urlFor(coverImage.asset).format('webp').url()}
 			srcset={`

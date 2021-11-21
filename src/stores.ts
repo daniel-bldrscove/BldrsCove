@@ -1,5 +1,4 @@
 import { writable, readable } from 'svelte/store';
-import { goto, prefetch } from '$app/navigation';
 
 export const themeMode = writable(null);
 
@@ -12,10 +11,5 @@ export const colors = readable({
 	midBlue: '#2f75d6',
 	brightBlue: '#38aaff'
 });
-
-export const navigate = (project: string):void => {
-	prefetch(project);
-	goto(project);
-};
 
 export const isMobileMenuOpen = writable(false)

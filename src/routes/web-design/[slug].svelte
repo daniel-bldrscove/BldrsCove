@@ -10,9 +10,8 @@
 </script>
 
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { browser } from '$app/env';
-	import { fly } from 'svelte/transition';
+	import { onMount, onDestroy } from 'svelte';
+	import { fade } from 'svelte/transition';
 	import client from '../../sanityClient';
 	import PortableText from '@portabletext/svelte';
 	import LayoutWrapper from '$lib/subComponents/LayoutWrapper.svelte';
@@ -42,6 +41,11 @@
 	}
 
 	onMount(async () => {
+		document.documentElement.style.scrollBehavior = 'auto';
+		setTimeout(() => {
+			window.scrollTo(0, 0);
+		}, 100);
+
 		const query = `*[_type == 'web-design-project' && slug.current == '${pageSlug}']{
 			coverImage{
 				alt,
@@ -78,9 +82,9 @@
 </script>
 
 <div
-	class="dark:bg-bldrsCoveCoolSlate h-full"
-	in:fly={{ y: -100, duration: 500 }}
-	out:fly={{ y: -100, duration: 500 }}
+	class="bg-white dark:bg-bldrsCoveCoolSlate h-full"
+	in:fade={{ duration: 100 }}
+	out:fade={{ duration: 100 }}
 >
 	{#if coverImage}
 		<img

@@ -50,7 +50,7 @@ a.anchor-tag {
 }
 
 html {
-	scroll-behavior: smooth;
+	background-color: #141928;
 }
 
 body.modal-open {
