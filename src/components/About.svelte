@@ -49,7 +49,7 @@
 					class="mt-8 sm:grid sm:grid-cols-16 sm:gap-6 text-ashenHighContrast-light dark:text-ashenMidContrast-dark"
 				>
 					<div class="p-spacing sm:col-start-1 sm:col-span-7 sm:row-start-1 sm:row-span-3">
-						<p class="sm-title mb-2">Specialization</p>
+						<p class="sm-title mb-2 mt-5 sm:mt-0">Specialization</p>
 						<p>
 							Most recently I’ve channeled my web design and graphic design experience into web
 							programming as a front-end developer. Leveraging the latest technologies, I'm able to
@@ -58,7 +58,7 @@
 						</p>
 					</div>
 					<div class="p-spacing sm:col-start-1 sm:col-span-7 sm:row-start-4 sm:row-span-3">
-						<p class="sm-title mb-2">Experience</p>
+						<p class="sm-title mb-2 mt-5 sm:mt-0">Experience</p>
 						<p>
 							I’ve had the privilege of working at design agencies, a well established tech company,
 							and also smaller businesses that focus in niche markets. Most of my freelancing
@@ -69,7 +69,7 @@
 						</p>
 					</div>
 					<div class="p-spacing sm:col-start-9 sm:col-span-8 sm:row-start-1 row-span-5">
-						<p class="sm-title mb-2">Technologies</p>
+						<p class="sm-title mb-2 mt-5 sm:mt-0">Technologies</p>
 						<p>
 							Some of the technologies I’m most excited about right now are Svelte JS, Gatsby, and
 							Tailwind CSS. I’m currently continuing to expand my knowledge with Next JS.
@@ -113,7 +113,7 @@
 								</tr>
 							</tbody>
 						</table>
-						<p class="mt-4 text-xs font-bold">Technologies currently learning:</p>
+						<p class="mt-4 text-xs font-bold">Technologies I'm currently learning:</p>
 						<table class="table-auto technologies-table w-full">
 							<tbody>
 								<tr>
