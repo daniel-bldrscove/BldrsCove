@@ -38,7 +38,7 @@
 						<GithubIcon />
 					</Icon>
 					<p
-						class="caption mt-1 -ml-1 text-xs slide-left-right dark:text-ashenMidContrast-dark dark:hover:text-bldrsCoveMidBlue"
+						class="caption mt-1 -ml-1 text-xs slide-left-right dark:text-ashenMidContrast-dark dark:hover:text-bldrsCoveBrightBlue"
 					>
 						View GitHub
 					</p>
@@ -57,7 +57,7 @@
 						<OpenLinkIcon />
 					</Icon>
 					<p
-						class="caption mt-1 -ml-1 text-xs slide-left-right dark:text-ashenMidContrast-dark dark:hover:text-bldrsCoveMidBlue"
+						class="caption mt-1 -ml-1 text-xs slide-left-right dark:text-ashenMidContrast-dark dark:hover:text-bldrsCoveBrightBlue"
 					>
 						View Site
 					</p>

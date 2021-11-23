@@ -86,7 +86,7 @@
 									<ArrowCursorIcon />
 								</Icon>
 								<h6
-									class="inline-block text-bldrsCoveDeepBlue dark:text-bldrsCoveLtGray slide-left-right"
+									class="inline-block text-bldrsCoveDeepBlue dark:text-bldrsCoveLtGray dark:hover:text-bldrsCoveBrightBlue  slide-left-right"
 								>
 									About me
 								</h6>
@@ -108,7 +108,7 @@
 									<ComputerIcon />
 								</Icon>
 								<h6
-									class="inline-block text-bldrsCoveDeepBlue dark:text-bldrsCoveLtGray ml-2 slide-left-right"
+									class="inline-block text-bldrsCoveDeepBlue dark:text-bldrsCoveLtGray dark:hover:text-bldrsCoveBrightBlue ml-2 slide-left-right"
 								>
 									Recent work
 								</h6>
