@@ -7,5 +7,6 @@ interface ImportMetaEnv {
 export declare global {
 	interface Window {
 		grecaptcha: ReCAPTCHA;
+		handleSubmit: () => void
 	}
 }

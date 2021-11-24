@@ -1,20 +1,21 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { Jellyfish } from 'svelte-loading-spinners';
 	import LayoutWrapper from '$lib/subComponents/LayoutWrapper.svelte';
 	import LayoutContainLg from '$lib/subComponents/LayoutContainLg.svelte';
 	import { themeMode, colors } from '../stores';
 	import { variables } from '$lib/variables';
-	import Icon from '$lib/subComponents/Icon.svelte';
-	import HandWavingIcon from '$lib/icons/HandWavingIcon.svelte';
 	import { contactFormSchema } from '$lib/utilities/validatorsSchema';
 	import RemainingCharacters from '$lib/subComponents/RemainingCharacters.svelte';
+	import FormFeedback from '$lib/subComponents/FormFeedback.svelte';
 
-	let fullName: string = '';
-	let email: string = '';
+	let fullName: string = null;
+	let email: string = null;
 	let message: string = '';
-	let isValid: boolean = null;
+	let isDisabled: boolean = true;
 	let submitting = false;
-	let submitted = false;
+	let submitted = null;
+	let submissionSuccess = null;
 	$: messageLength = message.length;
 
 	$: contactFormSchema
@@ -23,17 +24,22 @@
 			email,
 			message
 		})
-		.then(function (valid: boolean) {
-			isValid = valid;
+		.then((valid: boolean) => {
+			if (valid) {
+				isDisabled = false;
+			}
 		});
 
 	const handleSubmit = async () => {
-		// get captcha token
+		submitting = true;
+
 		const handleCaptcha = new Promise((resolve, reject) => {
+			// get captcha token
 			window.grecaptcha.ready(function () {
 				window.grecaptcha
 					.execute(variables.recaptchaSiteKey, { action: 'submit' })
 					.then(async (token: string) => {
+						// process captcha
 						try {
 							let captcha = await fetch('/api/recaptcha', {
 								method: 'POST',
@@ -54,51 +60,61 @@
 			});
 		});
 
-		submitting = true;
+		// if successful captcha - proceed
+		return handleCaptcha.then(async (captchaResult: Record<string, unknown>) => {
+			const result = await captchaResult.success;
+			if (result) {
+				try {
+					let res = await fetch('https://usebasin.com/f/694d15cb7f69', {
+						method: 'POST',
+						headers: {
+							Accept: 'application/json',
+							'Content-Type': 'application/json'
+						},
+						body: JSON.stringify({
+							fullName,
+							email,
+							message
+						})
+					});
 
-		handleCaptcha.then(async (captchaResult) => {
-			// console.log('Captcha Result: ', captchaResult);
-			try {
-				let res = await fetch('https://usebasin.com/f/694d15cb7f69', {
-					method: 'POST',
-					headers: {
-						Accept: 'application/json',
-						'Content-Type': 'application/json'
-					},
-					body: JSON.stringify({
-						fullName,
-						email,
-						message
-					})
-				});
-
-				if (res.ok || res.status === 200) {
-					setTimeout(() => {
-						flashFeedback(4000);
+					if (res.ok || res.status === 200) {
+						flashFeedback(4000, true);
 						fullName = '';
 						email = '';
 						message = '';
+						isDisabled = true;
 						submitting = false;
-					}, 1500);
+					}
+				} catch (error) {
+					fullName = '';
+					email = '';
+					message = '';
+					submitting = false;
+					console.log({
+						error: error,
+						message: 'Submission error. Please try again later.'
+					});
+					isDisabled = true;
+					throw new Error(error);
 				}
-			} catch (error) {
-				fullName = '';
-				email = '';
-				message = '';
-				submitting = false;
-				console.log({
-					error: error,
-					message: 'Submission error. Please try again later.'
-				});
-				throw new Error(error);
 			}
+
+			throw new Error('Error during submission, please try again later.');
 		});
 	};
 
-	const flashFeedback = (milSec: number) => {
+	onMount(() => {
+		window.handleSubmit = handleSubmit;
+	});
+
+	// TODO: handle error state
+	const flashFeedback = (milSec: number, success?: boolean) => {
 		submitted = true;
+		submissionSuccess = success;
 		setTimeout(() => {
 			submitted = false;
+			submissionSuccess = null;
 		}, milSec);
 	};
 </script>
@@ -189,7 +205,7 @@
 									data-sitekey={variables.recaptchaSiteKey}
 									data-callback="handleSubmit"
 									data-action="submit"
-									disabled={!isValid}
+									disabled={isDisabled}
 								>
 									{#if submitting}
 										<div class="flex justify-center items-center">
@@ -201,36 +217,7 @@
 								</button>
 							</div>
 						</form>
-						<div class="form-feedback relative">
-							{#if submitted}
-								<div class="submission-feedback w-full absolute mt-3 sm:mt-6 sm:mb-6 mx-auto">
-									<span
-										class="inline-block text-ashenMidContrast-light dark:text-ashenMidContrast-dark"
-									>
-										<Icon
-											strokeColor={$themeMode === 'dark' ? $colors.brightBlue : $colors.pureBlue}
-											fillColor="transparent"
-											width="32"
-											height="32"
-											viewBox="0 0 256 256"
-											name="hand-wave-icon"
-											svgClass="hidden sm:inline-block mr-2"
-										>
-											<HandWavingIcon />
-										</Icon>
-										<p
-											class={`${
-												$themeMode === 'dark'
-													? 'text-bldrsCoveBrightBlue'
-													: 'text-bldrsCovePureBlue'
-											} inline-block text-sm sm:text-lg`}
-										>
-											Thanks for your submission. Your message has been sent!
-										</p>
-									</span>
-								</div>
-							{/if}
-						</div>
+						<FormFeedback {submitted} {submissionSuccess} />
 					</div>
 				</div>
 			</div>

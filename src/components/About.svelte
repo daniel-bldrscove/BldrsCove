@@ -1,5 +1,5 @@
 <script>
-	import { fade } from 'svelte/transition';
+	import { onMount } from 'svelte';
 	import LayoutWrapper from '$lib/subComponents/LayoutWrapper.svelte';
 	import LayoutContainLg from '$lib/subComponents/LayoutContainLg.svelte';
 	import Icon from '$lib/subComponents/Icon.svelte';
@@ -9,6 +9,16 @@
 	import bioImageSm from '../images/dl-bio-photo-128px.jpg';
 	import bioImageMd from '../images/dl-bio-photo-256px.jpg';
 	import bioImageLg from '../images/dl-bio-photo-384px.jpg';
+
+	let bioSm;
+	let bioMd;
+	let bioLg;
+
+	onMount(() => {
+		bioSm = bioImageSm;
+		bioMd = bioImageMd;
+		bioLg = bioImageLg;
+	});
 </script>
 
 <!-- svelte-ignore a11y-missing-content -->
@@ -21,19 +31,21 @@
 			<div>
 				<div class="intro-text sm:flex">
 					<div class="bio-photo-container">
-						<img
-							src={bioImageLg}
-							srcset={`
-									${bioImageSm} 640w, 
-									${bioImageMd} 1024w, 
-									${bioImageLg} 2000w,
+						{#if bioSm && bioMd && bioLg}
+							<img
+								src={bioSm}
+								srcset={`
+									${bioSm} 640w, 
+									${bioMd} 1024w, 
+									${bioLg} 2000w,
 								`}
-							alt="Daniel lopez in black and white"
-							class="w-20 h-24 sm:w-32 sm:h-36 rounded-lg bg-ashenLowContrast-light mb-4 sm:mb-0 sm:inline-block object-cover object-center"
-							width="100%"
-							height="100%"
-							loading="lazy"
-						/>
+								alt="Daniel lopez in black and white"
+								class="w-20 h-24 sm:w-32 sm:h-36 rounded-lg bg-ashenLowContrast-light mb-4 sm:mb-0 sm:inline-block object-cover object-center"
+								width="100%"
+								height="100%"
+								loading="lazy"
+							/>
+						{/if}
 					</div>
 					<div class="sm:inline-block ml-0 sm:ml-6">
 						<h2 class="text-bldrsCoveDeepBlue dark:text-bldrsCoveLtGray">About me</h2>

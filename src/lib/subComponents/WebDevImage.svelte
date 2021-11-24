@@ -2,13 +2,17 @@
 	import { onMount } from 'svelte';
 
 	export let coverImageAlt: string;
-	export let coverImage = {
+	export let coverImage: {
+		lg: string;
+		md: string;
+		sm: string;
+	} = {
 		lg: null,
 		md: null,
 		sm: null
 	};
 
-	let lgImg = null;
+	let lgImg = '';
 	let mdImg = null;
 	let smImg = null;
 
@@ -23,7 +27,7 @@
 <div class="shadow-2xl rounded-lg lg:shadow-none lg:rounded-none">
 	{#if lgImg && mdImg && smImg}
 		<img
-			src={lgImg}
+			src={smImg}
 			srcset={`
 			${smImg} 640w, 
 			${mdImg} 1024w, 

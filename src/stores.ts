@@ -9,7 +9,8 @@ export const colors = readable({
 	paleStone: '#e0eaf0',
 	pureBlue: '#093bc7',
 	midBlue: '#2f75d6',
-	brightBlue: '#38aaff'
+	brightBlue: '#38aaff',
+	redWarning: '#d73855'
 });
 
 export const isMobileMenuOpen = writable(false)
