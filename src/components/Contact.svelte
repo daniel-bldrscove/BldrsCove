@@ -16,6 +16,7 @@
 	let submitting = false;
 	let submitted = null;
 	let submissionSuccess = null;
+	let error = null;
 	$: messageLength = message.length;
 
 	$: contactFormSchema
@@ -60,9 +61,11 @@
 			});
 		});
 
-		// if successful captcha - proceed
-		return handleCaptcha.then(async (captchaResult: Record<string, unknown>) => {
+		handleCaptcha.then(async (captchaResult: Record<string, unknown>) => {
 			const result = await captchaResult.success;
+			console.log('Captcha result: ', result);
+
+			// if successful captcha - proceed
 			if (result) {
 				try {
 					let res = await fetch('https://usebasin.com/f/694d15cb7f69', {
@@ -79,7 +82,7 @@
 					});
 
 					if (res.ok || res.status === 200) {
-						flashFeedback(4000, true);
+						flashFeedback(true);
 						fullName = '';
 						email = '';
 						message = '';
@@ -87,6 +90,7 @@
 						submitting = false;
 					}
 				} catch (error) {
+					flashFeedback(false, error);
 					fullName = '';
 					email = '';
 					message = '';
@@ -96,11 +100,14 @@
 						message: 'Submission error. Please try again later.'
 					});
 					isDisabled = true;
-					throw new Error(error);
 				}
-			}
+			} else {
+				// else - submission unsuccessful, show error
 
-			throw new Error('Error during submission, please try again later.');
+				submitting = false;
+				isDisabled = true;
+				flashFeedback(false, 'Submission error, please try again later.');
+			}
 		});
 	};
 
@@ -108,14 +115,16 @@
 		window.handleSubmit = handleSubmit;
 	});
 
-	// TODO: handle error state
-	const flashFeedback = (milSec: number, success?: boolean) => {
+	const flashFeedback = (wasSuccessful?: boolean, err?: string): void => {
 		submitted = true;
-		submissionSuccess = success;
+		submissionSuccess = wasSuccessful;
+		if (err) {
+			error = err;
+		}
 		setTimeout(() => {
 			submitted = false;
 			submissionSuccess = null;
-		}, milSec);
+		}, 5000);
 	};
 </script>
 
@@ -217,7 +226,7 @@
 								</button>
 							</div>
 						</form>
-						<FormFeedback {submitted} {submissionSuccess} />
+						<FormFeedback {submitted} {submissionSuccess} {error} />
 					</div>
 				</div>
 			</div>

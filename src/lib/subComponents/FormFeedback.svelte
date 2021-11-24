@@ -1,11 +1,12 @@
-<script>
+<script lang="ts">
 	import Icon from '$lib/subComponents/Icon.svelte';
 	import HandWavingIcon from '$lib/icons/HandWavingIcon.svelte';
 	import AlertIcon from '$lib/icons/AlertIcon.svelte';
 	import { themeMode, colors } from '../../stores';
 
-	export let submitted;
-	export let submissionSuccess;
+	export let submitted: boolean;
+	export let submissionSuccess: boolean;
+	export let error: string;
 </script>
 
 <div class="form-feedback relative">
@@ -32,7 +33,7 @@
 				</p>
 			</span>
 		</div>
-	{:else if submitted && !submissionSuccess}
+	{:else if submitted && !submissionSuccess && error}
 		<div class="submission-feedback w-full absolute mt-3 sm:mt-6 sm:mb-6 mx-auto">
 			<span class="inline-block text-ashenMidContrast-light dark:text-ashenMidContrast-dark">
 				<Icon
@@ -47,7 +48,7 @@
 					<AlertIcon />
 				</Icon>
 				<p class={`text-[#d73855] inline-block text-sm sm:text-lg`}>
-					There was an error in your submission. Please try again later.
+					{`An error occured. ${error}`}
 				</p>
 			</span>
 		</div>
