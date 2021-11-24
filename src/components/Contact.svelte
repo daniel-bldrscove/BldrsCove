@@ -12,13 +12,12 @@
 	let fullName: string = null;
 	let email: string = null;
 	let message: string = '';
-	let isDisabled: boolean = true;
-	let submitting = false;
-	let submitted = null;
-	let submissionSuccess = null;
+	let submitting: boolean = false;
+	let submitted: boolean = false;
+	let submissionSuccess: boolean = null;
 	let error = null;
+	$: isDisabled = true;
 	$: messageLength = message.length;
-
 	$: contactFormSchema
 		.isValid({
 			fullName,
@@ -26,9 +25,7 @@
 			message
 		})
 		.then((valid: boolean) => {
-			if (valid) {
-				isDisabled = false;
-			}
+			valid ? (isDisabled = false) : (isDisabled = true);
 		});
 
 	const handleSubmit = async () => {
