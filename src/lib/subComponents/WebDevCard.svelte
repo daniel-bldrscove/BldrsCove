@@ -10,11 +10,7 @@
 	export let gitHubLink: string;
 	export let projectLink: string;
 
-	$: console.log('Tech Stack: ', techStack);
-
-	let techHolder = JSON.stringify(techStack);
 	const rows = [0, 1]; // num rows (2)
-	const cols = [0, 1, 2]; // num columns (3)
 </script>
 
 <div

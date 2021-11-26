@@ -92,66 +92,90 @@
 							<tbody>
 								<tr>
 									<td
-										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
+										><p
+											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark"
+										>
 											HTML & CSS
 										</p></td
 									>
 									<td
-										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
+										><p
+											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark"
+										>
 											Javascript (CS6 +)
 										</p></td
 									>
 									<td
-										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
+										><p
+											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark"
+										>
 											React
 										</p></td
 									>
 									<td
-										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
+										><p
+											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark"
+										>
 											Gatsby
 										</p></td
 									>
 								</tr>
 								<tr>
 									<td
-										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
+										><p
+											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark"
+										>
 											Tailwind
 										</p></td
 									>
 									<td
-										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
+										><p
+											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark"
+										>
 											Emotion
 										</p></td
 									>
 									<td
-										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
+										><p
+											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark"
+										>
 											Styled Components
 										</p></td
 									>
 									<td
-										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
+										><p
+											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark"
+										>
 											Sanity
 										</p></td
 									>
 								</tr>
 								<tr>
 									<td
-										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
+										><p
+											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark"
+										>
 											Node JS
 										</p></td
 									>
 									<td
-										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
+										><p
+											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark"
+										>
 											Serverless Env.
 										</p></td
 									>
 									<td
-										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
+										><p
+											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark"
+										>
 											Mongo DB
 										</p></td
 									>
 									<td
-										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
+										><p
+											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark"
+										>
 											Graph QL
 										</p></td
 									>
@@ -163,17 +187,23 @@
 							<tbody>
 								<tr>
 									<td
-										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
+										><p
+											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark"
+										>
 											Next Js
 										</p></td
 									>
 									<td
-										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
+										><p
+											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark"
+										>
 											Svelte Js
 										</p></td
 									>
 									<td
-										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
+										><p
+											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark"
+										>
 											Remix Run
 										</p></td
 									>
@@ -211,6 +241,6 @@
 		@apply content-center items-center border-separate rounded-md overflow-hidden mt-2;
 	}
 	.about-table td {
-		@apply p-1 bg-[#dbe3ef] dark:bg-[#242c44];
+		@apply p-1 bg-[#dbe3ef] dark:bg-[#1a2032];
 	}
 </style>

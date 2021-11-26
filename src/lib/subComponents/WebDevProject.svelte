@@ -1,7 +1,8 @@
-<script>
+<script lang="ts">
 	import WebDevImage from '$lib/subComponents/WebDevImage.svelte';
 	import WebDevCard from '$lib/subComponents/WebDevCard.svelte';
 
+	// destructuring and default values
 	export let devProject = {
 		title: '',
 		subhead: '',
@@ -12,6 +13,7 @@
 		gitHubLink: '',
 		projectLink: ''
 	};
+
 	let {
 		title,
 		subhead,
