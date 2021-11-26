@@ -74,28 +74,6 @@
 					</div>
 					<div class="mt-20 flex flex-wrap">
 						<span class="cta-link" transition:fade={{ delay: 200, duration: 300 }}>
-							<a href="#about" rel="external">
-								<Icon
-									strokeColor={$themeMode === 'dark' ? $colors.brightBlue : $colors.midBlue}
-									fillColor="transparent"
-									width="32"
-									height="32"
-									name="arrow-cursor-icon"
-									svgClass="inline-block"
-								>
-									<ArrowCursorIcon />
-								</Icon>
-								<h6
-									class="inline-block text-bldrsCoveDeepBlue dark:text-bldrsCoveLtGray dark:hover:text-bldrsCoveBrightBlue  slide-left-right"
-								>
-									About me
-								</h6>
-							</a>
-						</span>
-						<span
-							class="w-full mt-6 sm:w-auto sm:mt-0 sm:ml-14 cta-link"
-							transition:fade={{ delay: 300, duration: 600 }}
-						>
 							<a href="#web-dev" rel="external">
 								<Icon
 									strokeColor={$themeMode === 'dark' ? $colors.brightBlue : $colors.midBlue}
@@ -111,6 +89,28 @@
 									class="inline-block text-bldrsCoveDeepBlue dark:text-bldrsCoveLtGray dark:hover:text-bldrsCoveBrightBlue ml-2 slide-left-right"
 								>
 									Recent work
+								</h6>
+							</a>
+						</span>
+						<span
+							class="w-full mt-6 sm:w-auto sm:mt-0 sm:ml-14 cta-link"
+							transition:fade={{ delay: 300, duration: 600 }}
+						>
+							<a href="#about" rel="external">
+								<Icon
+									strokeColor={$themeMode === 'dark' ? $colors.brightBlue : $colors.midBlue}
+									fillColor="transparent"
+									width="32"
+									height="32"
+									name="arrow-cursor-icon"
+									svgClass="inline-block"
+								>
+									<ArrowCursorIcon />
+								</Icon>
+								<h6
+									class="inline-block text-bldrsCoveDeepBlue dark:text-bldrsCoveLtGray dark:hover:text-bldrsCoveBrightBlue  slide-left-right"
+								>
+									About me
 								</h6>
 							</a>
 						</span>
