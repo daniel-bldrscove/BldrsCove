@@ -62,6 +62,10 @@ body.modal-open {
 	overflow-y: hidden;
 }
 
+#dev-card-content {
+	white-space: pre-line;
+}
+
 .grecaptcha-badge {
 	visibility: hidden;
 }
@@ -154,3 +158,18 @@ textarea:focus {
 			transparent 2rem /*This needs to match the lineheight*/
 		);
 }
+
+/* GLOBAL TABLE STYLES*/
+table tr:first-child td:first-child {
+	@apply rounded-tl-lg;
+}
+table tr:first-child td:last-child {
+	@apply rounded-tr-lg;
+}
+table tr:last-child td:first-child {
+	@apply rounded-bl-lg;
+}
+table tr:last-child td:last-child {
+	@apply rounded-br-lg;
+}
+/*--END TABLES*/

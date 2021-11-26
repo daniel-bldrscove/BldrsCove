@@ -45,7 +45,6 @@
 				<h3 class="mb-14 text-bldrsCoveMidBlue">Web Dev</h3>
 			</LayoutContainLg>
 		</LayoutWrapper>
-
 		<LayoutContainLg>
 			<div class="web-dev-container mx-auto xs:w-10/12 md:w-full">
 				{#each devProjects as devProject (devProject.title)}

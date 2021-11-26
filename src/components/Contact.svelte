@@ -60,7 +60,7 @@
 
 		handleCaptcha.then(async (captchaResult: Record<string, unknown>) => {
 			const result = await captchaResult.success;
-			console.log('Captcha result: ', result);
+			// console.log('Captcha result: ', result);
 
 			// if successful captcha - proceed
 			if (result) {

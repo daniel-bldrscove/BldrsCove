@@ -53,7 +53,7 @@
 						<p
 							class="mt-5 sm:mt-3 sm-subhead text-base leading-6 text-ashenHighContrast-light dark:text-ashenMidContrast-dark"
 						>
-							BldrsCove is my place on the web where I can share projects and writing (coming soon).
+							BldrsCove is my place on the web where I share projects and writing. (coming soon).
 						</p>
 					</div>
 				</div>
@@ -73,26 +73,37 @@
 						<p class="sm-title mb-2 mt-5 sm:mt-0">Experience</p>
 						<p>
 							I’ve had the privilege of working at design agencies, a well established tech company,
-							and also smaller businesses that focus in niche markets. Most of my freelancing
-							consists of website and branding services, and have allowed me to connect with
+							and also smaller businesses that focus in niche markets. Most of my freelance consists
+							of web app (or website), UI/UX, and branding services allowing me to connect with
 							different clients throughout the states. My certification through the UCF Coding
-							Bootcamp has also given me solid MERN stack foundational skills, which I've continued
-							to develop.
+							Bootcamp has given me a solid MERN stack foundation, and I continue develop my
+							knowledge through online workshops, community resources and tech events.
 						</p>
 					</div>
 					<div class="p-spacing sm:col-start-9 sm:col-span-8 sm:row-start-1 row-span-5">
 						<p class="sm-title mb-2 mt-5 sm:mt-0">Technologies</p>
 						<p>
-							Some of the technologies I’m most excited about right now are Svelte JS, Gatsby, and
-							Tailwind CSS. I’m currently continuing to expand my knowledge with Next JS.
+							Some of the technologies I’m most excited about right now are Gatsby, React Query, and
+							Tailwind CSS. I also do my best to keep up with emerging technologies. On my radar to
+							learn are Next Js, SvelteKit, and the newly released Remix Run.
 						</p>
-						<p class="mt-4 text-xs font-bold">Technologies I feel comfortable using:</p>
-						<table class="table-auto technologies-table w-full">
+						<p class="mt-4 text-xs">Frameworks & Languages:</p>
+						<table class="table-auto about-table w-full">
 							<tbody>
 								<tr>
 									<td
 										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
-											Javascript
+											HTML & CSS
+										</p></td
+									>
+									<td
+										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
+											Javascript (CS6 +)
+										</p></td
+									>
+									<td
+										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
+											React
 										</p></td
 									>
 									<td
@@ -100,16 +111,38 @@
 											Gatsby
 										</p></td
 									>
+								</tr>
+								<tr>
 									<td
 										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
-											Express
+											Tailwind
+										</p></td
+									>
+									<td
+										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
+											Emotion
+										</p></td
+									>
+									<td
+										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
+											Styled Components
+										</p></td
+									>
+									<td
+										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
+											Sanity
 										</p></td
 									>
 								</tr>
 								<tr>
 									<td
 										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
-											React
+											Node JS
+										</p></td
+									>
+									<td
+										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
+											Serverless Env.
 										</p></td
 									>
 									<td
@@ -119,14 +152,14 @@
 									>
 									<td
 										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
-											Node JS
+											Graph QL
 										</p></td
 									>
 								</tr>
 							</tbody>
 						</table>
-						<p class="mt-4 text-xs font-bold">Technologies I'm currently learning:</p>
-						<table class="table-auto technologies-table w-full">
+						<p class="mt-4 text-xs">Currently learning:</p>
+						<table class="table-auto about-table w-full">
 							<tbody>
 								<tr>
 									<td
@@ -137,6 +170,11 @@
 									<td
 										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
 											Svelte Js
+										</p></td
+									>
+									<td
+										><p class="text-xs ml-2 text-bldrsCovePureBlue dark:text-bldrsCoveBrightBlue">
+											Remix Run
 										</p></td
 									>
 								</tr>
@@ -169,22 +207,10 @@
 </div>
 
 <style type="text/postcss">
-	.technologies-table {
+	.about-table {
 		@apply content-center items-center border-separate rounded-md overflow-hidden mt-2;
 	}
-	.technologies-table td {
-		@apply p-1 bg-[#d0dbed] dark:bg-[#242c44];
-	}
-	.technologies-table tr:first-child td:first-child {
-		@apply rounded-tl-lg;
-	}
-	.technologies-table tr:first-child td:last-child {
-		@apply rounded-tr-lg;
-	}
-	.technologies-table tr:last-child td:first-child {
-		@apply rounded-bl-lg;
-	}
-	.technologies-table tr:last-child td:last-child {
-		@apply rounded-br-lg;
+	.about-table td {
+		@apply p-1 bg-[#dbe3ef] dark:bg-[#242c44];
 	}
 </style>

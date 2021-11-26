@@ -7,6 +7,7 @@ import tradingJournalFeatImgSm from '../images/trading-journal-feat-image-530px.
 
 const webDevProjects: {
 		title: string;
+		subhead: string;
 		coverImage: {
 			lg: string;
 			md: string;
@@ -19,7 +20,8 @@ const webDevProjects: {
 		projectLink: string;
 	}[] = [
 		{
-			title: 'BBS Portfolio Website',
+			title: 'Build Beautiful Spaces',
+			subhead: 'Portfolio Website',
 			coverImage: {
 				lg: bbsFeatImgLg,
 				md: bbsFeatImgMd,
@@ -27,13 +29,14 @@ const webDevProjects: {
 			},
 			coverImageAlt: 'BBS logo overlaid on beautiful wall',
 			description:
-				'Clean and snappy photo portfolio for a small restoration and renovation company. Due to the site being image heavy, a fast solution that leveraged caching and lazy loading was used along with pagination for the main work page. File upload and email integration was also added for ease of contact.',
+				'Build Beautiful Spaces is a small business that specializes in restoration and interior renovation. Lacking an online presence, the project consisted of developing a clean and snappy portfolio that would not sacrifice speed due to its image-heavy content.',
 			techStack: ['Gatsby', 'Slider JS', 'Framer Motion', 'Cloudinary', 'SendGrid'],
 			gitHubLink: 'https://github.com/tgdpez/BBS-Website',
 			projectLink: 'https://buildbeautifulspaces.com'
 		},
 		{
 			title: 'Delta North Trading Journal',
+			subhead: 'CRUD Tracking Journal',
 			coverImage: {
 				lg: tradingJournalFeatImgLg,
 				md: tradingJournalFeatImgMd,
