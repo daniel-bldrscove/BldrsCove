@@ -60,7 +60,7 @@
 				<div
 					class="mt-8 sm:grid sm:grid-cols-16 sm:gap-6 text-ashenHighContrast-light dark:text-ashenMidContrast-dark"
 				>
-					<div class="p-spacing sm:col-start-1 sm:col-span-7 sm:row-start-1 sm:row-span-3">
+					<div class="p-spacing sm:col-start-1 sm:col-span-7 sm:row-start-1 sm:row-span-2">
 						<p class="sm-title mb-2 mt-5 sm:mt-0">Specialization</p>
 						<p>
 							Most recently I’ve channeled my web design and graphic design experience into web
@@ -69,7 +69,7 @@
 							interfaces.
 						</p>
 					</div>
-					<div class="p-spacing sm:col-start-1 sm:col-span-7 sm:row-start-4 sm:row-span-3">
+					<div class="p-spacing sm:col-start-1 sm:col-span-7 sm:row-start-4 sm:row-span-2">
 						<p class="sm-title mb-2 mt-5 sm:mt-0">Experience</p>
 						<p>
 							I’ve had the privilege of working at design agencies, a well established tech company,

@@ -3,7 +3,8 @@
 	import { fly } from 'svelte/transition';
 	import HomeTopSection from '../components/HomeTopSection.svelte';
 	import About from '../components/About.svelte';
-	import Projects from '../components/Projects.svelte';
+	import ProjectsWebDev from '../components/ProjectsWebDev.svelte';
+	import ProjectsOtherWork from '../components/ProjectsOtherWork.svelte';
 	import Contact from '../components/Contact.svelte';
 	import { themeMode } from '../stores';
 
@@ -34,7 +35,8 @@
 
 <div in:fly={{ y: -100, duration: 500 }} out:fly={{ y: -100, duration: 500 }} class="bg-white">
 	<section><HomeTopSection /></section>
+	<section><ProjectsWebDev /></section>
 	<section><About /></section>
-	<section><Projects /></section>
+	<section><ProjectsOtherWork /></section>
 	<section><Contact /></section>
 </div>
