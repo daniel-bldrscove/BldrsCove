@@ -87,7 +87,7 @@
 							Tailwind CSS. I also do my best to keep up with emerging technologies. On my radar to
 							learn are Next Js, SvelteKit, and the newly released Remix Run.
 						</p>
-						<p class="mt-4 text-xs">Frameworks & Languages:</p>
+						<p class="mt-4 text-xs">Frameworks, Libraries, and Languages:</p>
 						<table class="table-auto about-table w-full">
 							<tbody>
 								<tr>
@@ -211,7 +211,11 @@
 							</tbody>
 						</table>
 						<span class="block mt-12">
-							<a href="/#" rel="noopener noreferrer">
+							<a
+								href="/daniel-lopez-bldrscove-resumé.pdf"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
 								<Icon
 									strokeColor={$themeMode === 'dark' ? $colors.brightBlue : $colors.pureBlue}
 									fillColor="transparent"
