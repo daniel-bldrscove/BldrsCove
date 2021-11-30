@@ -62,7 +62,8 @@ body.modal-open {
 	overflow-y: hidden;
 }
 
-#dev-card-content {
+#dev-card-content,
+#dev-card-excerpt {
 	white-space: pre-line;
 }
 

@@ -24,7 +24,9 @@
 	});
 </script>
 
-<div class="shadow-2xl rounded-lg lg:shadow-none lg:rounded-none">
+<div
+	class="shadow-2xl rounded-lg lg:shadow-none lg:rounded-l-lg lg:rounded-r-none bg-bldrsCovePaleStone dark:bg-bldrsCoveCoolSlate"
+>
 	{#if lgImg && mdImg && smImg}
 		<img
 			src={smImg}
@@ -34,7 +36,7 @@
 			${lgImg} 2000w,
 		`}
 			alt={coverImageAlt}
-			class="w-full h-80 rounded-t-lg bg-transparent sm:rounded-lg sm:h-106 lg:rounded-r-none object-cover object-center"
+			class="w-full h-80 rounded-t-lg bg-transparent sm:rounded-lg sm:h-106 lg:rounded-r-none object-contain object-center"
 			width="100%"
 			height="100%"
 			loading="lazy"

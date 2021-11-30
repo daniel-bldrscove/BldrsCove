@@ -9,21 +9,13 @@
 		coverImage: {},
 		coverImageAlt: '',
 		description: '',
+		excerpt: '',
 		techStack: [],
 		gitHubLink: '',
 		projectLink: ''
 	};
 
-	let {
-		title,
-		subhead,
-		coverImage,
-		coverImageAlt,
-		description,
-		techStack,
-		gitHubLink,
-		projectLink
-	} = devProject;
+	let { coverImage, coverImageAlt } = devProject;
 </script>
 
 <div
@@ -37,6 +29,6 @@
 	<div
 		class="w-full h-full sm:w-5/6 sm:-mt-20 md:col-end-13 md:col-span-10 md:justify-self-end md:row-start-3 md:row-span-4 self-end lg:w-full lg:col-end-13 lg:col-span-6 lg:row-span-6 "
 	>
-		<WebDevCard {title} {subhead} {description} {techStack} {gitHubLink} {projectLink} />
+		<WebDevCard {...devProject} />
 	</div>
 </div>

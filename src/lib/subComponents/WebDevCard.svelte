@@ -2,10 +2,12 @@
 	import Icon from '$lib/subComponents/Icon.svelte';
 	import GithubIcon from '$lib/icons/GithubIcon.svelte';
 	import OpenLinkIcon from '$lib/icons/OpenLinkIcon.svelte';
+	import Modal, { getModal } from '$lib/subComponents/Modal.svelte';
 
 	export let title: string;
 	export let subhead: string;
 	export let description: string;
+	export let excerpt: string;
 	export let techStack: string[];
 	export let gitHubLink: string;
 	export let projectLink: string;
@@ -63,12 +65,35 @@
 				</span>
 			</a>
 		</span>
-		<p
-			id="dev-card-content"
-			class="mt-3 mb-8 text-ashenHighContrast-light text-[0.95rem] leading-[1.35rem] dark:text-ashenMidContrast-dark"
-		>
-			{description}
-		</p>
+		<span class="mt-3 mb-8 block">
+			<p
+				id="dev-card-excerpt"
+				class="inline text-ashenHighContrast-light text-[0.95rem] leading-[1.35rem] mr-2 dark:text-ashenMidContrast-dark"
+			>
+				{excerpt}
+			</p>
+			<button on:click={() => getModal(title).open()}
+				><p class="text-sm text-bldrsCoveMidBlue">Read more...</p></button
+			>
+		</span>
+
+		<!--Modal Start-->
+		<Modal bind:id={title}>
+			<h4 class="text-bldrsCoveDeepBlue dark:text-ashenHighContrast-dark">
+				{title}
+			</h4>
+			<p class="sm-title mt-1 mb-8 text-ashenMidContrast-light dark:text-ashenHighContrast-dark">
+				{subhead}
+			</p>
+			<p
+				id="dev-card-content"
+				class="text-ashenHighContrast-light text-[0.95rem] leading-[1.35rem] dark:text-ashenMidContrast-dark"
+			>
+				{description}
+			</p>
+		</Modal>
+		<!--Modal End-->
+
 		<p class="sm-title text-bldrsCoveMidBlue mb-2 tracking-wide">Technologies Used</p>
 		<table class="table-auto technologies-table w-full">
 			<tbody>
