@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { Jellyfish } from 'svelte-loading-spinners';
-	import LayoutWrapper from '$lib/subComponents/LayoutWrapper.svelte';
-	import LayoutContainLg from '$lib/subComponents/LayoutContainLg.svelte';
+	import LayoutWrapper from './subComponents/LayoutWrapper.svelte';
+	import LayoutContainLg from './subComponents/LayoutContainLg.svelte';
 	import { themeMode, colors } from '../stores';
 	import { variables } from '$lib/variables';
-	import { contactFormSchema } from '$lib/utilities/validatorsSchema';
-	import RemainingCharacters from '$lib/subComponents/RemainingCharacters.svelte';
-	import FormFeedback from '$lib/subComponents/FormFeedback.svelte';
+	import { contactFormSchema } from '../utilities/validatorsSchema';
+	import RemainingCharacters from './subComponents/RemainingCharacters.svelte';
+	import FormFeedback from './subComponents/FormFeedback.svelte';
 
 	let fullName: string = null;
 	let email: string = null;
@@ -22,7 +22,7 @@
 		.isValid({
 			fullName,
 			email,
-			message
+			message,
 		})
 		.then((valid: boolean) => {
 			valid ? (isDisabled = false) : (isDisabled = true);
@@ -42,8 +42,8 @@
 							let captcha = await fetch('/api/recaptcha', {
 								method: 'POST',
 								body: JSON.stringify({
-									captchaToken: token
-								})
+									captchaToken: token,
+								}),
 							});
 
 							if (captcha.ok || captcha.status === 200) {
@@ -69,13 +69,13 @@
 						method: 'POST',
 						headers: {
 							Accept: 'application/json',
-							'Content-Type': 'application/json'
+							'Content-Type': 'application/json',
 						},
 						body: JSON.stringify({
 							fullName,
 							email,
-							message
-						})
+							message,
+						}),
 					});
 
 					if (res.ok || res.status === 200) {
@@ -94,7 +94,7 @@
 					submitting = false;
 					console.log({
 						error: error,
-						message: 'Submission error. Please try again later.'
+						message: 'Submission error. Please try again later.',
 					});
 					isDisabled = true;
 				}

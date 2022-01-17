@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Icon from '$lib/subComponents/Icon.svelte';
+	import Icon from './Icon.svelte';
 	import MenuIcon from '$lib/icons/MenuIcon.svelte';
 	import { themeMode, colors, isMobileMenuOpen } from '../../stores';
 

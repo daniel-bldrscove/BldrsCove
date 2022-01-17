@@ -1,4 +1,4 @@
-import { isMobileMenuOpen} from '../../stores';
+import { isMobileMenuOpen} from '../stores';
 import { browser } from '$app/env';
 import { goto, prefetch } from '$app/navigation';
 

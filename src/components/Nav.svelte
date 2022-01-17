@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { themeMode, isMobileMenuOpen } from '../stores';
-	import LayoutWrapper from '$lib/subComponents/LayoutWrapper.svelte';
+	import LayoutWrapper from './subComponents/LayoutWrapper.svelte';
 	import CarrotIcon from '$lib/icons/CarrotIcon.svelte';
 	import CarrotDownIcon from '$lib/icons/CarrotDownIcon.svelte';
 	import bldrsCoveLogoLight from '../images/bldrscove-logo-light-md.png';
 	import bldrsCoveLogoDark from '../images/bldrscove-logo-dark-md.png';
-	import DropDownNav from '$lib/subComponents/DropDownNav.svelte';
-	import MobileMenu from '$lib/subComponents/MobileMenu.svelte';
-	import MobileMenuBtn from '$lib/subComponents/MobileMenuBtn.svelte';
-	import ThemeButton from '$lib/subComponents/ThemeButton.svelte';
+	import DropDownNav from './subComponents/DropDownNav.svelte';
+	import MobileMenu from './subComponents/MobileMenu.svelte';
+	import MobileMenuBtn from './subComponents/MobileMenuBtn.svelte';
+	import ThemeButton from './subComponents/ThemeButton.svelte';
 </script>
 
 <nav

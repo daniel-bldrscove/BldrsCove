@@ -2,9 +2,9 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { themeMode, colors } from '../stores';
-	import LayoutWrapper from '$lib/subComponents/LayoutWrapper.svelte';
-	import LayoutContainLg from '$lib/subComponents/LayoutContainLg.svelte';
-	import Icon from '$lib/subComponents/Icon.svelte';
+	import LayoutWrapper from './subComponents/LayoutWrapper.svelte';
+	import LayoutContainLg from './subComponents/LayoutContainLg.svelte';
+	import Icon from './subComponents/Icon.svelte';
 	import ArrowCursorIcon from '$lib/icons/ArrowCursorIcon.svelte';
 	import ComputerIcon from '$lib/icons/ComputerIcon.svelte';
 	import HALO from 'vanta/dist/vanta.halo.min';

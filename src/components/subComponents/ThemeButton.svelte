@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
-	import Icon from '$lib/subComponents/Icon.svelte';
+	import Icon from './Icon.svelte';
 	import SunIcon from '$lib/icons/SunIcon.svelte';
 	import MoonIcon from '$lib/icons/MoonIcon.svelte';
 	import { themeMode } from '../../stores';

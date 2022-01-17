@@ -1,6 +1,6 @@
 <script lang="ts">
-	import WebDevImage from '$lib/subComponents/WebDevImage.svelte';
-	import WebDevCard from '$lib/subComponents/WebDevCard.svelte';
+	import WebDevImage from './WebDevImage.svelte';
+	import WebDevCard from './WebDevCard.svelte';
 
 	// destructuring and default values
 	export let devProject = {

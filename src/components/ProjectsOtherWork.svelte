@@ -2,9 +2,9 @@
 	import { onMount } from 'svelte';
 	import client from '../sanityClient';
 
-	import LayoutWrapper from '$lib/subComponents/LayoutWrapper.svelte';
-	import LayoutContainLg from '$lib/subComponents/LayoutContainLg.svelte';
-	import WebDesignCard from '$lib/subComponents/WebDesignCard.svelte';
+	import LayoutWrapper from './subComponents/LayoutWrapper.svelte';
+	import LayoutContainLg from './subComponents/LayoutContainLg.svelte';
+	import WebDesignCard from './subComponents/WebDesignCard.svelte';
 
 	let webDesignProjects = [];
 	// $: console.log('Web Design Projects: ', webDesignProjects);

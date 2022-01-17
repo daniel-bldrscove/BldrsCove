@@ -11,7 +11,7 @@
 <script lang="ts">
 	import { browser } from '$app/env';
 	import { onDestroy } from 'svelte';
-	import Icon from '$lib/subComponents/Icon.svelte';
+	import Icon from './Icon.svelte';
 	import CloseIcon from '$lib/icons/CloseIcon.svelte';
 	import { themeMode, colors } from '../../stores';
 

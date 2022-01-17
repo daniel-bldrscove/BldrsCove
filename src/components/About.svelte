@@ -1,8 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
-	import LayoutWrapper from '$lib/subComponents/LayoutWrapper.svelte';
-	import LayoutContainLg from '$lib/subComponents/LayoutContainLg.svelte';
-	import Icon from '$lib/subComponents/Icon.svelte';
+	import LayoutWrapper from './subComponents/LayoutWrapper.svelte';
+	import LayoutContainLg from './subComponents/LayoutContainLg.svelte';
+	import Icon from './subComponents/Icon.svelte';
 	import DownloadDocIcon from '$lib/icons/DownloadDocIcon.svelte';
 	import { themeMode, colors } from '../stores';
 
@@ -102,7 +102,7 @@
 										><p
 											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark"
 										>
-											Javascript (CS6 +)
+											Javascript
 										</p></td
 									>
 									<td
@@ -162,21 +162,7 @@
 										><p
 											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark"
 										>
-											Serverless Env.
-										</p></td
-									>
-									<td
-										><p
-											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark"
-										>
-											Mongo DB
-										</p></td
-									>
-									<td
-										><p
-											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark"
-										>
-											Graph QL
+											Vercel/Netlify
 										</p></td
 									>
 								</tr>

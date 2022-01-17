@@ -1,2 +1,2 @@
-# bldrsCove
-Portfolio site template
+# Edwindanlopez Portfolio
+Website for my portfolio and future blog

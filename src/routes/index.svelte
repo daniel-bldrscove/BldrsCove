@@ -9,10 +9,6 @@
 	import { themeMode } from '../stores';
 
 	onMount(() => {
-		setTimeout(() => {
-			document.documentElement.style.scrollBehavior = 'smooth';
-		}, 100);
-
 		if (window.localStorage.theme) {
 			// decide according to whats been set in local storage
 			const theme = window.localStorage.theme === 'dark' ? 'dark' : 'light';

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Icon from '$lib/subComponents/Icon.svelte';
+	import Icon from './Icon.svelte';
 	import HandWavingIcon from '$lib/icons/HandWavingIcon.svelte';
 	import AlertIcon from '$lib/icons/AlertIcon.svelte';
 	import { themeMode, colors } from '../../stores';

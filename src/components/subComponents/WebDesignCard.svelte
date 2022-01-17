@@ -39,7 +39,7 @@
 </script>
 
 <div class="sm:mb-2 sm:mt-2" in:fade={{ duration: 400 }} out:fade={{ duration: 500 }}>
-	<a href={`/web-design/${slug.current}`} sveltekit:prefetch sveltekit:noscroll class="col-span-1">
+	<a href={`/web-design/${slug.current}`} sveltekit:prefetch class="col-span-1">
 		<img
 			src={urlFor(coverImage.asset).format('webp').url()}
 			srcset={`

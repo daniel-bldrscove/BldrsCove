@@ -1,7 +1,7 @@
 <script lang="ts">
-	import WebDevProject from '$lib/subComponents/WebDevProject.svelte';
-	import LayoutWrapper from '$lib/subComponents/LayoutWrapper.svelte';
-	import LayoutContainLg from '$lib/subComponents/LayoutContainLg.svelte';
+	import WebDevProject from './subComponents/WebDevProject.svelte';
+	import LayoutWrapper from './subComponents/LayoutWrapper.svelte';
+	import LayoutContainLg from './subComponents/LayoutContainLg.svelte';
 	import devProjects from '$lib/devProjects';
 </script>
 

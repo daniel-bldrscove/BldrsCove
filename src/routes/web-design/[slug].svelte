@@ -10,11 +10,11 @@
 </script>
 
 <script lang="ts">
-	import { onMount, onDestroy } from 'svelte';
+	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import client from '../../sanityClient';
 	import PortableText from '@portabletext/svelte';
-	import LayoutWrapper from '$lib/subComponents/LayoutWrapper.svelte';
+	import LayoutWrapper from '../../components/subComponents/LayoutWrapper.svelte';
 	import MarkProps from '$lib/portableText/MarkProps.svelte';
 	import ImageSerializer from '$lib/portableText/ImageSerializer.svelte';
 	import StyleProps from '$lib/portableText/StyleProps.svelte';
@@ -41,11 +41,6 @@
 	}
 
 	onMount(async () => {
-		document.documentElement.style.scrollBehavior = 'auto';
-		setTimeout(() => {
-			window.scrollTo(0, 0);
-		}, 100);
-
 		const query = `*[_type == 'web-design-project' && slug.current == '${pageSlug}']{
 			coverImage{
 				alt,

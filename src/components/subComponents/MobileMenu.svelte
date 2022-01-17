@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
 	import LayoutWrapper from './LayoutWrapper.svelte';
-	import { handleMobileMenu } from '$lib/utilities/handlePageTransition';
+	import { handleMobileMenu } from '../../utilities/handlePageTransition';
 </script>
 
 <div

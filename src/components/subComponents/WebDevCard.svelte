@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Icon from '$lib/subComponents/Icon.svelte';
+	import Icon from './Icon.svelte';
 	import GithubIcon from '$lib/icons/GithubIcon.svelte';
 	import OpenLinkIcon from '$lib/icons/OpenLinkIcon.svelte';
-	import Modal, { getModal } from '$lib/subComponents/Modal.svelte';
+	import Modal, { getModal } from './Modal.svelte';
 
 	export let title: string;
 	export let subhead: string;
