@@ -8,6 +8,7 @@ module.exports = {
 		'./src/**/*.ts',
 		'./src/**/*.js'
 	],
+	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		fontFamily: {
 			ubuntuSans: ['Ubuntu', 'sans-serif'],
