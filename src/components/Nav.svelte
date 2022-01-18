@@ -3,8 +3,6 @@
 	import LayoutWrapper from './subComponents/LayoutWrapper.svelte';
 	import CarrotIcon from '$lib/icons/CarrotIcon.svelte';
 	import CarrotDownIcon from '$lib/icons/CarrotDownIcon.svelte';
-	import bldrsCoveLogoLight from '../images/bldrscove-logo-light-md.png';
-	import bldrsCoveLogoDark from '../images/bldrscove-logo-dark-md.png';
 	import DropDownNav from './subComponents/DropDownNav.svelte';
 	import MobileMenu from './subComponents/MobileMenu.svelte';
 	import MobileMenuBtn from './subComponents/MobileMenuBtn.svelte';
@@ -24,13 +22,7 @@
 				<!--Logo-->
 				<div class="logo-wrapper mx-auto sm:mx-0 sm:self-start">
 					<a href="/" rel="external">
-						<img
-							src={$themeMode === 'dark' ? bldrsCoveLogoDark : bldrsCoveLogoLight}
-							alt="BldrsCove Logo"
-							class="w-36 md:w-40 ml-12 sm:ml-0"
-							width="100%"
-							height="100%"
-						/>
+						<p class="text-2xl">Edwin Dan Lopez</p>
 					</a>
 				</div>
 				<div class="w-auto flex items-center flex-shrink-0">

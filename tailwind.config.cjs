@@ -1,20 +1,12 @@
 module.exports = {
-	mode: 'jit',
+  content: ['./src/**/*.{html,js,svelte,ts}'],
 	darkMode: 'class',
-	purge: [
-		// purge out css that isn't being used
-		'./src/**/*.svelte',
-		'./src/**/*.html',
-		'./src/**/*.ts',
-		'./src/**/*.js'
-	],
-	content: ['./src/**/*.{html,js,svelte,ts}'],
-	theme: {
-		fontFamily: {
-			ubuntuSans: ['Ubuntu', 'sans-serif'],
-			firaMono: ['fira-mono', 'sans-serif']
-		},
+  theme: {
 		extend: {
+			fontFamily: {
+				filsonPro: ['filson-pro', 'sans-serif'],
+				niveauGrotesk: ['niveau-grotesk', 'sans-serif']
+			},
 			colors: {
 				ashenLowContrast: {
 					light: '#9CA6B6',
@@ -65,6 +57,4 @@ module.exports = {
 			}
 		}
 	},
-	variants: {},
-	plugins: []
-};
+}

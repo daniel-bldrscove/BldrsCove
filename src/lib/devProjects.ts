@@ -1,3 +1,5 @@
+import type { DevProjectTypes } from '../../@types/ComponentTypes';
+
 import bbsFeatImgLg from '../images/bbs-feat-image-1276px.jpg';
 import bbsFeatImgMd from '../images/bbs-feat-image-768px.jpg';
 import bbsFeatImgSm from '../images/bbs-feat-image-530px.jpg';
@@ -5,21 +7,8 @@ import tradingAllyFeatImgLg from '../images/trading-ally-feat-image-1276px.jpg';
 import tradingAllyFeatImgMd from '../images/trading-ally-feat-image-768px.jpg';
 import tradingAllyFeatImgSm from '../images/trading-ally-feat-image-530px.jpg';
 
-const webDevProjects: {
-		title: string;
-		subhead: string;
-		coverImage: {
-			lg: string;
-			md: string;
-			sm: string;
-		}
-		coverImageAlt: string;
-		description: string;
-		excerpt: string;
-		techStack: string[];
-		gitHubLink: string;
-		projectLink: string;
-	}[] = [
+
+const webDevProjects: DevProjectTypes[] = [
 		{
 			title: 'Build Beautiful Spaces',
 			subhead: 'Business Website',

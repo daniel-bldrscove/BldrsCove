@@ -5,44 +5,34 @@
 
 @layer base {
 	h1 {
-		font-display: swap;
-		@apply font-ubuntuSans text-xl font-bold antialiased;
+		@apply font-filsonPro text-xl font-bold antialiased;
 	}
 	h2 {
-		font-display: swap;
-		@apply font-firaMono text-4xl-a leading-4xl-a font-normal antialiased;
+		@apply font-niveauGrotesk text-4xl-a leading-4xl-a font-normal antialiased;
 	}
 	h3 {
-		font-display: swap;
-		@apply font-ubuntuSans text-2xl font-normal antialiased;
+		@apply font-filsonPro text-2xl font-normal antialiased;
 	}
 	h4 {
-		font-display: swap;
-		@apply font-firaMono text-2xl font-normal antialiased;
+		@apply font-niveauGrotesk text-2xl font-normal antialiased;
 	}
 	h5 {
-		font-display: swap;
-		@apply font-ubuntuSans text-lg font-medium antialiased;
+		@apply font-filsonPro text-lg font-medium antialiased;
 	}
 	h6 {
-		font-display: swap;
-		@apply font-firaMono text-base font-normal antialiased;
+		@apply font-niveauGrotesk text-base font-normal antialiased;
 	}
 	p {
-		font-display: swap;
-		@apply font-ubuntuSans text-base font-normal antialiased;
+		@apply font-filsonPro text-base font-normal antialiased;
 	}
 	.sm-title {
-		font-display: swap;
-		@apply font-ubuntuSans text-xs font-medium uppercase tracking-wide antialiased;
+		@apply font-filsonPro text-xs font-medium uppercase tracking-wide antialiased;
 	}
 	.sm-subhead {
-		font-display: swap;
-		@apply font-ubuntuSans text-xs font-medium antialiased;
+		@apply font-filsonPro text-xs font-medium antialiased;
 	}
 	.caption {
-		font-display: swap;
-		@apply font-firaMono text-sm font-normal antialiased;
+		@apply font-niveauGrotesk text-sm font-normal antialiased;
 	}
 }
 
@@ -100,7 +90,7 @@ body.modal-open {
 }
 
 input {
-	@apply w-full block h-8 align-bottom border-b border-ashenLowContrast-light rounded-none dark:border-b pt-3 font-firaMono bg-transparent dark:text-ashenMidContrast-dark dark:border-ashenLowContrast-dark;
+	@apply w-full block h-8 align-bottom border-b border-ashenLowContrast-light rounded-none dark:border-b pt-3 font-niveauGrotesk bg-transparent dark:text-ashenMidContrast-dark dark:border-ashenLowContrast-dark;
 }
 
 input:focus {

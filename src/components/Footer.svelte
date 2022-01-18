@@ -1,26 +1,19 @@
-<script lang="ts">
-	import { themeMode } from '../stores';
-	import footerLogoLightMode from '../images/bldrscove-secondary-logo-light-md.png';
-	import footerLogoDarkMode from '../images/bldrscove-secondary-logo-dark-md.png';
-</script>
-
 <div
-	class="w-full grid grid-cols-1 justify-center content-center h-32 pt-2 bg-[#b9cdd7] dark:bg-bldrsCoveDeepBlue"
+	class="w-full flex flex-wrap justify-center content-center items-center h-32 pt-2 bg-[#b9cdd7] dark:bg-bldrsCoveDeepBlue"
 >
-	<div class="self-center justify-self-center">
-		<img
-			src={$themeMode === 'dark' ? footerLogoDarkMode : footerLogoLightMode}
-			alt="BldrsCove secondary logo"
-			class="w-20"
-			width="100%"
-			height="100%"
-		/>
+	<div class="mb-2 w-full flex justify-center items-center">
+		<p class="text-xl">EDL</p>
 	</div>
-	<small
-		class="text-center mt-2 self-center justify-self-center text-ashenMidContrast-light dark:text-ashenLowContrast-dark"
-	>
-		{`Designed & built by Daniel Lopez`}
-	</small>
+	<span class="w-full flex justify-center items-center">
+		<p class="text-sm text-ashenMidContrast-light dark:text-ashenLowContrast-dark">
+			Designed & built by
+		</p>
+		<a href="https://github.com/edwindanlopez" rel="external" target="_blank">
+			<p class="ml-1 underline text-sm text-ashenMidContrast-light dark:text-ashenLowContrast-dark">
+				Edwin Dan Lopez
+			</p>
+		</a>
+	</span>
 </div>
 
 <style>

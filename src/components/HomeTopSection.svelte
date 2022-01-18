@@ -1,5 +1,4 @@
 <script>
-	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { themeMode, colors } from '../stores';
 	import LayoutWrapper from './subComponents/LayoutWrapper.svelte';
@@ -7,50 +6,12 @@
 	import Icon from './subComponents/Icon.svelte';
 	import ArrowCursorIcon from '$lib/icons/ArrowCursorIcon.svelte';
 	import ComputerIcon from '$lib/icons/ComputerIcon.svelte';
-	import HALO from 'vanta/dist/vanta.halo.min';
-	let vantaContainer;
-	let haloEffect = null;
-
-	const updateHaloEffect = () => {
-		haloEffect &&
-			haloEffect.setOptions({
-				baseColor: $themeMode === 'dark' ? $colors.deepBlue : $colors.brightBlue,
-				backgroundColor: $themeMode === 'dark' ? $colors.deepBlue : '#b9cdd7',
-				xOffset: $themeMode === 'dark' ? 0.3 : 0.18,
-				yOffset: $themeMode === 'dark' ? -0.28 : 0.12,
-				size: $themeMode === 'dark' ? 0.9 : 1.25
-			});
-	};
-
-	$: $themeMode, updateHaloEffect();
-
-	onMount(() => {
-		if (themeMode) {
-			haloEffect = HALO({
-				el: vantaContainer,
-				mouseControls: true,
-				touchControls: true,
-				baseColor: $themeMode === 'dark' ? $colors.deepBlue : $colors.brightBlue,
-				backgroundColor: $themeMode === 'dark' ? $colors.deepBlue : '#b9cdd7',
-				gyroControls: false,
-				minHeight: 200.0,
-				minWidth: 200.0,
-				amplitudeFactor: 2,
-				xOffset: $themeMode === 'dark' ? 0.3 : 0.18,
-				yOffset: $themeMode === 'dark' ? -0.28 : 0.12,
-				size: $themeMode === 'dark' ? 0.9 : 1.25
-			});
-		}
-
-		return () => haloEffect.destroy();
-	});
 </script>
 
 <!-- svelte-ignore a11y-missing-content -->
 <a id="home-top-section" class="anchor-tag" />
 <div
 	class="bg-bldrsCovePaleStone dark:bg-bldrsCoveCoolGray flex justify-center items-center"
-	bind:this={vantaContainer}
 	transition:fade={{ delay: 100, duration: 100 }}
 >
 	<LayoutWrapper>
@@ -68,15 +29,17 @@
 							class="text-2xl sm:text-4xl-a sm:leading-4xl-a text-bldrsCoveDeepBlue dark:text-bldrsCoveLtGray md:w-10/12 xl:w-9/12 2xl:w-5/12"
 							transition:fade={{ delay: 100, duration: 1200 }}
 						>
-							I build interactive experiences on the web through UI and modern javascript
-							technologies.
+							I build interactive experiences on the web through UI and modern
+							javascript technologies.
 						</h2>
 					</div>
 					<div class="mt-20 flex flex-wrap">
 						<span class="cta-link" transition:fade={{ delay: 200, duration: 300 }}>
 							<a href="#web-dev" rel="external">
 								<Icon
-									strokeColor={$themeMode === 'dark' ? $colors.brightBlue : $colors.midBlue}
+									strokeColor={$themeMode === 'dark'
+										? $colors.brightBlue
+										: $colors.midBlue}
 									fillColor="transparent"
 									width="32"
 									height="32"
@@ -98,7 +61,9 @@
 						>
 							<a href="#about" rel="external">
 								<Icon
-									strokeColor={$themeMode === 'dark' ? $colors.brightBlue : $colors.midBlue}
+									strokeColor={$themeMode === 'dark'
+										? $colors.brightBlue
+										: $colors.midBlue}
 									fillColor="transparent"
 									width="32"
 									height="32"

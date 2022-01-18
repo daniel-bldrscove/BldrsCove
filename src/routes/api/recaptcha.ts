@@ -1,18 +1,13 @@
-// import type { RequestHandler } from '@sveltejs/kit';
-// TODO: integrate more types
-
 import dotenv from 'dotenv';
+
 dotenv.config();
 
-export async function post(req:Record<string, string> ):Promise<{
-    body: string;
-} | {
-    status: number;
-    body: string;
-}> {
+/** @type {import('@sveltejs/kit').RequestHandler} */
+// eslint-disable-next-line import/prefer-default-export
+export async function post(req:Record<string, string> ) {
 	const body = await JSON.parse(req.body);
 	const token = body.captchaToken;
-
+	
 	if (!token) {
 		return {
 			status: 401,
@@ -24,7 +19,7 @@ export async function post(req:Record<string, string> ):Promise<{
 	}
 
 	const checkRecaptcha = async () => {
-		const verificationUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env['RECAPTCHA_SECRET_KEY']}&response=${token}`;
+		const verificationUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`;
 
 		const captchaRes = await fetch(verificationUrl, {
 			method: 'POST'
@@ -39,17 +34,15 @@ export async function post(req:Record<string, string> ):Promise<{
 				message: 'Captcha verified',
 				captchaResponse: captcha
 			};
-		} else {
+		} 
 			return {
 				error: captcha['error-codes'][0],
 				message: 'Encountered Error with ReCaptcha'
 			};
-		}
+		
 	};
 
-	return await checkRecaptcha().then((result) => {
-		return {
+	return checkRecaptcha().then((result) => ({
 			body: JSON.stringify(result)
-		};
-	});
+		}));
 }

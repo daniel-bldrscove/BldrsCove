@@ -1,16 +1,17 @@
-import preprocess from 'svelte-preprocess';
-import tailwind from 'tailwindcss';
-import autoprefixer from 'autoprefixer';
+import sveltePreprocessor from 'svelte-preprocess';
 import vercel from '@sveltejs/adapter-vercel';
-/*This will add autocompletion when working with svelteKit */
+import tailwindcss from 'tailwindcss';
+import autoprefixer from 'autoprefixer';
+
+
 /** @type {import('@sveltejs/kit').Config} */
-const config = {
+export default {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
 	preprocess: [
-		preprocess({
+		sveltePreprocessor({
 			postcss: {
-				plugins: [tailwind, autoprefixer]
+				plugins: [tailwindcss, autoprefixer]
 			}
 		})
 	],
@@ -25,10 +26,8 @@ const config = {
 			serviceWorker: 'src/service-worker',
 			template: 'src/app.html'
 		},
+		vite: {},
 		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte',
-		vite: {}
+		target: '#svelte'
 	}
 };
-
-export default config;

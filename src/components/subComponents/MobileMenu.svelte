@@ -50,8 +50,8 @@
 	</div>
 </div>
 
-<style>
+<style lang="postcss">
 	.nav-btn {
-		@apply block h-16 w-full text-left mt-3 mb-3 p-3 border border-ashenLowContrast-light rounded-md focus:outline-none focus:ring-2 focus:ring-bldrsCoveMidBlue focus:border-transparent bg-[#e3eaf1] focus:bg-gray-100 hover:bg-gray-100;
+		@apply block h-16 w-full text-left mt-3 mb-3 p-3 border border-ashenLowContrast-light rounded-md bg-[#e3eaf1] focus:outline-none focus:ring-2 focus:ring-bldrsCoveMidBlue focus:border-transparent focus:bg-gray-100 hover:bg-gray-100;
 	}
 </style>

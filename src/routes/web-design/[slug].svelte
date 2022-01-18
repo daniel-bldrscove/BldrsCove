@@ -1,10 +1,10 @@
 <script context="module" lang="ts">
-	export async function load({ page }) {
-		const pageSlug = page.params.slug;
+	export async function load({ params }) {
+		const pageSlug = params.slug;
 		return {
 			props: {
-				pageSlug
-			}
+				pageSlug,
+			},
 		};
 	}
 </script>
@@ -78,64 +78,58 @@
 
 <div
 	class="bg-white dark:bg-bldrsCoveCoolSlate h-full"
-	in:fade={{ duration: 100 }}
-	out:fade={{ duration: 100 }}
->
+	in:fade="{{ duration: 100 }}"
+	out:fade="{{ duration: 100 }}">
 	{#if coverImage}
 		<img
-			src={urlFor(coverImage).format('webp').url()}
-			srcset={`
+			src="{urlFor(coverImage).format('webp').url()}"
+			srcset="{`
 					${urlFor(coverImage).format('webp').width(640).url()} 640w, 
 					${urlFor(coverImage).format('webp').width(768).url()} 768w, 
 					${urlFor(coverImage).format('webp').width(1024).url()} 1024w, 
 					${urlFor(coverImage).format('webp').width(1280).url()} 1280w, 
 					${urlFor(coverImage).format('webp').width(1536).url()} 1536w, 
 					${urlFor(coverImage).format('webp').width(2000).url()} 2000w, 
-				`}
+				`}"
 			width="100%"
 			height="100%"
-			alt={altText}
-			class="w-full h-96 md:h-106 2xl:w-10/12 2xl:mx-auto 2xl:rounded-lg object-cover object-center"
-		/>
+			alt="{altText}"
+			class="w-full h-96 md:h-106 2xl:w-10/12 2xl:mx-auto 2xl:rounded-lg object-cover object-center" />
 	{/if}
 	<LayoutWrapper>
 		<div class="pt-8 pb-8">
 			<div class="mt-8 mb-8">
 				<h1
-					class="mb-4 text-3xl lg:w-10/12 xl:w-8/12 lg:mx-auto text-bldrsCoveCoolGray dark:text-bldrsCoveLtGray"
-				>
+					class="mb-4 text-3xl lg:w-10/12 xl:w-8/12 lg:mx-auto text-bldrsCoveCoolGray dark:text-bldrsCoveLtGray">
 					{title && title}
 				</h1>
 				<!--Description-->
 				<div
-					class="mb-16 lg:w-10/12 xl:w-8/12 lg:mx-auto text-ashenMidContrast-light dark:text-ashenMidContrast-dark"
-				>
+					class="mb-16 lg:w-10/12 xl:w-8/12 lg:mx-auto text-ashenMidContrast-light dark:text-ashenMidContrast-dark">
 					<PortableText
-						blocks={description}
-						serializers={{
+						blocks="{description}"
+						serializers="{{
 							types: {
-								image: ImageSerializer
+								image: ImageSerializer,
 							},
 							marks: {
-								link: MarkProps
+								link: MarkProps,
 							},
 							blockStyles: {
 								caption: StyleProps,
-								breakBefore: StyleProps
-							}
-						}}
-					/>
+								breakBefore: StyleProps,
+							},
+						}}" />
 				</div>
 			</div>
 			<!--Images-->
 			<PortableText
-				blocks={projectImages}
-				serializers={{
+				blocks="{projectImages}"
+				serializers="{{
 					types: {
-						image: ImageSerializer
-					}
-				}}
-			/>
+						image: ImageSerializer,
+					},
+				}}" />
 			<!--Project Link-->
 			<span class="block mt-8 text-ashenMidContrast-light dark:text-ashenMidContrast-dark">
 				<!--Disclaimer-->
@@ -146,10 +140,9 @@
 				<p>
 					<a
 						class="text-xs font-bold slide-left-right text-ashenMidContrast-light dark:text-ashenMidContrast-dark dark:hover:text-bldrsCoveMidBlue"
-						href={projectLink && `${projectLink}`}
+						href="{projectLink && `${projectLink}`}"
 						target="_blank"
-						rel="noopener noreferrer">{`www.${shortSlug}.com`}</a
-					>
+						rel="noopener noreferrer">{`www.${shortSlug}.com`}</a>
 				</p>
 			</span>
 		</div>

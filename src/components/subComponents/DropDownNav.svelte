@@ -21,8 +21,8 @@
 	</div>
 </div>
 
-<style>
+<style lang="postcss">
 	.dropdown-nav-item {
-		@apply p-4 text-ashenMidContrast-light  hover:text-ashenHighContrast-light hover:bg-bldrsCoveLtBabyBlue;
+		@apply p-4 text-ashenMidContrast-light hover:text-ashenHighContrast-light hover:bg-bldrsCoveLtBabyBlue;
 	}
 </style>
