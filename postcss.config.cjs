@@ -1,8 +1,8 @@
 module.exports = (ctx) => ({
   plugins: {
+    autoprefixer: {},
     tailwindcss: {},
     'postcss-import': {},
-    autoprefixer: {},
     cssnano: ctx.env === 'production' ? {} : false,
   },
 })
