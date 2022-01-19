@@ -8,11 +8,12 @@
 </style>
 
 <script lang="ts">
-	import Icon from './Icon.svelte';
+	import Icon from '../../shared/Icon.svelte';
 	import GithubIcon from '$lib/icons/GithubIcon.svelte';
 	import OpenLinkIcon from '$lib/icons/OpenLinkIcon.svelte';
-	import Modal, { getModal } from './Modal.svelte';
-	import type { DevProjectTypes } from '../../../@types/ComponentTypes';
+	import Modal, { getModal } from '../../shared/Modal.svelte';
+	import { themeMode, colors } from '../../../stores';
+	import type { DevProjectTypes } from '../../../../types/ComponentTypes';
 
 	export let devProjectProps: Omit<DevProjectTypes, 'coverImage' | 'coverImageAlt'>;
 
@@ -23,9 +24,9 @@
 </script>
 
 <div
-	class="bg-gray-100 p-6 shadow-2xl lg:shadow-none rounded-b-lg sm:rounded-lg sm:p-12 lg:rounded-l-none dark:bg-bldrsCoveDeepBlue h-full flex justify-center items-center">
+	class="bg-gray-100 p-6 shadow-2xl lg:shadow-none rounded-b-lg sm:rounded-lg sm:p-12 lg:rounded-l-none dark:bg-edlDeepBlue h-full flex justify-center items-center">
 	<div>
-		<h4 class="text-bldrsCoveDeepBlue dark:text-ashenHighContrast-dark">
+		<h4 class="text-edlDeepBlue dark:text-ashenHighContrast-dark">
 			{title}
 		</h4>
 		<p class="sm-title mt-1 mb-8 text-ashenMidContrast-light dark:text-ashenHighContrast-dark">
@@ -35,7 +36,7 @@
 			<a href="{gitHubLink}" target="_blank" rel="external" class="inline-block">
 				<span class="flex">
 					<Icon
-						strokeColor="transparent"
+						strokeColor="{$colors.midBlue}"
 						fillColor="#2f75d6"
 						width="32"
 						height="32"
@@ -44,7 +45,7 @@
 						<GithubIcon />
 					</Icon>
 					<p
-						class="caption mt-1 -ml-1 slide-left-right dark:text-ashenMidContrast-dark dark:hover:text-bldrsCoveBrightBlue">
+						class="font-niveauGrotesk font-medium text-sm mt-[2px] -ml-1 slide-left-right dark:text-ashenMidContrast-dark dark:hover:text-edlBrightBlue">
 						View GitHub
 					</p>
 				</span>
@@ -52,7 +53,7 @@
 			<a href="{projectLink}" target="_blank" rel="external" class="inline-block ml-8">
 				<span class="flex">
 					<Icon
-						strokeColor="#2f75d6"
+						strokeColor="{$colors.midBlue}"
 						fillColor="transparent"
 						width="32"
 						height="32"
@@ -61,7 +62,7 @@
 						<OpenLinkIcon />
 					</Icon>
 					<p
-						class="caption mt-1 -ml-1 slide-left-right dark:text-ashenMidContrast-dark dark:hover:text-bldrsCoveBrightBlue">
+						class="font-niveauGrotesk font-medium text-sm mt-[2px] -ml-1 slide-left-right dark:text-ashenMidContrast-dark dark:hover:text-edlBrightBlue">
 						View Site
 					</p>
 				</span>
@@ -74,16 +75,15 @@
 				{excerpt}
 			</p>
 			<button on:click="{() => getModal(title).open()}"
-				><p class="text-sm text-bldrsCoveMidBlue">Read more...</p></button>
+				><p class="text-sm text-edlMidBlue">Read more...</p></button>
 		</span>
 
 		<!--Modal Start-->
 		<Modal bind:id="{title}">
-			<h4 class="text-bldrsCoveDeepBlue dark:text-ashenHighContrast-dark">
+			<h4 class="text-edlDeepBlue dark:text-ashenHighContrast-dark">
 				{title}
 			</h4>
-			<p
-				class="sm-title mt-1 mb-8 text-ashenMidContrast-light dark:text-ashenHighContrast-dark">
+			<p class="sm-title mt-1 mb-8 text-ashenMidContrast-light dark:text-ashenHighContrast-dark">
 				{subhead}
 			</p>
 			<p
@@ -94,7 +94,9 @@
 		</Modal>
 		<!--Modal End-->
 
-		<p class="sm-title text-bldrsCoveMidBlue mb-2 tracking-wide">Technologies Used</p>
+		<p class="sm-title font-sans font-bold text-edlDeepBlue mb-2 tracking-wider">
+			Technologies Used
+		</p>
 		<table class="table-auto technologies-table w-full">
 			<tbody>
 				{#each rows as row}
@@ -102,8 +104,7 @@
 						<tr>
 							{#each techStack.slice(0, 3) as technology, index}
 								<td>
-									<p
-										class="caption text-xs ml-2 text-bldrsCoveDeepBlue dark:text-ashenMidContrast-dark">
+									<p class="caption text-xs ml-2 text-edlDeepBlue dark:text-ashenMidContrast-dark">
 										{technology}
 									</p>
 								</td>
@@ -113,8 +114,7 @@
 						<tr>
 							{#each techStack.slice(3, 6) as technology, index}
 								<td>
-									<p
-										class="caption text-xs ml-2 text-bldrsCoveDeepBlue dark:text-ashenMidContrast-dark">
+									<p class="caption text-xs ml-2 text-edlDeepBlue dark:text-ashenMidContrast-dark">
 										{technology}
 									</p>
 								</td>

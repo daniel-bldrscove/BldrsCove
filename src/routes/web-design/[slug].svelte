@@ -14,7 +14,7 @@
 	import { fade } from 'svelte/transition';
 	import client from '../../sanityClient';
 	import PortableText from '@portabletext/svelte';
-	import LayoutWrapper from '../../components/subComponents/LayoutWrapper.svelte';
+	import LayoutWrapper from '../../components/shared/LayoutWrapper.svelte';
 	import MarkProps from '$lib/portableText/MarkProps.svelte';
 	import ImageSerializer from '$lib/portableText/ImageSerializer.svelte';
 	import StyleProps from '$lib/portableText/StyleProps.svelte';
@@ -77,7 +77,7 @@
 </script>
 
 <div
-	class="bg-white dark:bg-bldrsCoveCoolSlate h-full"
+	class="bg-white dark:bg-edlCoolSlate h-full"
 	in:fade="{{ duration: 100 }}"
 	out:fade="{{ duration: 100 }}">
 	{#if coverImage}
@@ -100,7 +100,7 @@
 		<div class="pt-8 pb-8">
 			<div class="mt-8 mb-8">
 				<h1
-					class="mb-4 text-3xl lg:w-10/12 xl:w-8/12 lg:mx-auto text-bldrsCoveCoolGray dark:text-bldrsCoveLtGray">
+					class="mb-4 text-3xl lg:w-10/12 xl:w-8/12 lg:mx-auto text-edlCoolGray dark:text-edlLtGray">
 					{title && title}
 				</h1>
 				<!--Description-->
@@ -139,7 +139,7 @@
 				</p>
 				<p>
 					<a
-						class="text-xs font-bold slide-left-right text-ashenMidContrast-light dark:text-ashenMidContrast-dark dark:hover:text-bldrsCoveMidBlue"
+						class="text-xs font-bold slide-left-right text-ashenMidContrast-light dark:text-ashenMidContrast-dark dark:hover:text-edlTealLight"
 						href="{projectLink && `${projectLink}`}"
 						target="_blank"
 						rel="noopener noreferrer">{`www.${shortSlug}.com`}</a>

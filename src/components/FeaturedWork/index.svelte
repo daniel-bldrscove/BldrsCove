@@ -6,22 +6,20 @@
 </style>
 
 <script lang="ts">
-	import WebDevProject from './subComponents/WebDevProject.svelte';
-	import LayoutWrapper from './subComponents/LayoutWrapper.svelte';
-	import LayoutContainLg from './subComponents/LayoutContainLg.svelte';
+	import WebDevProject from './WebDevProject/index.svelte';
+	import LayoutWrapper from '../shared/LayoutWrapper.svelte';
+	import LayoutContainLg from '../shared/LayoutContainLg.svelte';
 	import devProjects from '$lib/devProjects';
 </script>
 
 <!-- svelte-ignore a11y-missing-content -->
 <a id="web-dev" class="anchor-tag"></a>
-<div class="pt-16 pb- sm:pt-32 sm:pb-12 dark:bg-bldrsCoveCoolGray">
+<div class="pt-16 pb- sm:pt-32 sm:pb-12 dark:bg-edlCoolGray">
 	<div class="project-container h-auto">
 		<LayoutWrapper>
 			<LayoutContainLg>
-				<h2 class="mx-auto mb-2 text-bldrsCoveDeepBlue dark:text-bldrsCoveLtGray">
-					Featured work
-				</h2>
-				<h3 class="mb-14 text-bldrsCoveMidBlue">Web Dev</h3>
+				<h2 class="mx-auto mb-2 text-edlDeepBlue dark:text-edlLtGray">Featured work</h2>
+				<h3 class="mb-14 text-edlOrange">Web Dev</h3>
 			</LayoutContainLg>
 		</LayoutWrapper>
 		<LayoutContainLg>

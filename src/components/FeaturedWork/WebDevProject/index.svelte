@@ -1,16 +1,16 @@
 <script lang="ts">
-import WebDevImage from './WebDevImage.svelte';
-import WebDevCard from './WebDevCard.svelte';
-import type { DevProjectTypes } from '../../../@types/ComponentTypes';
-import { browser } from '$app/env';
+	import WebDevImage from './WebDevImage.svelte';
+	import WebDevCard from './WebDevCard.svelte';
+	import type { DevProjectTypes } from '../../../../types/ComponentTypes';
+	import { browser } from '$app/env';
 
-export let devProject: DevProjectTypes;
+	export let devProject: DevProjectTypes;
 
-if (typeof devProject === undefined) {
-	throw new Error('Dev Project is undefined!');
-}
+	if (typeof devProject === undefined) {
+		throw new Error('Dev Project is undefined!');
+	}
 
-export let { coverImage, coverImageAlt, ...rest } = devProject;
+	export let { coverImage, coverImageAlt, ...rest } = devProject;
 </script>
 
 <div

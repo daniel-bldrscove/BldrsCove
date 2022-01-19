@@ -4,13 +4,14 @@ export const themeMode = writable(null);
 
 export const colors = readable({
 	ltGray: '#cccccc',
-	deepBlue: '#090d1a',
+	deepBlue: '#0b0d14',
 	paleGray: '#626f7d',
 	paleStone: '#e0eaf0',
-	pureBlue: '#093bc7',
 	midBlue: '#2f75d6',
 	brightBlue: '#38aaff',
-	redWarning: '#d73855'
+	redWarning: '#d73855',
+	edlYellow: '#feb91b',
+	edlTealLight: '#0dc3b3',
 });
 
 export const isMobileMenuOpen = writable(false)

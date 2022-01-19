@@ -5,16 +5,16 @@
 
 @layer base {
 	h1 {
-		@apply font-filsonPro text-xl font-bold antialiased;
+		@apply font-filsonPro text-3xl font-bold antialiased;
 	}
 	h2 {
-		@apply font-niveauGrotesk text-4xl-a leading-4xl-a font-normal antialiased;
+		@apply font-niveauGrotesk text-4xl-b leading-[3.5rem] font-medium antialiased;
 	}
 	h3 {
-		@apply font-filsonPro text-2xl font-normal antialiased;
+		@apply font-filsonPro text-2xl font-bold antialiased;
 	}
 	h4 {
-		@apply font-niveauGrotesk text-2xl font-normal antialiased;
+		@apply font-niveauGrotesk text-2xl font-medium antialiased;
 	}
 	h5 {
 		@apply font-filsonPro text-lg font-medium antialiased;
@@ -23,16 +23,16 @@
 		@apply font-niveauGrotesk text-base font-normal antialiased;
 	}
 	p {
-		@apply font-filsonPro text-base font-normal antialiased;
+		@apply font-niveauGrotesk text-base font-normal antialiased;
 	}
 	.sm-title {
-		@apply font-filsonPro text-xs font-medium uppercase tracking-wide antialiased;
+		@apply font-niveauGrotesk text-sm font-normal uppercase tracking-wide antialiased;
 	}
 	.sm-subhead {
 		@apply font-filsonPro text-xs font-medium antialiased;
 	}
 	.caption {
-		@apply font-niveauGrotesk text-sm font-normal antialiased;
+		@apply font-filsonPro text-sm font-normal antialiased;
 	}
 }
 
@@ -94,7 +94,7 @@ input {
 }
 
 input:focus {
-	@apply focus:outline-none focus:border-b focus:border-bldrsCoveMidBlue;
+	@apply focus:outline-none focus:border-b focus:border-edlTealLight;
 }
 
 @media (max-width: 640px) {

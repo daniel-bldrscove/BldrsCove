@@ -1,4 +1,4 @@
-import type { DevProjectTypes } from '../../@types/ComponentTypes';
+import type { DevProjectTypes } from '../../types/ComponentTypes';
 
 import bbsFeatImgLg from '../images/bbs-feat-image-1276px.jpg';
 import bbsFeatImgMd from '../images/bbs-feat-image-768px.jpg';

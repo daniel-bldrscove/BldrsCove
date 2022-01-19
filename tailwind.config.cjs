@@ -20,18 +20,22 @@ module.exports = {
 					light: '#333742',
 					dark: '#EDF0F6'
 				},
-				bldrsCoveDeepBlue: '#090d1a',
-				bldrsCoveCoolSlate: '#141928',
-				bldrsCoveCoolGray: '#252936',
-				bldrsCoveBrightBlue: '#38aaff',
-				bldrsCoveMidBlue: '#2f75d6',
-				bldrsCovePureBlue: '#093bc7',
-				bldrsCoveLtBabyBlue: '#d3edff',
-				bldrsCoveLtGray: '#cccccc',
-				bldrsCovePaleStone: '#e0eaf0'
+				edlDeepBlue: '#0b0d14',
+				edlCoolSlate: '#191d26',
+				edlCoolGray: '#2a2e3a',
+				edlBrightBlue: '#38aaff',
+				edlMidBlue: '#2f75d6',
+				edlLtBabyBlue: '#d3edff',
+				edlLtGray: '#cccccc',
+				edlPaleStone: '#e0eaf0',
+				edlOrange: '#ff5e38',
+				edlYellow: '#feb91b',
+				edlTealLight: '#0dc3b3',
+				edlTealDark: '#12797e',
 			},
 			fontSize: {
-				'4xl-a': '2.375rem'
+				'4xl-a': '2.375rem',
+				'4xl-b': '3.675rem'
 			},
 			gridTemplateColumns: {
 				// Simple 16 column grid

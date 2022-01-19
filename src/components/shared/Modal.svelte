@@ -1,3 +1,9 @@
+<style>
+	.visible {
+		visibility: visible;
+	}
+</style>
+
 <script context="module" lang="ts">
 	let onTop; //keeping track of which open modal is on top
 	const modals = {}; //all modals get registered here for easy future access
@@ -63,44 +69,33 @@
 
 <div
 	id="topModal"
-	class={`invisible z-[9999] fixed top-0 bottom-0 right-0 left-0 bg-[#eaf6ffe6] dark:bg-[#090d1ae6] flex justify-center items-center ${
+	class="{`invisible z-[9999] fixed top-0 bottom-0 right-0 left-0 bg-[#eaf6ffe6] dark:bg-[#090d1ae6] flex justify-center items-center ${
 		visible ? `visible !important` : ``
-	}`}
-	bind:this={topDiv}
-	on:click={() => close()}
->
+	}`}"
+	bind:this="{topDiv}"
+	on:click="{() => close()}">
 	<div
 		id="modal"
-		on:click|stopPropagation={() => {}}
-		class="relative w-11/12 sm:w-8/12 md:w-7/12 lg:w-[35rem] rounded-lg bg-white dark:bg-bldrsCoveDeepBlue border-2 border-bldrsCoveMidBlue shadow-2xl p-8"
-	>
+		on:click|stopPropagation="{() => {}}"
+		class="relative w-11/12 sm:w-8/12 md:w-7/12 lg:w-[35rem] rounded-lg bg-white dark:bg-edlDeepBlue border-2 border-edlMidBlue dark:border-edlBrightBlue shadow-2xl p-8">
 		<button
-			on:click={() => close()}
-			class="absolute -top-4 -right-4 cursor-pointer bg-white dark:bg-bldrsCoveDeepBlue border-2 border-bldrsCoveMidBlue rounded-full transition duration-100 ease-in-out transform hover:scale-125 flex justify-center items-center"
-		>
+			on:click="{() => close()}"
+			class="absolute -top-4 -right-4 cursor-pointer bg-white dark:bg-edlDeepBlue border-2 border-edlMidBlue dark:border-edlBrightBlue  rounded-full transition duration-100 ease-in-out transform hover:scale-125 flex justify-center items-center">
 			<Icon
-				strokeColor={$colors.midBlue}
+				strokeColor="{$themeMode === 'dark' ? $colors.brightBlue : $colors.midBlue}"
 				fillColor="transparent"
 				width="32"
 				height="32"
 				viewBox="0 0 24 24"
 				name="close-icon"
-				svgClass="block p-[5px]"
-			>
+				svgClass="block p-[5px]">
 				<CloseIcon />
 			</Icon>
 		</button>
 		<div
 			id="modal-content"
-			class="max-h-[460px] overflow-y-scroll sm:max-h-auto sm:overflow-y-auto"
-		>
+			class="max-h-[460px] overflow-y-scroll sm:max-h-auto sm:overflow-y-auto">
 			<slot />
 		</div>
 	</div>
 </div>
-
-<style>
-	.visible {
-		visibility: visible;
-	}
-</style>

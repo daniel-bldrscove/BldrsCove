@@ -1,6 +1,8 @@
+<style>
+</style>
+
 <div
-	class="w-full flex flex-wrap justify-center content-center items-center h-32 pt-2 bg-[#b9cdd7] dark:bg-bldrsCoveDeepBlue"
->
+	class="w-full flex flex-wrap justify-center content-center items-center h-32 pt-2 bg-[#b9cdd7] dark:bg-edlDeepBlue">
 	<div class="mb-2 w-full flex justify-center items-center">
 		<p class="text-xl">EDL</p>
 	</div>
@@ -15,6 +17,3 @@
 		</a>
 	</span>
 </div>
-
-<style>
-</style>

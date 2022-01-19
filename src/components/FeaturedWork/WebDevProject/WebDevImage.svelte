@@ -1,12 +1,12 @@
 <script lang="ts">
-	import type { DevProjectTypes } from '../../../@types/ComponentTypes';
+	import type { DevProjectTypes } from '../../../../types/ComponentTypes';
 	export let coverImage: DevProjectTypes['coverImage'];
 	export const { lg, md, sm } = coverImage;
 	export let coverImageAlt: DevProjectTypes['coverImageAlt'];
 </script>
 
 <div
-	class="shadow-2xl rounded-lg lg:shadow-none lg:rounded-l-lg lg:rounded-r-none bg-bldrsCovePaleStone dark:bg-bldrsCoveCoolSlate">
+	class="shadow-2xl rounded-lg lg:shadow-none lg:rounded-l-lg lg:rounded-r-none bg-edlPaleStone dark:bg-edlCoolSlate">
 	{#if typeof sm === 'string'}
 		<img
 			src="{sm}"
