@@ -5,10 +5,10 @@
 
 @layer base {
 	h1 {
-		@apply font-filsonPro text-3xl font-bold antialiased;
+		@apply font-filsonPro text-2xl sm:text-3xl font-bold antialiased;
 	}
 	h2 {
-		@apply font-niveauGrotesk text-4xl-b leading-[3.5rem] font-medium antialiased;
+		@apply font-niveauGrotesk text-4xl-a leading-[2.5rem] xs:text-[2.8rem] xs:leading-[3rem] sm:text-4xl-b sm:leading-[3.5rem] font-normal antialiased;
 	}
 	h3 {
 		@apply font-filsonPro text-2xl font-bold antialiased;
@@ -23,7 +23,10 @@
 		@apply font-niveauGrotesk text-base font-normal antialiased;
 	}
 	p {
-		@apply font-niveauGrotesk text-base font-normal antialiased;
+		@apply font-niveauGrotesk text-base font-normal antialiased text-edlDeepBlue dark:text-ashenMidContrast-dark;
+	}
+	.hero-title {
+		@apply font-niveauGrotesk text-4xl-a leading-[2.5rem] xs:text-[2.8rem] xs:leading-[3rem] sm:text-4xl-b sm:leading-[3.5rem] font-medium antialiased;
 	}
 	.sm-title {
 		@apply font-niveauGrotesk text-sm font-normal uppercase tracking-wide antialiased;
@@ -90,22 +93,22 @@ body.modal-open {
 }
 
 input {
-	@apply w-full block h-8 align-bottom border-b border-ashenLowContrast-light rounded-none dark:border-b pt-3 font-niveauGrotesk bg-transparent dark:text-ashenMidContrast-dark dark:border-ashenLowContrast-dark;
+	@apply w-full block h-8 align-bottom border-b border-ashenLowContrast-light rounded-none dark:border-b pt-3 font-niveauGrotesk text-xl font-normal bg-transparent dark:text-ashenHighContrast-dark dark:border-ashenLowContrast-dark;
 }
 
 input:focus {
-	@apply focus:outline-none focus:border-b focus:border-edlTealLight;
+	@apply focus:outline-none focus:border-b focus:border-edlBrightBlue;
 }
 
 @media (max-width: 640px) {
 	textarea,
 	input {
-		font-size: 00.85rem;
+		font-size: 1rem;
 	}
 
 	textarea::placeholder,
 	input::placeholder {
-		font-size: 0.85rem;
+		font-size: 1rem;
 	}
 }
 
@@ -114,6 +117,7 @@ label {
 }
 
 textarea {
+	font-size: 1.25rem;
 	background-image: linear-gradient(to right, transparent 10px, transparent 10px),
 		linear-gradient(to left, transparent 10px, transparent 10px),
 		repeating-linear-gradient(
@@ -144,13 +148,20 @@ textarea:focus {
 		repeating-linear-gradient(
 			transparent 0rem,
 			transparent 1.6rem,
-			#2f75d6 1.6rem,
+			#38aaff 1.6rem,
 			transparent 1.7rem,
 			transparent 2rem /*This needs to match the lineheight*/
 		);
 }
 
-/* GLOBAL TABLE STYLES*/
+table {
+	@apply w-full content-center items-center
+}
+
+.callout-table {
+	@apply border-separate rounded-md overflow-hidden mt-2;
+}
+
 table tr:first-child td:first-child {
 	@apply rounded-tl-lg;
 }
@@ -163,4 +174,3 @@ table tr:last-child td:first-child {
 table tr:last-child td:last-child {
 	@apply rounded-br-lg;
 }
-/*--END TABLES*/

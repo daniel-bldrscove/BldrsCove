@@ -1,19 +1,12 @@
-<style lang="postcss">
-	.about-table {
-		@apply content-center items-center border-separate rounded-md overflow-hidden mt-2;
-	}
-	.about-table td {
-		@apply p-1 bg-[#dbe3ef] dark:bg-[#1a2032];
-	}
-</style>
-
 <script>
 	import { onMount } from 'svelte';
+	import { themeMode, colors } from '../stores';
+
 	import LayoutWrapper from './shared/LayoutWrapper.svelte';
 	import LayoutContainLg from './shared/LayoutContainLg.svelte';
 	import Icon from './shared/Icon.svelte';
 	import DownloadDocIcon from '$lib/icons/DownloadDocIcon.svelte';
-	import { themeMode, colors } from '../stores';
+	import TableCallout from './shared/TableCallout/index.svelte';
 
 	import bioImageSm from '../images/dl-bio-photo-128px.jpg';
 	import bioImageMd from '../images/dl-bio-photo-256px.jpg';
@@ -28,12 +21,39 @@
 		bioMd = bioImageMd;
 		bioLg = bioImageLg;
 	});
+
+	export const frameworksTblData = [
+		{
+			tech1: 'HTML & CSS',
+			tech2: 'Javascript',
+			tech3: 'React',
+			tech4: 'Gatsby',
+		},
+		{
+			tech1: 'Tailwindcss',
+			tech2: 'Emotion',
+			tech3: 'Styled Comp.',
+			tech4: 'Sanity.io',
+		},
+		{
+			tech2: 'Node Js',
+			tech1: 'Vercel/Netlify',
+		},
+	];
+
+	export const clTblData = [
+		{
+			tech1: 'Next Js',
+			tech2: 'Svelte',
+			tech3: 'Remix Run',
+		},
+	];
 </script>
 
 <!-- svelte-ignore a11y-missing-content -->
 <a id="about" class="anchor-tag"></a>
 <div
-	class="w-full bg-edlPaleStone dark:bg-edlCoolSlate flex justify-center items-center pt-16 pb-16 sm:pt-32 sm:pb-32">
+	class="w-full dark:bg-edlCoolGray flex justify-center items-center pt-16 pb-16 sm:pt-32 sm:pb-32">
 	<LayoutWrapper>
 		<LayoutContainLg>
 			<div>
@@ -55,12 +75,8 @@
 						{/if}
 					</div>
 					<div class="sm:inline-block ml-0 sm:ml-6">
-						<h2 class="text-edlDeepBlue dark:text-edlLtGray">About me</h2>
-						<h3 class="mt-2 text-edlOrange">From designer to developer. ⚒️</h3>
-						<p
-							class="mt-5 sm:mt-3 sm-subhead text-base leading-6 text-ashenHighContrast-light dark:text-ashenMidContrast-dark">
-							BldrsCove is my place on the web where I share projects and writing. (coming soon).
-						</p>
+						<h2 class="text-edlDeepBlue dark:text-white">About me ⚒️</h2>
+						<h3 class="mt-2 text-edlOrange">From design to development</h3>
 					</div>
 				</div>
 				<div
@@ -70,7 +86,7 @@
 							Specialization
 						</h4>
 						<p>
-							Most recently I’ve channeled my web design and graphic design experience into web
+							Most recently I&apos;ve channeled my web design and graphic design experience into web
 							programming as a front-end developer. Leveraging the latest technologies, I'm able to
 							combine my visual skills with best practices to develop user-friendly and functional
 							interfaces.
@@ -81,10 +97,10 @@
 							Experience
 						</h4>
 						<p>
-							I’ve had the privilege of working at design agencies, a well established tech company,
-							and also smaller businesses that focus in niche markets. Most of my freelance consists
-							of web app (or website), UI/UX, and branding services allowing me to connect with
-							different clients throughout the states. My certification through the UCF Coding
+							I&apos;ve had the privilege of working at design agencies, a well established tech
+							company, and also smaller businesses that focus in niche markets. Most of my freelance
+							consists of web app (or website), UI/UX, and branding services allowing me to connect
+							with different clients throughout the states. My certification through the UCF Coding
 							Bootcamp has given me a solid MERN stack foundation, and I continue develop my
 							knowledge through online workshops, community resources and tech events.
 						</p>
@@ -94,99 +110,26 @@
 							Technologies
 						</h4>
 						<p>
-							Some of the technologies I’m most excited about right now are Gatsby, React Query, and
-							Tailwind CSS. I also do my best to keep up with emerging technologies. On my radar to
-							learn are Next Js, SvelteKit, and the newly released Remix Run.
+							Some libraries and frameworks I&apos;m most excited about right now are React, Gatsby,
+							Chakra UI, React Query and Tailwind CSS. Other frameworks I&apos;d like to pick up are
+							Next Js, SvelteKit, and Remix Run.
 						</p>
-						<p
-							class="font-niveauGrotesk font-medium text-sm mt-4 -ml-1 slide-left-right dark:text-ashenMidContrast-dark dark:hover:text-edlBrightBlue">
+						<p class="font-niveauGrotesk font-medium text-sm mt-4 dark:text-ashenHighContrast-dark">
 							Frameworks, Libraries, and Languages:
 						</p>
-						<table class="table-auto about-table w-full">
-							<tbody>
-								<tr>
-									<td
-										><p
-											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark">
-											HTML & CSS
-										</p></td>
-									<td
-										><p
-											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark">
-											Javascript
-										</p></td>
-									<td
-										><p
-											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark">
-											React
-										</p></td>
-									<td
-										><p
-											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark">
-											Gatsby
-										</p></td>
-								</tr>
-								<tr>
-									<td
-										><p
-											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark">
-											Tailwind
-										</p></td>
-									<td
-										><p
-											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark">
-											Emotion
-										</p></td>
-									<td
-										><p
-											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark">
-											Styled Components
-										</p></td>
-									<td
-										><p
-											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark">
-											Sanity
-										</p></td>
-								</tr>
-								<tr>
-									<td
-										><p
-											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark">
-											Node JS
-										</p></td>
-									<td
-										><p
-											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark">
-											Vercel/Netlify
-										</p></td>
-								</tr>
-							</tbody>
-						</table>
-						<p
-							class="font-niveauGrotesk font-medium text-sm mt-4 -ml-1 slide-left-right dark:text-ashenMidContrast-dark dark:hover:text-edlBrightBlue">
+						<TableCallout
+							tblClass="callout-table"
+							tblTdClass="bg-[#f0f6ff] dark:bg-[#252832]"
+							tableData="{frameworksTblData}"
+							showCols="{false}" />
+						<p class="font-niveauGrotesk font-medium text-sm mt-4 dark:text-ashenHighContrast-dark">
 							Currently learning:
 						</p>
-						<table class="table-auto about-table w-full">
-							<tbody>
-								<tr>
-									<td
-										><p
-											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark">
-											Next Js
-										</p></td>
-									<td
-										><p
-											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark">
-											Svelte Js
-										</p></td>
-									<td
-										><p
-											class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark">
-											Remix Run
-										</p></td>
-								</tr>
-							</tbody>
-						</table>
+						<TableCallout
+							tblClass="callout-table"
+							tblTdClass="bg-[#f0f6ff] dark:bg-[#252832]"
+							tableData="{clTblData}"
+							showCols="{false}" />
 						<span class="block mt-12">
 							<a
 								href="/daniel-lopez-bldrscove-resumé.pdf"

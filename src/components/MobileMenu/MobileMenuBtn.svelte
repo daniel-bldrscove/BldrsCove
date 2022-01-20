@@ -9,7 +9,7 @@
 </script>
 
 <button
-	class="menu-icon sm:hidden absolute left-0 rounded-md"
+	class="menu-icon sm:hidden rounded-md"
 	type="button"
 	on:click|preventDefault="{() => {
 		isMobileMenuOpen.update((val) => (val = !val));

@@ -41,14 +41,12 @@
 </script>
 
 <!-- svelte-ignore a11y-missing-content -->
-<a id="web-dev" class="anchor-tag"></a>
-<div class="pt-16 pb-16 sm:pt-32 sm:pb-32 dark:bg-edlCoolGray">
+<a id="web-design" class="anchor-tag"></a>
+<div class="pt-16 pb-20 sm:pt-32 sm:pb-32 bg-edlPaleStone dark:bg-edlCoolSlate">
 	<div class="project-container h-auto">
-		<!-- svelte-ignore a11y-missing-content -->
-		<a id="web-design" class="anchor-tag"></a>
 		<LayoutWrapper>
 			<LayoutContainLg>
-				<h2 class="mx-auto mb-2 dark:text-edlLtGray">Other work</h2>
+				<h2 class="mx-auto mb-2 dark:text-white">Other work</h2>
 				<h3 class="mb-8 text-edlOrange">Web Design</h3>
 				<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 					{#each webDesignProjects as webDesignProject, i}

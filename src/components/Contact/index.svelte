@@ -138,13 +138,12 @@
 					<h2 class="mb-5 sm:mb-16 text-4xl sm:text-current text-edlDeepBlue dark:text-edlLtGray">
 						Drop me a line ✍🏼
 					</h2>
-					<h4
-						class="w-8/12 sm:w-11/12 mx-auto mb-6 sm:mb-4 text-edlOrange dark:text-ashenHighContrast-dark">
+					<h4 class="w-8/12 sm:w-11/12 mx-auto mb-6 sm:mb-4 text-edlOrange dark:text-edlOrange">
 						Thanks for checking out my website
 					</h4>
 					<p
-						class="w-full mx-auto text-ashenMidContrast-light dark:text-ashenMidContrast-dark md:w-7/12 2xl:w-5/12">
-						If you have a question or would like to inquire about a project, shoot me an email. I do
+						class="max-w-[28rem] lg:max-w-none lg:w-[32rem] mx-auto text-ashenMidContrast-light dark:text-ashenMidContrast-dark">
+						If you have a question or would like to inquire about a project, send me an email. I do
 						my best to respond within 24hrs.
 					</p>
 					<div class="w-full form-wrapper mt-20 mx-auto">
@@ -173,7 +172,7 @@
 									bind:value="{message}"
 									class="{`${
 										$themeMode === 'dark' && 'dark'
-									} w-full leading-8 resize-none bg-local font-niveauGrotesk align-text-bottom bg-transparent dark:text-ashenMidContrast-dark`}"
+									} w-full leading-8 resize-none bg-local font-niveauGrotesk align-text-bottom bg-transparent dark:text-ashenHighContrast-dark`}"
 									name="message"
 									type="text"
 									placeholder="Enter message"
@@ -202,7 +201,7 @@
 							</div>
 							<div class="col-span-2 mt-4 group">
 								<button
-									class="g-recaptcha bg-edlMidBlue h-14 w-full drop-shadow-xl rounded-2xl group-hover:bg-edlTealLight transition duration-300 ease-in-out group-hover:scale-105 dark:group-hover:text-white disabled:bg-ashenLowContrast-light disabled:opacity-60 group-hover:disabled:scale-100 group-hover:disabled:bg-ashenLowContrast-light group-hover:disabled:cursor-default"
+									class="g-recaptcha bg-edlMidBlue h-14 w-full drop-shadow-xl rounded-2xl group-hover:bg-edlOrange transition duration-300 ease-in-out group-hover:scale-105 dark:group-hover:text-white disabled:bg-ashenLowContrast-light disabled:opacity-60 group-hover:disabled:scale-100 group-hover:disabled:bg-ashenLowContrast-light group-hover:disabled:cursor-default"
 									data-sitekey="{variables.recaptchaSiteKey}"
 									data-callback="handleSubmit"
 									data-action="submit"

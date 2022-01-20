@@ -15,8 +15,7 @@
 
 	// post CSS can't handle the different light and dark variants
 	// that's why it's being split up like this
-	export const dropdownItemDark =
-		'dark:text-ashenMidContrast-dark dark:hover:text-white dark:hover:bg-edlTealLight';
+	export const dropdownItemDark = 'dark:hover:bg-edlBrightBlue';
 </script>
 
 <div class="w-52 shadow-2xl pt-6 pb-6 bg-white dark:text-edlLtGray dark:bg-edlCoolGray rounded-xl">
@@ -28,7 +27,7 @@
 		</a>
 	</div>
 	<div class="group">
-		<a href="{hrefItemA}" rel="external" sveltekit:prefetch class="w-full text-left">
+		<a href="{hrefItemB}" rel="external" sveltekit:prefetch class="w-full text-left">
 			<div class="{`dropdown-item-light ${dropdownItemDark}`}">
 				<slot name="dropdown-item-B" />
 			</div>

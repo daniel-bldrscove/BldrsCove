@@ -45,7 +45,7 @@ module.exports = {
 				'4xl-a': '2.875rem'
 			},
 			screens: {
-				xs: '475px',
+				xs: '30rem', //475px
 				ultraWide: '2000px'
 			},
 			dropShadow: {

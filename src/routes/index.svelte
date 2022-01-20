@@ -32,7 +32,7 @@
 <div in:fly="{{ y: -100, duration: 500 }}" out:fly="{{ y: -100, duration: 500 }}" class="bg-white">
 	<section><HomeTopSection /></section>
 	<section><FeaturedWork /></section>
-	<section><About /></section>
 	<section><OtherWork /></section>
+	<section><About /></section>
 	<section><Contact /></section>
 </div>

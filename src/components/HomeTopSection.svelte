@@ -21,16 +21,16 @@
 						<h1
 							class="mb-6 text-edlOrange dark:text-edlOrange"
 							transition:fade="{{ delay: 100, duration: 100 }}">
-							Hi, I'm Daniel.
+							Hi, I'm Daniel
 						</h1>
-						<h2
-							class="text-edlDeepBlue dark:text-white md:w-10/12 xl:w-9/12 2xl:w-5/12"
+						<p
+							class="hero-title text-edlDeepBlue dark:text-white md:w-10/12 xl:w-9/12 2xl:w-5/12"
 							transition:fade="{{ delay: 100, duration: 1200 }}">
 							I build modern user interfaces through front end web development
-						</h2>
+						</p>
 					</div>
-					<div class="mt-20 flex flex-wrap">
-						<span class="cta-link" transition:fade="{{ delay: 200, duration: 300 }}">
+					<div class="mt-10 sm:mt-20 flex flex-wrap xs:flex-nowrap">
+						<span class="cta-link xs:w-40" transition:fade="{{ delay: 200, duration: 300 }}">
 							<a href="#web-dev" rel="external">
 								<Icon
 									strokeColor="{$themeMode === 'dark' ? $colors.brightBlue : $colors.midBlue}"
@@ -48,7 +48,7 @@
 							</a>
 						</span>
 						<span
-							class="w-full mt-6 sm:w-auto sm:mt-0 sm:ml-14 cta-link"
+							class="w-full mt-6 xs:mt-0 xs:w-40 sm:w-auto sm:mt-0 sm:ml-14 cta-link"
 							transition:fade="{{ delay: 300, duration: 600 }}">
 							<a href="#about" rel="external">
 								<Icon

@@ -9,7 +9,7 @@ export type DevProjectTypes = {
 	coverImageAlt: string;
 	description: string;
 	excerpt: string;
-	techStack: string[];
+	techStack: string[] | Record<string, unknown>[];
 	gitHubLink: string;
 	projectLink: string;
 }
