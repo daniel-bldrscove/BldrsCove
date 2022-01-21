@@ -1,3 +1,15 @@
+<style>
+	/* .line-break:before {
+		white-space: pre-wrap;
+		content: '\A';
+	} */
+	br {
+		display: block;
+		margin: 12px 0;
+		content: '';
+	}
+</style>
+
 <script lang="ts">
 	import type { BlockProps } from '@portabletext/svelte';
 
@@ -15,15 +27,3 @@
 {:else}
 	<slot />
 {/if}
-
-<style>
-	/* .line-break:before {
-		white-space: pre-wrap;
-		content: '\A';
-	} */
-	br {
-		display: block;
-		margin: 12px 0;
-		content: '';
-	}
-</style>

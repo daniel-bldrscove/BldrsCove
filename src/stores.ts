@@ -14,4 +14,4 @@ export const colors = readable({
 	edlTealLight: '#0dc3b3',
 });
 
-export const isMobileMenuOpen = writable(false)
+export const isMobileMenuOpen = writable(false);

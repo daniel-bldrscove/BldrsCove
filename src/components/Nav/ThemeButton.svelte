@@ -28,7 +28,8 @@
 					on:click="{() => handleTheme('light')}"
 					on:mouseenter="{() => (prevThemeIcon = true)}"
 					on:mouseleave="{() => (prevThemeIcon = false)}"
-					class="w-10 h-10 nav-item hover:bg-gray-200 flex justify-center items-center rounded-md dark:hover:bg-edlCoolGray">
+					class="w-10 h-10 nav-item hover:bg-gray-200 flex justify-center items-center rounded-md dark:hover:bg-edlCoolGray"
+				>
 					{#if prevThemeIcon}
 						<div class="absolute" in:fly="{{ y: -20 }}">
 							<Icon
@@ -36,7 +37,8 @@
 								fillColor="transparent"
 								width="32"
 								height="32"
-								name="sun-icon">
+								name="sun-icon"
+							>
 								<SunIcon />
 							</Icon>
 						</div>
@@ -47,7 +49,8 @@
 								fillColor="transparent"
 								width="32"
 								height="32"
-								name="moon-icon">
+								name="moon-icon"
+							>
 								<MoonIcon />
 							</Icon>
 						</div>
@@ -58,7 +61,8 @@
 					on:click="{() => handleTheme('dark')}"
 					on:mouseenter="{() => (prevThemeIcon = true)}"
 					on:mouseleave="{() => (prevThemeIcon = false)}"
-					class="w-10 h-10 nav-item hover:bg-gray-200 flex justify-center items-center rounded-md">
+					class="w-10 h-10 nav-item hover:bg-gray-200 flex justify-center items-center rounded-md"
+				>
 					{#if prevThemeIcon}
 						<div class="absolute" in:fly="{{ y: -20 }}">
 							<Icon
@@ -66,7 +70,8 @@
 								fillColor="transparent"
 								width="32"
 								height="32"
-								name="moon-icon"><MoonIcon /></Icon>
+								name="moon-icon"><MoonIcon /></Icon
+							>
 						</div>
 					{:else}
 						<div in:fly="{{ y: -20 }}">
@@ -75,7 +80,8 @@
 								fillColor="transparent"
 								width="32"
 								height="32"
-								name="sun-icon">
+								name="sun-icon"
+							>
 								<SunIcon />
 							</Icon>
 						</div>

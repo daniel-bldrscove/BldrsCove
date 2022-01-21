@@ -79,7 +79,8 @@
 <div
 	class="bg-white dark:bg-edlCoolSlate h-full"
 	in:fade="{{ duration: 100 }}"
-	out:fade="{{ duration: 100 }}">
+	out:fade="{{ duration: 100 }}"
+>
 	{#if coverImage}
 		<img
 			src="{urlFor(coverImage).format('webp').url()}"
@@ -94,18 +95,21 @@
 			width="100%"
 			height="100%"
 			alt="{altText}"
-			class="w-full h-96 md:h-106 2xl:w-10/12 2xl:mx-auto 2xl:rounded-lg object-cover object-center" />
+			class="w-full h-96 md:h-106 2xl:w-10/12 2xl:mx-auto 2xl:rounded-lg object-cover object-center"
+		/>
 	{/if}
 	<LayoutWrapper>
 		<div class="pt-8 pb-8">
 			<div class="mt-8 mb-8">
 				<h1
-					class="mb-4 text-3xl lg:w-10/12 xl:w-8/12 lg:mx-auto text-edlCoolGray dark:text-edlLtGray">
+					class="mb-4 text-3xl lg:w-10/12 xl:w-8/12 lg:mx-auto text-edlCoolGray dark:text-edlLtGray"
+				>
 					{title && title}
 				</h1>
 				<!--Description-->
 				<div
-					class="mb-16 lg:w-10/12 xl:w-8/12 lg:mx-auto text-ashenMidContrast-light dark:text-ashenMidContrast-dark">
+					class="mb-16 lg:w-10/12 xl:w-8/12 lg:mx-auto text-ashenMidContrast-light dark:text-ashenMidContrast-dark"
+				>
 					<PortableText
 						blocks="{description}"
 						serializers="{{
@@ -119,7 +123,8 @@
 								caption: StyleProps,
 								breakBefore: StyleProps,
 							},
-						}}" />
+						}}"
+					/>
 				</div>
 			</div>
 			<!--Images-->
@@ -129,7 +134,8 @@
 					types: {
 						image: ImageSerializer,
 					},
-				}}" />
+				}}"
+			/>
 			<!--Project Link-->
 			<span class="block mt-8 text-ashenMidContrast-light dark:text-ashenMidContrast-dark">
 				<!--Disclaimer-->
@@ -142,7 +148,8 @@
 						class="text-xs font-bold slide-left-right text-ashenMidContrast-light dark:text-ashenMidContrast-dark dark:hover:text-edlTealLight"
 						href="{projectLink && `${projectLink}`}"
 						target="_blank"
-						rel="noopener noreferrer">{`www.${shortSlug}.com`}</a>
+						rel="noopener noreferrer">{`www.${shortSlug}.com`}</a
+					>
 				</p>
 			</span>
 		</div>

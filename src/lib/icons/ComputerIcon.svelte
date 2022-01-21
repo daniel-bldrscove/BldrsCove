@@ -2,17 +2,11 @@
 	d="M4.5625 21.875V4.8125C4.5625 4.11631 4.83906 3.44863 5.33134 2.95634C5.82363 2.46406 6.49131 2.1875 7.1875 2.1875H30.8125C31.5087 2.1875 32.1764 2.46406 32.6687 2.95634C33.1609 3.44863 33.4375 4.11631 33.4375 4.8125V21.875"
 	stroke-width="2.625"
 	stroke-linecap="round"
-	stroke-linejoin="round"
-/>
+	stroke-linejoin="round"></path>
 <path
 	d="M1.9375 21.875H36.0625V24.5C36.0625 25.1962 35.7859 25.8639 35.2937 26.3562C34.8014 26.8484 34.1337 27.125 33.4375 27.125H4.5625C3.86631 27.125 3.19863 26.8484 2.70634 26.3562C2.21406 25.8639 1.9375 25.1962 1.9375 24.5V21.875Z"
 	stroke-width="2.625"
 	stroke-linecap="round"
-	stroke-linejoin="round"
-/>
-<path
-	d="M21.625 7.4375H16.375"
-	stroke-width="2.625"
-	stroke-linecap="round"
-	stroke-linejoin="round"
-/>
+	stroke-linejoin="round"></path>
+<path d="M21.625 7.4375H16.375" stroke-width="2.625" stroke-linecap="round" stroke-linejoin="round"
+></path>

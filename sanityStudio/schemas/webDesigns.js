@@ -10,7 +10,7 @@ export default {
 			name: 'coverImage',
 			type: 'image',
 			options: {
-				hotspot: true
+				hotspot: true,
 			},
 			fields: [
 				{
@@ -18,15 +18,15 @@ export default {
 					name: 'alt',
 					type: 'string',
 					options: {
-						isHighlighted: true // <-- make this field easily accessible
-					}
-				}
-			]
+						isHighlighted: true, // <-- make this field easily accessible
+					},
+				},
+			],
 		},
 		{
 			title: 'Title',
 			name: 'title',
-			type: 'string'
+			type: 'string',
 		},
 		{
 			title: 'Description',
@@ -37,8 +37,8 @@ export default {
 					type: 'block',
 					styles: [
 						{ title: 'Caption', value: 'caption' },
-						{ title: 'Break Before', value: 'breakBefore' }
-					]
+						{ title: 'Break Before', value: 'breakBefore' },
+					],
 				},
 				{
 					type: 'image',
@@ -50,22 +50,22 @@ export default {
 							description: `Some visitors may not see images for a variety of reasons. 
                     Alternative text is today's standard for helping those who are visually impaired.`,
 							options: {
-								isHighlighted: true
-							}
-						}
-					]
-				}
-			]
+								isHighlighted: true,
+							},
+						},
+					],
+				},
+			],
 		},
 		{
 			title: 'Disclaimer',
 			name: 'disclaimer',
-			type: 'string'
+			type: 'string',
 		},
 		{
 			title: 'Project link',
 			name: 'projectLink',
-			type: 'string'
+			type: 'string',
 		},
 		{
 			title: 'Slug',
@@ -74,13 +74,13 @@ export default {
 			options: {
 				source: 'title',
 				maxLength: 200, // will be ignored if slugify is set
-				slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200)
-			}
+				slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
+			},
 		},
 		{
 			title: 'Project order',
 			name: 'projectOrder',
-			type: 'string'
+			type: 'string',
 		},
 		{
 			title: 'Project Images',
@@ -97,12 +97,12 @@ export default {
 							description: `Some visitors may not see images for a variety of reasons. 
                     Alternative text is today's standard for helping those who are visually impaired.`,
 							options: {
-								isHighlighted: true
-							}
-						}
-					]
-				}
-			]
-		}
-	]
+								isHighlighted: true,
+							},
+						},
+					],
+				},
+			],
+		},
+	],
 };

@@ -1,11 +1,7 @@
-<style></style>
-
 <script lang="ts">
-	import Icon from '../shared/Icon.svelte';
-	import MenuIcon from '$lib/icons/MenuIcon.svelte';
 	import { themeMode, colors, isMobileMenuOpen } from '../../stores';
-
-	// export let handleMobileMenu: any;
+	import MenuIcon from '$lib/icons/MenuIcon.svelte';
+	import Icon from '../shared/Icon.svelte';
 </script>
 
 <button
@@ -13,15 +9,17 @@
 	type="button"
 	on:click|preventDefault="{() => {
 		isMobileMenuOpen.update((val) => (val = !val));
-	}}">
+	}}"
+>
 	<Icon
 		strokeColor="{$themeMode === 'dark' ? $colors.brightBlue : $colors.midBlue}"
 		fillColor="transparent"
-		width="32"
-		height="32"
+		width="{32}"
+		height="{32}"
 		viewBox="0 0 256 256"
 		name="mobile-menu-icon"
-		svgClass="">
+		svgClass=""
+	>
 		<MenuIcon />
 	</Icon>
 </button>

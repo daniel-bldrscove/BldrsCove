@@ -13,9 +13,8 @@
 			}
 		}
 	],
-	"svelteSortOrder" : "options-styles-scripts-markup",
-  "svelteStrictMode": true,
-  "svelteBracketNewLine": false,
-  "svelteAllowShorthand": false,
-  "svelteIndentScriptAndStyle": true
+	"svelteSortOrder": "options-styles-scripts-markup",
+	"svelteStrictMode": true,
+	"svelteAllowShorthand": false,
+	"svelteIndentScriptAndStyle": true
 }

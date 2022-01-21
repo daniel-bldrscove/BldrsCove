@@ -23,13 +23,15 @@
 					height="32"
 					viewBox="0 0 256 256"
 					name="hand-wave-icon"
-					svgClass="hidden sm:inline-block mr-2">
+					svgClass="hidden sm:inline-block mr-2"
+				>
 					<HandWavingIcon />
 				</Icon>
 				<p
 					class="{`${
 						$themeMode === 'dark' ? 'text-edlBrightBlue' : 'text-edlMidBlue'
-					} inline-block text-sm sm:text-lg`}">
+					} inline-block text-sm sm:text-lg`}"
+				>
 					Thanks for your submission. Your message has been sent!
 				</p>
 			</span>
@@ -44,7 +46,8 @@
 					height="32"
 					viewBox="0 0 256 256"
 					name="hand-wave-icon"
-					svgClass="hidden sm:inline-block mr-2">
+					svgClass="hidden sm:inline-block mr-2"
+				>
 					<AlertIcon />
 				</Icon>
 				<p class="{`text-[#d73855] inline-block text-sm sm:text-lg`}">

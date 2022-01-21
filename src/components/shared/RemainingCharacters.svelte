@@ -9,7 +9,8 @@
 		remainingCharacters < 220
 			? `text-edlMidBlue dark:text-edlBrightBlue`
 			: `text-ashenLowContrast-light dark:text-ashenLowContrast-dark`
-	}`}">
+	}`}"
+>
 	{#if remainingCharacters <= -1}
 		<p class="sm-title text-edlOrange tracking-wider">Limit Reached!</p>
 	{:else}

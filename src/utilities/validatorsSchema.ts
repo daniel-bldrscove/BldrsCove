@@ -1,4 +1,5 @@
 import * as Yup from 'yup';
+
 const characterLimit = 220;
 
 const contactFormSchema = Yup.object({
@@ -6,7 +7,7 @@ const contactFormSchema = Yup.object({
 	email: Yup.string().email('Invalid email addresss').required('Required'),
 	message: Yup.string()
 		.max(characterLimit, `Must be ${characterLimit} characters or less`)
-		.required('Required')
+		.required('Required'),
 });
 
-export { contactFormSchema };
+export default contactFormSchema;

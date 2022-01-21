@@ -5,21 +5,18 @@
 	y2="128"
 	stroke-linecap="round"
 	stroke-linejoin="round"
-	stroke-width="16"
-/><line
+	stroke-width="16"></line><line
 	x1="40"
 	y1="64"
 	x2="216"
 	y2="64"
 	stroke-linecap="round"
 	stroke-linejoin="round"
-	stroke-width="16"
-/><line
+	stroke-width="16"></line><line
 	x1="40"
 	y1="192"
 	x2="216"
 	y2="192"
 	stroke-linecap="round"
 	stroke-linejoin="round"
-	stroke-width="16"
-/>
+	stroke-width="16"></line>

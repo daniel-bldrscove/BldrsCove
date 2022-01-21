@@ -10,5 +10,5 @@ import webDesigns from './webDesigns';
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
 	name: 'web-designs',
-	types: schemaTypes.concat([webDesigns])
+	types: schemaTypes.concat([webDesigns]),
 });

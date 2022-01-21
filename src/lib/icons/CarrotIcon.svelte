@@ -1,16 +1,16 @@
 <style>
-g {
-	position: relative;
-}
+	g {
+		position: relative;
+	}
 </style>
 
 <script lang="ts">
-export let width: string | number = 14;
-export let height: string | number = 14;
-export let name: string = '';
-export let fillColor: string = '';
-export let strokeColor: string = 'currentColor';
-export let svgClass: string = '';
+	export let width: string | number = 14;
+	export let height: string | number = 14;
+	export let name: string = '';
+	export let fillColor: string = '';
+	export let strokeColor: string = 'currentColor';
+	export let svgClass: string = '';
 </script>
 
 <svg
@@ -20,7 +20,8 @@ export let svgClass: string = '';
 	viewBox="0 0 22 22"
 	aria-labelledby="{name}"
 	role="presentation"
-	class="{svgClass}">
+	class="{svgClass}"
+>
 	<title id="{name}" lang="en">
 		{`${name}`}
 	</title>

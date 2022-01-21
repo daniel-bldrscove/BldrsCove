@@ -12,7 +12,8 @@
 				{#each Object.keys(tableData[0]) as columnHeading}
 					<th>
 						<p
-							class="text-sm font-bold uppercase text-ashenHighContrast-light dark:text-ashenMidContrast-dark">
+							class="text-sm font-bold uppercase text-ashenHighContrast-light dark:text-ashenMidContrast-dark"
+						>
 							{columnHeading}
 						</p>
 					</th>
@@ -27,7 +28,8 @@
 					<td class="{`p-1 ${tblTdClass}`}">
 						<p class="text-xs ml-2 text-ashenHighContrast-light dark:text-ashenMidContrast-dark">
 							{cell}
-						</p></td>
+						</p></td
+					>
 				{/each}
 			</tr>
 		{/each}

@@ -10,21 +10,15 @@
 
 <svg
 	xmlns="http://www.w3.org/2000/svg"
-	{width}
-	{height}
-	{viewBox}
-	aria-labelledby={name}
+	width="{width}"
+	height="{height}"
+	viewBox="{viewBox}"
+	aria-labelledby="{name}"
 	role="presentation"
-	class={svgClass}
+	class="{svgClass}"
 >
-	<title class={name} lang="en">{`${name}`}</title>
-	<g fill={fillColor} stroke={strokeColor}>
+	<title class="{name}" lang="en">{`${name}`}</title>
+	<g fill="{fillColor}" stroke="{strokeColor}">
 		<slot />
 	</g>
 </svg>
-
-<style>
-	g {
-		position: relative;
-	}
-</style>

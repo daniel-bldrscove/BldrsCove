@@ -12,4 +12,5 @@
 
 <button
 	class="{`${variant === 'primary' ? 'primary' : 'secondary'} ${className}`}"
-	disabled="{disabled}"><slot /></button>
+	disabled="{disabled}"><slot /></button
+>
