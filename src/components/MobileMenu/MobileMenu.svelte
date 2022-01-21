@@ -48,7 +48,7 @@
 						in:fly="{transitionConfig(0, 200, 0, -15)}"
 						out:fly="{transitionConfig(0, 350, 0, -15)}"
 						class="mobile-nav-buttons dark:bg-edlDeepBlue dark:focus:bg-edlCoolSlate"
-						on:click="{() => handleNavigate(`#home-top-section`)}"
+						on:click="{() => handleNavigate(`/#home-top-section`)}"
 					>
 						<h5 class="nav-item">Home</h5>
 					</button>
@@ -56,7 +56,7 @@
 						in:fly="{transitionConfig(25, 230, 0, -15)}"
 						out:fly="{transitionConfig(0, 300, 0, -15)}"
 						class="mobile-nav-buttons dark:bg-edlDeepBlue dark:focus:bg-edlCoolSlate"
-						on:click="{() => handleNavigate(`#web-dev`)}"
+						on:click="{() => handleNavigate(`/#web-dev`)}"
 					>
 						<h5 class="nav-item">Front-end Dev</h5>
 					</button>
@@ -64,7 +64,7 @@
 						in:fly="{transitionConfig(35, 260, 0, -15)}"
 						out:fly="{transitionConfig(0, 260, 0, -15)}"
 						class="mobile-nav-buttons dark:bg-edlDeepBlue dark:focus:bg-edlCoolSlate"
-						on:click="{() => handleNavigate(`#web-design`)}"
+						on:click="{() => handleNavigate(`/#web-design`)}"
 					>
 						<h5 class="nav-item">Web Design</h5>
 					</button>
@@ -72,7 +72,7 @@
 						in:fly="{transitionConfig(45, 300, 0, -15)}"
 						out:fly="{transitionConfig(0, 230, 0, -15)}"
 						class="mobile-nav-buttons dark:bg-edlDeepBlue dark:focus:bg-edlCoolSlate"
-						on:click="{() => handleNavigate(`#about`)}"
+						on:click="{() => handleNavigate(`/#about`)}"
 					>
 						<h5 class="nav-item">About</h5>
 					</button>
@@ -80,7 +80,7 @@
 						in:fly="{transitionConfig(55, 350, 0, -15)}"
 						out:fly="{transitionConfig(0, 200, 0, -15)}"
 						class="mobile-nav-buttons dark:bg-edlDeepBlue dark:focus:bg-edlCoolSlate"
-						on:click="{() => handleNavigate(`#contact`)}"
+						on:click="{() => handleNavigate(`/#contact`)}"
 					>
 						<h5 class="nav-item">Contact</h5>
 					</button>
