@@ -5,25 +5,29 @@
 </style>
 
 <script context="module" lang="ts">
-	let onTop; //keeping track of which open modal is on top
-	const modals = {}; //all modals get registered here for easy future access
-
-	// 	returns an object for the modal specified by `id`, which contains the API functions (`open` and `close` )
+	const modals = {};
+	// returns an object for the modal specified by `id`
+	// which contains the API functions (`open` and `close` )
 	export function getModal(id = '') {
 		return modals[id];
 	}
 </script>
 
 <script lang="ts">
+	import { scale } from 'svelte/transition';
+	import { backInOut } from 'svelte/easing';
+	import transitionConfig from '../../../utilities/transitions';
+
 	import { browser } from '$app/env';
 	import { onDestroy } from 'svelte';
-	import Icon from './Icon.svelte';
+	import Icon from '../Icon.svelte';
 	import CloseIcon from '$lib/icons/CloseIcon.svelte';
-	import { themeMode, colors } from '../../stores';
+	import { themeMode, colors } from '../../../stores';
 
+	let onTop: HTMLElement;
 	let topDiv: HTMLElement;
-	let visible = false;
 	let prevOnTop: HTMLElement;
+	let visible = false;
 	let closeCallback: any;
 
 	export let id = '';
@@ -33,8 +37,11 @@
 		if (ev.key == 'Escape' && onTop == topDiv) close(); //ESC
 	}
 
+	$: animModalTransition = false;
+
 	/**  API **/
 	function open(callback?: () => void) {
+		animModalTransition = true;
 		closeCallback = callback;
 		if (visible) return;
 		prevOnTop = onTop;
@@ -50,6 +57,7 @@
 	}
 
 	function close(retVal?: HTMLElement) {
+		animModalTransition = false;
 		if (!visible) return;
 		browser && window.removeEventListener('keydown', keyPress);
 		onTop = prevOnTop;
@@ -75,32 +83,38 @@
 	bind:this="{topDiv}"
 	on:click="{() => close()}"
 >
-	<div
-		id="modal"
-		on:click|stopPropagation="{() => {}}"
-		class="relative w-11/12 sm:w-8/12 md:w-7/12 lg:w-[35rem] rounded-lg bg-white dark:bg-edlDeepBlue border-2 border-edlMidBlue dark:border-edlBrightBlue shadow-2xl p-8"
-	>
-		<button
-			on:click="{() => close()}"
-			class="absolute -top-4 -right-4 cursor-pointer bg-white dark:bg-edlDeepBlue border-2 border-edlMidBlue dark:border-edlBrightBlue  rounded-full transition duration-100 ease-in-out transform hover:scale-125 flex justify-center items-center"
-		>
-			<Icon
-				strokeColor="{$themeMode === 'dark' ? $colors.brightBlue : $colors.midBlue}"
-				fillColor="transparent"
-				width="32"
-				height="32"
-				viewBox="0 0 24 24"
-				name="close-icon"
-				svgClass="block p-[5px]"
+	<div class="flex justify-center items-center">
+		{#if animModalTransition}
+			<div
+				id="modal"
+				in:scale="{transitionConfig(0, 600, 0, 0, backInOut)}"
+				out:scale="{transitionConfig(450, 450, 0, 0, backInOut)}"
+				on:click|stopPropagation="{() => {}}"
+				class="relative w-11/12 sm:w-8/12 md:w-7/12 lg:w-[35rem] rounded-lg bg-white dark:bg-edlDeepBlue border-2 border-edlMidBlue dark:border-edlBrightBlue shadow-2xl p-8"
 			>
-				<CloseIcon />
-			</Icon>
-		</button>
-		<div
-			id="modal-content"
-			class="max-h-[460px] overflow-y-scroll sm:max-h-auto sm:overflow-y-auto"
-		>
-			<slot />
-		</div>
+				<button
+					on:click="{() => close()}"
+					class="absolute -top-4 -right-4 cursor-pointer bg-white dark:bg-edlDeepBlue border-2 border-edlMidBlue dark:border-edlBrightBlue  rounded-full transition duration-100 ease-in-out transform hover:scale-125 flex justify-center items-center"
+				>
+					<Icon
+						strokeColor="{$themeMode === 'dark' ? $colors.brightBlue : $colors.midBlue}"
+						fillColor="transparent"
+						width="32"
+						height="32"
+						viewBox="0 0 24 24"
+						name="close-icon"
+						svgClass="block p-[5px]"
+					>
+						<CloseIcon />
+					</Icon>
+				</button>
+				<div
+					id="modal-content"
+					class="max-h-[460px] overflow-y-scroll sm:max-h-auto sm:overflow-y-auto"
+				>
+					<slot />
+				</div>
+			</div>
+		{/if}
 	</div>
 </div>
