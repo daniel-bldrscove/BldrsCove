@@ -34,7 +34,6 @@ const webDevProjects: DevProjectTypes[] = [
 			},
 			{
 				tech1: 'Google Maps',
-				tech2: 'Formik',
 			},
 		],
 		gitHubLink: 'https://github.com/daniel-bldrscove/BBS-Website',

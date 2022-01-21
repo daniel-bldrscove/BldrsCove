@@ -17,17 +17,16 @@
 	let transitionCard = false;
 </script>
 
-<div>
+<div
+	class="h-full bg-gray-100 dark:bg-edlDeepBlue p-6 shadow-2xl lg:shadow-none rounded-b-lg sm:rounded-lg sm:p-12 lg:rounded-l-none  flex justify-center items-center"
+>
 	<div
 		class="animate-card-signal"
 		use:viewport
 		on:enterviewport="{() => (transitionCard = true)}"
 	></div>
 	{#if transitionCard}
-		<div
-			in:fly="{transitionConfig(200, 750, 0, 80)}"
-			class="bg-gray-100 p-6 shadow-2xl lg:shadow-none rounded-b-lg sm:rounded-lg sm:p-12 lg:rounded-l-none dark:bg-edlDeepBlue h-full flex justify-center items-center"
-		>
+		<div in:fly="{transitionConfig(200, 750, 0, 80)}">
 			<div>
 				<h4 class="text-edlDeepBlue dark:text-ashenHighContrast-dark">
 					{title}

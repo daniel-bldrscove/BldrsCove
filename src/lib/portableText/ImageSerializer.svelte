@@ -1,6 +1,3 @@
-<style>
-</style>
-
 <script lang="ts">
 	import type { BlockProps } from '@portabletext/svelte';
 	import imageUrlBuilder from '@sanity/image-url';

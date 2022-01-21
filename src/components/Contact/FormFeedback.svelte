@@ -1,6 +1,3 @@
-<style>
-</style>
-
 <script lang="ts">
 	import Icon from '../shared/Icon.svelte';
 	import HandWavingIcon from '$lib/icons/HandWavingIcon.svelte';

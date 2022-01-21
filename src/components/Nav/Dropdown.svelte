@@ -1,6 +1,6 @@
 <style lang="postcss">
 	.dropdown-item-light {
-		@apply p-4 text-ashenMidContrast-light hover:text-ashenHighContrast-light hover:bg-edlLtBabyBlue;
+		@apply p-4 text-ashenMidContrast-light;
 	}
 </style>
 
@@ -21,14 +21,18 @@
 <div class="w-52 shadow-2xl pt-6 pb-6 bg-white dark:text-edlLtGray dark:bg-edlCoolGray rounded-xl">
 	<div class="group">
 		<a href="{hrefItemA}" rel="external" sveltekit:prefetch class="w-full text-left">
-			<div class="{`dropdown-item-light ${dropdownItemDark}`}">
+			<div
+				class="{`dropdown-item-light hover:text-ashenHighContrast-light hover:bg-edlLtBabyBlue ${dropdownItemDark}`}"
+			>
 				<slot name="dropdown-item-A" />
 			</div>
 		</a>
 	</div>
 	<div class="group">
 		<a href="{hrefItemB}" rel="external" sveltekit:prefetch class="w-full text-left">
-			<div class="{`dropdown-item-light ${dropdownItemDark}`}">
+			<div
+				class="{`dropdown-item-light hover:text-ashenHighContrast-light hover:bg-edlLtBabyBlue ${dropdownItemDark}`}"
+			>
 				<slot name="dropdown-item-B" />
 			</div>
 		</a>

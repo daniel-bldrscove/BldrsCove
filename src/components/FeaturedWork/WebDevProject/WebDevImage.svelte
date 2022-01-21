@@ -30,7 +30,7 @@
 			${lg} 2000w,
 		`}"
 					alt="{coverImageAlt}"
-					class="w-full h-80 rounded-t-lg bg-transparent sm:rounded-lg sm:h-106 lg:rounded-r-none object-contain object-center"
+					class="w-full h-80 sm:h-106 rounded-t-lg bg-transparent sm:rounded-lg lg:rounded-r-none object-cover object-center"
 					width="100%"
 					height="100%"
 					loading="lazy"

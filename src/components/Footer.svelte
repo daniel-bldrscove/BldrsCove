@@ -1,6 +1,3 @@
-<style>
-</style>
-
 <div
 	class="w-full flex flex-wrap justify-center content-center items-center h-24 bg-[white] dark:bg-edlDeepBlue"
 >
