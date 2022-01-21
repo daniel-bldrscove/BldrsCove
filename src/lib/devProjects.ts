@@ -61,12 +61,11 @@ const webDevProjects: DevProjectTypes[] = [
 			{
 				tech1: 'Typescript',
 				tech2: 'Fauna DB',
-				tech3: 'Formik',
+				tech3: 'React Query',
 			},
 			{
-				tech1: 'React Query',
-				tech2: 'React Table',
-				tech3: 'Yup',
+				tech1: 'React Table',
+				tech2: 'Yup',
 			},
 		],
 		gitHubLink: 'https://github.com/daniel-bldrscove/trading-ally',
