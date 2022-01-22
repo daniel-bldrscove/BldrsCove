@@ -1,3 +1,59 @@
+<style>
+	.home-top-section-light {
+		background: -webkit-radial-gradient(
+				22% 54%,
+				circle farthest-corner,
+				rgba(255, 228, 194, 0.75) 0%,
+				rgba(255, 228, 194, 0) 26%
+			),
+			-webkit-radial-gradient(100% 0%, circle farthest-corner, rgba(163, 194, 241, 1) 0%, rgba(
+							191,
+							207,
+							255,
+							0
+						)
+						26%),
+			-webkit-radial-gradient(10% 100%, circle farthest-corner, rgba(163, 194, 241, 1) 0%, rgba(
+							163,
+							194,
+							241,
+							0.2
+						)
+						26%);
+	}
+
+	.home-top-section-dark {
+		background: -webkit-radial-gradient(
+				28% 54%,
+				circle farthest-corner,
+				rgba(255, 217, 194, 0.65) -120%,
+				rgba(255, 228, 194, 0) 26%
+			),
+			-webkit-radial-gradient(100% 0%, circle farthest-corner, rgba(13, 36, 64, 0.82) 10%, rgba(
+							11,
+							59,
+							131,
+							0
+						)
+						33%),
+			-webkit-radial-gradient(10% 100%, circle farthest-corner, rgba(13, 36, 64, 0.87) 0%, rgba(
+							17,
+							57,
+							116,
+							0
+						)
+						26%),
+			-webkit-radial-gradient(60% 55%, circle farthest-corner, rgba(42, 42, 58, 1) 15%, rgba(
+							17,
+							57,
+							116,
+							0
+						)
+						60%);
+		background-color: #191d26;
+	}
+</style>
+
 <script>
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
@@ -20,7 +76,9 @@
 <!-- svelte-ignore a11y-missing-content -->
 <a id="home-top-section" class="anchor-tag"></a>
 <div
-	class="bg-edlPaleStone dark:bg-edlCoolSlate flex justify-center items-center"
+	class="{`${
+		$themeMode === 'dark' ? 'home-top-section-dark' : 'home-top-section-light'
+	} flex justify-center items-center`}"
 	in:fly="{{ delay: 100, duration: 100 }}"
 >
 	<LayoutWrapper>
