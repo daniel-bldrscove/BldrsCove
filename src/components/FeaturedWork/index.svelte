@@ -20,7 +20,7 @@
 
 <!-- svelte-ignore a11y-missing-content -->
 <a id="web-dev" class="anchor-tag"></a>
-<div class="pt-16 pb-2 sm:pt-32 sm:pb-12 dark:bg-edlCoolGray">
+<div class="pt-16 pb-2 sm:pt-32 sm:pb-12 min-h-[60rem] dark:bg-edlCoolGray">
 	<div class="project-container h-auto">
 		<LayoutWrapper>
 			<div

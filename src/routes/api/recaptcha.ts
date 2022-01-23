@@ -4,8 +4,8 @@ dotenv.config();
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
 // eslint-disable-next-line import/prefer-default-export
-export async function post(req: Record<string, string>) {
-	const body = await JSON.parse(req.body);
+export async function post({request}) {
+	const body = await request.json();
 	const token = body.captchaToken;
 
 	if (!token) {
