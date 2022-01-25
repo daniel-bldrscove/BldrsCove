@@ -115,6 +115,7 @@
 	};
 
 	onMount(() => {
+		// initialize handleSubmit method to window in order to run recaptcha on submit
 		window.handleSubmit = () => handleSubmit;
 	});
 
@@ -150,7 +151,7 @@
 						{#if transitionHeadings}
 							<h2
 								in:fly="{transitionConfig(25, 350, 0, 10)}"
-								class="mb-5 sm:mb-16 text-4xl sm:text-current text-edlDeepBlue dark:text-edlLtGray"
+								class="mb-5 sm:mb-16 text-edlDeepBlue dark:text-edlLtGray"
 							>
 								Drop me a line ✍🏼
 							</h2>

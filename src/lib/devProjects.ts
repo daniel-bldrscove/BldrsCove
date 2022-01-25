@@ -36,7 +36,7 @@ const webDevProjects: DevProjectTypes[] = [
 				tech1: 'Google Maps',
 			},
 		],
-		gitHubLink: 'https://github.com/daniel-bldrscove/BBS-Website',
+		gitHubLink: 'https://github.com/edwindanlopez/BBS-Website',
 		projectLink: 'https://buildbeautifulspaces.com',
 	},
 	{
@@ -49,9 +49,9 @@ const webDevProjects: DevProjectTypes[] = [
 		},
 		coverImageAlt: 'Trading Ally journal app ui screenshot',
 		description:
-			'Trading Ally helps keep trading goals front and center, highlighting user performance in a way that\'s flexible and easy to understand. \n\n Although there are many apps that help track market data, the user interface and data can still be complicated to understand, especially for the new investors. This is where Trading Ally helps distill noisy data into a simple and clear UI. \n\n Although still in development, Trading Ally seeks to help users answer three simple questions. \n\n - "What was my past trading performance?" \n - "What is my current trading performance?" \n - "Where do I want my future trading performance to be?" \n\n Trading Ally empowers it\'s users by giving them control over their own data and provides suggestions that can help investors achieve their goals.',
+			'This React web app incorporates reusable functional components and follows best practices for passing data between component UI. \n\n Trading Ally also integrates with Fauna DB for data storage and is built with Typescript to help increase efficiency in maintainability and future development. \n\n Future plans include integrating with Netlify ID for user authentication, and integrating with the TD Ameritrade API, to automatically log trades for users with a ThinkorSwim account.',
 		excerpt:
-			"Trading Ally helps keep trading goals front and center, highlighting user performance in a way that's flexible and easy to understand.",
+			"Trading Ally is a web application that allows users to log their latest stock trades, keeping their trading goals front and center.",
 		techStack: [
 			{
 				tech1: 'React',
@@ -68,7 +68,7 @@ const webDevProjects: DevProjectTypes[] = [
 				tech2: 'Yup',
 			},
 		],
-		gitHubLink: 'https://github.com/daniel-bldrscove/trading-ally',
+		gitHubLink: 'https://github.com/edwindanlopez/Trading-Ally',
 		projectLink: 'https://tradingally.netlify.app/',
 	},
 ];

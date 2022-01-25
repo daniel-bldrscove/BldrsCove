@@ -145,7 +145,7 @@
 				</p>
 				<p>
 					<a
-						class="text-xs font-bold slide-left-right text-ashenMidContrast-light dark:text-ashenMidContrast-dark dark:hover:text-edlTealLight"
+						class="text-xs font-bold slide-left-right text-ashenMidContrast-light dark:text-ashenMidContrast-dark dark:hover:text-edlBrightBlue"
 						href="{projectLink && `${projectLink}`}"
 						target="_blank"
 						rel="noopener noreferrer">{`www.${shortSlug}.com`}</a

@@ -4,16 +4,19 @@
 	import SunIcon from '$lib/icons/SunIcon.svelte';
 	import MoonIcon from '$lib/icons/MoonIcon.svelte';
 	import { themeMode, colors } from '../../stores';
-	import { browser } from '$app/env';
 
 	let prevThemeIcon = null;
 
 	let handleTheme = (theme: string): void => {
 		prevThemeIcon = false;
 		const html = document.documentElement;
-		theme === 'dark' ? html.classList.add('dark') : html.classList.remove('dark');
-		browser && window.localStorage.setItem('theme', theme);
-		themeMode.update((val) => (val = theme));
+		theme === 'dark'
+			? (html.classList.add('dark'), window.localStorage.setItem('theme', 'dark'))
+			: (html.removeAttribute('class'),
+			  html.classList.remove('dark'),
+			  window.localStorage.setItem('theme', 'light'));
+
+		themeMode.set(theme);
 	};
 </script>
 

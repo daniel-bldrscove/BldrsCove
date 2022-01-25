@@ -1,35 +1,31 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
-	import HomeTopSection from '../components/HomeTopSection.svelte';
+	import HomeTopSection from '../components/HomeTopHero/index.svelte';
 	import About from '../components/About.svelte';
 	import FeaturedWork from '../components/FeaturedWork/index.svelte';
 	import OtherWork from '../components/OtherWork/index.svelte';
 	import Contact from '../components/Contact/index.svelte';
 	import { themeMode } from '../stores';
 
+	// update the themeMode global store value
 	onMount(() => {
 		if (window.localStorage.theme) {
-			// decide according to whats been set in local storage
 			const theme = window.localStorage.theme === 'dark' ? 'dark' : 'light';
 			themeMode.update((val) => (val = theme));
 		} else {
-			// decide according to user theme preference or theme class
-			const theme =
-				window.matchMedia('(prefers-color-scheme: dark)').matches ||
-				document.documentElement.className === 'dark'
-					? 'dark'
-					: 'light';
+			// update based on user theme preference
+			const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 			themeMode.update((val) => (val = theme));
 		}
 	});
 </script>
 
 <svelte:head>
-	<title>BldrsCove Portfolio</title>
+	<title>EDL Portfolio</title>
 </svelte:head>
 
-<div in:fly="{{ y: -100, duration: 500 }}" out:fly="{{ y: -100, duration: 500 }}" class="bg-white">
+<div>
 	<section><HomeTopSection /></section>
 	<section><FeaturedWork /></section>
 	<section><OtherWork /></section>

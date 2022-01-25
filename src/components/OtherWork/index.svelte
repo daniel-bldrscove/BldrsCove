@@ -58,10 +58,10 @@
 			{#if transitionHeadings}
 				<LayoutContainLg>
 					<h2 in:fly="{transitionConfig(0, 350, 0, 10)}" class="mx-auto mb-2 dark:text-white">
-						Other work
+						Web Design
 					</h2>
 					<h3 in:fly="{transitionConfig(50, 450, 0, 10)}" class="mb-8 text-edlOrange">
-						Web Design
+						Other Work
 					</h3>
 					<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
 						{#each webDesignProjects as webDesignProject, i}

@@ -13,7 +13,7 @@
 </script>
 
 {#if mark.href}
-	<a href="{mark.href}" target="_blank" rel="noopener noreferer" class="underline text-edlTealLight"
+	<a href="{mark.href}" target="_blank" rel="noopener noreferer" class="underline text-edlOrange"
 		><slot /></a
 	>
 {:else}

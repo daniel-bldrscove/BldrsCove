@@ -30,8 +30,6 @@ module.exports = {
 				edlPaleStone: '#e0eaf0',
 				edlOrange: '#ff5e38',
 				edlYellow: '#feb91b',
-				edlTealLight: '#0dc3b3',
-				edlTealDark: '#12797e',
 			},
 			fontSize: {
 				'4xl-a': '2.375rem',
@@ -42,7 +40,7 @@ module.exports = {
 				16: 'repeat(16, minmax(0, 1fr))',
 			},
 			lineHeight: {
-				'4xl-a': '2.875rem',
+				'4xl-a': '3rem',
 			},
 			screens: {
 				xs: '30rem', //475px

@@ -11,7 +11,6 @@ export const colors = readable({
 	brightBlue: '#38aaff',
 	redWarning: '#d73855',
 	edlYellow: '#feb91b',
-	edlTealLight: '#0dc3b3',
 });
 
 export const isMobileMenuOpen = writable(false);

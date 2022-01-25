@@ -38,11 +38,21 @@
 	}
 </script>
 
-<div class="sm:mb-2 sm:mt-2" in:fade="{{ duration: 400 }}" out:fade="{{ duration: 500 }}">
+<div class="sm:mb-2 sm:mt-2">
 	<a href="{`/web-design/${slug.current}`}" sveltekit:prefetch class="col-span-1">
-		<img
-			src="{urlFor(coverImage.asset).format('webp').url()}"
-			srcset="{`
+		<div class="overlay-wrapper relative overflow-hidden rounded-md">
+			<div
+				class="absolute w-full h-full group hover:bg-[rgba(0,0,0,0.5)] flex justify-center items-center"
+			>
+				<p
+					class="hidden group-hover:block animate-pulse font-niveauGrotesk font-bold uppercase tracking-[5px] text-2xl text-white"
+				>
+					View More
+				</p>
+			</div>
+			<img
+				src="{urlFor(coverImage.asset).format('webp').url()}"
+				srcset="{`
 				${urlFor(coverImage.asset).width(640).format('webp').url()} 640w, 
 				${urlFor(coverImage.asset).width(768).format('webp').url()} 768w, 
 				${urlFor(coverImage.asset).width(1024).format('webp').url()} 1024w, 
@@ -50,12 +60,13 @@
 				${urlFor(coverImage.asset).width(1536).format('webp').url()} 1536w, 
 				${urlFor(coverImage.asset).width(2000).format('webp').url()} 2000w, 
 			`}"
-			alt="{coverImage.alt}"
-			loading="lazy"
-			width="100%"
-			height="100%"
-			class="w-full h-48 rounded-lg sm:h-44 md:h-72 lg:w-106 2xl:h-96 2xl:w-full object-cover object-center shadow-md"
-		/>
+				alt="{coverImage.alt}"
+				loading="lazy"
+				width="100%"
+				height="100%"
+				class="w-full h-48 rounded-lg sm:h-44 md:h-72 lg:w-106 2xl:h-96 2xl:w-full object-cover object-center shadow-md"
+			/>
+		</div>
 		<p
 			class="mt-2 text-base font-medium text-edlDeepBlue slide-left-right dark:text-ashenMidContrast-dark dark:hover:text-edlBrightBlue"
 		>

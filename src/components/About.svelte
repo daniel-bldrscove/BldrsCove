@@ -91,7 +91,7 @@
 						<div class="sm:inline-block ml-0 sm:ml-6">
 							<h2
 								in:fly="{transitionConfig(75, 420, 0, 10)}"
-								class="text-edlDeepBlue dark:text-white"
+								class="sm:pt-[1.6rem] text-edlDeepBlue dark:text-white"
 							>
 								About me ⚒️
 							</h2>
@@ -175,11 +175,7 @@
 								showCols="{false}"
 							/>
 							<span class="block mt-12">
-								<a
-									href="/daniel-lopez-bldrscove-resumé.pdf"
-									target="_blank"
-									rel="noopener noreferrer"
-								>
+								<a href="/edwindanlopez-resumé.pdf" target="_blank" rel="noopener noreferrer">
 									<Icon
 										strokeColor="{$themeMode === 'dark' ? $colors.brightBlue : $colors.midBlue}"
 										fillColor="transparent"

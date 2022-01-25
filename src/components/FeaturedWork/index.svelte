@@ -34,10 +34,10 @@
 						class="mx-auto mb-2 text-edlDeepBlue dark:text-white"
 						in:fly="{transitionConfig(300, 500, 0, 10)}"
 					>
-						Featured work
+						Front-end Dev
 					</h2>
 					<h3 class="mb-14 text-edlOrange" in:fly="{transitionConfig(50, 450, 0, 10)}">
-						Front-end Dev
+						Featured work
 					</h3>
 				</LayoutContainLg>
 			{/if}

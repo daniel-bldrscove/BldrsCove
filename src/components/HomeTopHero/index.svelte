@@ -3,7 +3,7 @@
 		background: -webkit-radial-gradient(
 				22% 54%,
 				circle farthest-corner,
-				rgba(255, 228, 194, 0.75) 0%,
+				rgba(255, 230, 184, 0.75) 0%,
 				rgba(255, 228, 194, 0) 26%
 			),
 			-webkit-radial-gradient(100% 0%, circle farthest-corner, rgba(163, 194, 241, 1) 0%, rgba(
@@ -57,14 +57,15 @@
 <script>
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
-	import transitionConfig from '../utilities/transitions';
+	import transitionConfig from '../../utilities/transitions';
 
-	import { themeMode, colors } from '../stores';
-	import LayoutWrapper from './shared/LayoutWrapper.svelte';
-	import LayoutContainLg from './shared/LayoutContainLg.svelte';
-	import Icon from './shared/Icon.svelte';
+	import { themeMode, colors } from '../../stores';
+	import LayoutWrapper from '../shared/LayoutWrapper.svelte';
+	import LayoutContainLg from '../shared/LayoutContainLg.svelte';
+	import Icon from '../shared/Icon.svelte';
 	import ArrowCursorIcon from '$lib/icons/ArrowCursorIcon.svelte';
 	import ComputerIcon from '$lib/icons/ComputerIcon.svelte';
+	import Canvas from './Canvas.svelte';
 
 	$: shouldAnimate = false;
 
@@ -78,12 +79,12 @@
 <div
 	class="{`${
 		$themeMode === 'dark' ? 'home-top-section-dark' : 'home-top-section-light'
-	} flex justify-center items-center`}"
+	} relative flex justify-center items-center`}"
 	in:fly="{{ delay: 100, duration: 100 }}"
 >
-	<LayoutWrapper>
+	<LayoutWrapper wrapperClass="z-10">
 		<LayoutContainLg>
-			<div class="hero-container min-h-[80vh] relative flex justify-center items-center">
+			<div id="top-hero-container" class="min-h-[80vh] relative flex justify-center items-center">
 				{#if shouldAnimate}
 					<div class="flex-wrapper">
 						<div class="text-container">
@@ -97,7 +98,7 @@
 								class="hero-title text-edlDeepBlue dark:text-white md:w-10/12 xl:w-9/12 2xl:w-5/12"
 								in:fly="{transitionConfig(50, 450, 0, 10)}"
 							>
-								I build modern web and user interfaces through front end development
+								I build modern web and user interfaces through front-end development
 							</p>
 						</div>
 						<div class="mt-10 sm:mt-20 flex flex-wrap xs:flex-nowrap">
@@ -148,4 +149,5 @@
 			</div>
 		</LayoutContainLg>
 	</LayoutWrapper>
+	<Canvas />
 </div>

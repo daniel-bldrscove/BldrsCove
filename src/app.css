@@ -46,10 +46,6 @@ a.anchor-tag {
 	visibility: hidden;
 }
 
-html {
-	background-color: #141928;
-}
-
 .modal-open {
 	height: 100vh;
 	overflow-y: hidden;
