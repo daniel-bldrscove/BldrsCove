@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
 	import imageUrlBuilder from '@sanity/image-url';
 	import client from '../../sanityClient';
 
@@ -64,7 +63,7 @@
 				loading="lazy"
 				width="100%"
 				height="100%"
-				class="w-full h-48 rounded-lg sm:h-44 md:h-72 lg:w-106 2xl:h-96 2xl:w-full object-cover object-center shadow-md"
+				class="aspect-video object-cover object-center shadow-md"
 			/>
 		</div>
 		<p

@@ -48,7 +48,9 @@ a.anchor-tag {
 
 .modal-open {
 	height: 100vh;
-	overflow-y: hidden;
+	overflow: hidden;
+	touch-action: none;
+	-ms-touch-action: none;
 }
 
 #dev-card-content,

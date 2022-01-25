@@ -22,7 +22,7 @@
 	<div class="group">
 		<a href="{hrefItemA}" rel="external" sveltekit:prefetch class="w-full text-left">
 			<div
-				class="{`dropdown-item-light hover:text-ashenHighContrast-light hover:bg-edlLtBabyBlue ${dropdownItemDark}`}"
+				class="{`dropdown-item-light hover:text-ashenHighContrast-light hover:bg-[#e0eaf0] ${dropdownItemDark}`}"
 			>
 				<slot name="dropdown-item-A" />
 			</div>
@@ -31,7 +31,7 @@
 	<div class="group">
 		<a href="{hrefItemB}" rel="external" sveltekit:prefetch class="w-full text-left">
 			<div
-				class="{`dropdown-item-light hover:text-ashenHighContrast-light hover:bg-edlLtBabyBlue ${dropdownItemDark}`}"
+				class="{`dropdown-item-light hover:text-ashenHighContrast-light hover:bg-[#e0eaf0] ${dropdownItemDark}`}"
 			>
 				<slot name="dropdown-item-B" />
 			</div>

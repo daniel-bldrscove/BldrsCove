@@ -4,6 +4,7 @@
 
 	export let href: string = '';
 	export let rel: string = 'external';
+	export let target: string = '';
 	export let classes: string = 'ml-4 md:ml-6 lg:ml-10';
 	export let animateDelay: number = 0;
 </script>
@@ -18,7 +19,7 @@
 	class="{classes}"
 >
 	<h6>
-		<a href="{href}" rel="{rel}" class="nav-item slide-left-right">
+		<a href="{href}" rel="{rel}" target="{target}" class="nav-item slide-left-right">
 			<slot />
 		</a>
 	</h6>

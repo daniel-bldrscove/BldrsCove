@@ -20,7 +20,7 @@
 </script>
 
 <nav
-	class="w-full z-[100] flex items-center bg-gray-100 h-24 drop-shadow-xlLight dark:bg-edlDeepBlue"
+	class="w-full z-[100] flex items-center bg-[white] h-24 drop-shadow-xlLight dark:bg-edlDeepBlue"
 >
 	<LayoutWrapper wrapperClass="relative">
 		<div id="navigation" class="w-full flex justify-center items-center sm:justify-between">
@@ -58,7 +58,9 @@
 						<!--Nav Items-->
 						<div class="nav-items hidden sm:block sm:justify-self-end mr-4 md:mr-6 lg:mr-10">
 							<ul class="flex justify-between items-center w-full">
-								<NavListItem animateDelay="{25}" href="/#home-top-section">Home</NavListItem>
+								<NavListItem animateDelay="{25}" href="/edwindanlopez-resumé.pdf" target="_blank"
+									>Resumé</NavListItem
+								>
 								<NavDropdownItem animateDelay="{50}">
 									<!-- svelte-ignore a11y-invalid-attribute -->
 									<h6 slot="navItem" class="nav-item">Projects</h6>
@@ -69,7 +71,7 @@
 											hrefB: '/#web-design',
 										}}"
 									>
-										<p slot="dropdown-item-A" class="dark:text-white">Web Development</p>
+										<p slot="dropdown-item-A" class="dark:text-white">Front-end Dev</p>
 										<p slot="dropdown-item-B" class="dark:text-white">Web Design</p>
 									</Dropdown>
 								</NavDropdownItem>

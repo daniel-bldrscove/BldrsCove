@@ -148,9 +148,9 @@
 								Technologies
 							</h4>
 							<p>
-								Some libraries and frameworks I&apos;m most excited about right now are React,
-								Gatsby, Chakra UI, React Query and Tailwind CSS. Other frameworks I&apos;d like to
-								pick up are Next Js, SvelteKit, and Remix Run.
+								Some of my favorite libraries and frameworks at the moment are React, Chakra UI,
+								Tailwindcss, Gatsby, React Query and SvelteKit. Other frameworks I&apos;d like to
+								pick up are Next Js and Remix Run.
 							</p>
 							<p
 								class="font-niveauGrotesk font-medium text-sm mt-4 dark:text-ashenHighContrast-dark"

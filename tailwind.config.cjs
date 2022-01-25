@@ -27,7 +27,7 @@ module.exports = {
 				edlMidBlue: '#2f75d6',
 				edlLtBabyBlue: '#d3edff',
 				edlLtGray: '#cccccc',
-				edlPaleStone: '#e0eaf0',
+				edlPaleStone: '#e7ebed',
 				edlOrange: '#ff5e38',
 				edlYellow: '#feb91b',
 			},
