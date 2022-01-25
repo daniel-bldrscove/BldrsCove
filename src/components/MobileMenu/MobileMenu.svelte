@@ -15,8 +15,8 @@
 	import LayoutWrapper from '../shared/LayoutWrapper.svelte';
 
 	const handleNavigate = (project: string): void => {
-		isMobileMenuOpen.update((val) => !val);
 		goto(project);
+		isMobileMenuOpen.update((val) => val);
 	};
 
 	$: shouldFlyIn = false;
