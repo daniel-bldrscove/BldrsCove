@@ -1,6 +1,6 @@
 # edwindanlopez.com
 
-![enter image description here](https://res.cloudinary.com/bldrscove/image/upload/v1643160984/Readmes/Edwindanlopez-Portfolio/edl-portfolio-img_q7izwn.jpg)
+![edl-portfolio-website](https://res.cloudinary.com/bldrscove/image/upload/v1643160984/Readmes/Edwindanlopez-Portfolio/edl-portfolio-img_q7izwn.jpg)
 
 ## Project Status
 Although this portfolio project is built on an unstable version of SvelteKit (1.0.0-next.238), it's performant and stable enough for this simple portfolio project. I'm currently using it to feature my own work, and am expecting to migrate when SvelteKit releases their first stable version. This is the very first version of this portfolio project. Deployed on Vercel.
