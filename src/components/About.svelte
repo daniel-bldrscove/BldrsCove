@@ -118,10 +118,12 @@
 								Specialization
 							</h4>
 							<p>
-								Most recently I&apos;ve channeled my web design and graphic design experience into
-								web programming as a front-end developer. Leveraging the latest technologies, I'm
-								able to combine my visual skills with best practices to develop user-friendly and
-								functional interfaces.
+								I bring prototypes and user interfaces to life by combining my knowledge in
+								javascript and web design. Following best practices, I aim to create flexible and
+								reusable components that improve maintainability and scale well over time. My
+								background in design also helps me identify areas that might cause issues when
+								integrating with dev requirements, and create solutions to help avoid those
+								problems.
 							</p>
 						</div>
 						<div
@@ -132,12 +134,12 @@
 								Experience
 							</h4>
 							<p>
-								I&apos;ve had the privilege of working at design agencies, a well established tech
-								company, and also smaller businesses that focus in niche markets. Most of my
-								freelance consists of web app (or website), UI/UX, and branding services allowing me
-								to connect with different clients throughout the states. My certification through
-								the UCF Coding Bootcamp has given me a solid MERN stack foundation, and I continue
-								develop my knowledge through online workshops, community resources and tech events.
+								I have had the opportunity of working with design agencies, a well established tech
+								company, and smaller businesses that focus in niche markets. Most of my freelance
+								work consists of developing websites, web apps, designing UI, and on occasion
+								providing branding services. The UCF Coding Bootcamp has given me a solid foundation
+								in front-end web development, and I continue grow my knowledge through workshops,
+								online community groups and tech events.
 							</p>
 						</div>
 						<div
@@ -149,8 +151,8 @@
 							</h4>
 							<p>
 								Some of my favorite libraries and frameworks at the moment are React, Chakra UI,
-								Tailwindcss, Gatsby, React Query and SvelteKit. Other frameworks I&apos;d like to
-								pick up are Next Js and Remix Run.
+								Tailwindcss, Gatsby, and React Query. Other frameworks I'd like to learn are Next Js
+								and Remix Run.
 							</p>
 							<p
 								class="font-niveauGrotesk font-medium text-sm mt-4 dark:text-ashenHighContrast-dark"
