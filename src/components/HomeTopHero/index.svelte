@@ -98,7 +98,7 @@
 								class="hero-title text-edlDeepBlue dark:text-white md:w-10/12 xl:w-9/12 2xl:w-5/12"
 								in:fly="{transitionConfig(50, 450, 0, 10)}"
 							>
-								I build modern websites and user interfaces through front-end development
+								I help businesses build their presence by developing modern websites and UI
 							</p>
 						</div>
 						<div class="mt-10 sm:mt-20 flex flex-wrap xs:flex-nowrap">
