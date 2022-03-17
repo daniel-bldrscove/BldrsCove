@@ -53,7 +53,7 @@
 								const result = await captcha.json();
 								resolve(result);
 							} else {
-								console.log('Returning response: ', captcha);
+								console.log('Returning respons: ', captcha);
 								reject(new Error('Captcha response status code was not 200'));
 							}
 						} catch (error) {
