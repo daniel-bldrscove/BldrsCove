@@ -1,10 +1,10 @@
 {
 	"root": true,
 	"project": {
-		"name": "EDL-Portfolio-Sanity"
+		"name": "edl-portfolio"
 	},
 	"api": {
-		"projectId": "fv0ic7lw",
+		"projectId": "wydp43aa",
 		"dataset": "production"
 	},
 	"plugins": [
