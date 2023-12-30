@@ -96,7 +96,7 @@
 								About me ⚒️
 							</h2>
 							<h3 in:fly="{transitionConfig(100, 520, 0, 10)}" class="mt-2 text-edlOrange">
-								From design to development
+								Bridging Functionality & Delight
 							</h3>
 						</div>
 					</div>

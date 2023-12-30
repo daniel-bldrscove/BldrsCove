@@ -1,13 +1,15 @@
 # edwindanlopez.com
 
-![edl-portfolio-website](https://res.cloudinary.com/bldrscove/image/upload/v1643160984/Readmes/Edwindanlopez-Portfolio/edl-portfolio-img_q7izwn.jpg)
+![edl-portfolio-website](https://res.cloudinary.com/edwindanlopez/image/upload/v1643160984/Readmes/Edwindanlopez-Portfolio/edl-portfolio-img_q7izwn.jpg)
 
 ## Project Status
+
 Although this portfolio project is built on an unstable version of SvelteKit (1.0.0-next.238), it's performant and stable enough for this simple portfolio project. I'm currently using it to feature my own work, and am expecting to migrate when SvelteKit releases their first stable version. This is the very first version of this portfolio project. Deployed on Vercel.
 
 ## Technologies
 
-This portfolio project is created/configured with: 
+This portfolio project is created/configured with:
+
 - Svelte 3.44
 - SvelteKit 1.0.0-next.238
 - Sanity 2.23
@@ -18,6 +20,7 @@ This portfolio project is created/configured with:
 - Yup 0.32
 
 Other services used
+
 - Google recaptcha
 - UseBasin
 
@@ -25,7 +28,7 @@ Packages were last updated on 1.18.22
 
 ## Set up & Installation
 
-Most likely, you will need to mitigate a few breaking changes depending on the time of installation, mainly due to SvelteKit. To run this app on your machine, clone down this repo using npm.  You will need node and npm installed globally on your machine. After you've git cloned, cd into the project directory, and install the dependencies.
+Most likely, you will need to mitigate a few breaking changes depending on the time of installation, mainly due to SvelteKit. To run this app on your machine, clone down this repo using npm. You will need node and npm installed globally on your machine. After you've git cloned, cd into the project directory, and install the dependencies.
 
 The 'Contact' form section integrates with google recaptcha, which requires the recaptcha key in a .env file. Set up your recaptcha key through the [v3 Admin Console](https://www.google.com/recaptcha/about/). Create a .env file and paste those keys in the following format:
 `RECAPTCHA_SECRET_KEY={secret_key_here}`
@@ -42,10 +45,9 @@ Start server
 Vist app:
 `localhost:3000`
 
-
 ## Description
 
-This project is built with SvelteKit, Tailwindcss, and integrates Sanity as a headless CMS. 
+This project is built with SvelteKit, Tailwindcss, and integrates Sanity as a headless CMS.
 
 The top hero section is minimal and has room for growth. At this point, it's using HTML 5 canvas to display some shape textures. In the future, I'd like to use WebGL and bring in a 3D render. One of the current challenges is refreshing the canvas whenever the user toggles between theme modes. Theme mode is based on system preferences/local storage, and the canvas colors refresh based on these settings during initial page load or when window is resized.
 
