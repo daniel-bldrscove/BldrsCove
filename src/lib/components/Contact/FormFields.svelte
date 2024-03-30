@@ -143,7 +143,7 @@
 			<button
 				class="g-recaptcha bg-edlMidBlue h-14 w-full drop-shadow-xl rounded-2xl group-hover:bg-edlOrange transition duration-300 ease-in-out group-hover:scale-105 dark:group-hover:text-white disabled:bg-ashenLowContrast-light disabled:opacity-60 group-hover:disabled:scale-100 group-hover:disabled:bg-ashenLowContrast-light group-hover:disabled:cursor-default"
 				data-sitekey="{variables.recaptchaSiteKey}"
-				data-callback="handleContactSubmit"
+				data-callback="handleSubmit"
 				data-action="submit"
 				disabled="{disabled}"
 			>
