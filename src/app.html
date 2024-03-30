@@ -14,13 +14,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 		<meta
 			name="description"
-			content="Daniel Lopez is a front end developer with a creative background in web and graphic design. His focus is on delivering a pleasing digital experience, enhancing the connection between user and product."
+			content="Daniel Lopez is an experience designer with a creative background in web and graphic design. His focus is on delivering a intuitive digital experiences, enhancing the connection between user and product."
 		/>
 		<meta name="image" content="/edl-portfolio-img.jpg" />
 		<meta property="og:title" content="Daniel Lopez" />
 		<meta
 			property="og:description"
-			content="Daniel Lopez is a front end developer with a creative background in web and graphic design. His focus is on delivering a pleasing digital experience, enhancing the connection between user and product."
+			content="Daniel Lopez is an experience designer with a creative background in web and graphic design. His focus is on delivering a intuitive digital experiences, enhancing the connection between user and product."
 		/>
 		<meta property="og:image" content="/edl-portfolio-img.jpg" />
 		<meta property="og:url" content="https://edwindanlopez.com/" />
@@ -30,12 +30,10 @@
 		<meta name="twitter:title" content="Daniel Lopez" />
 		<meta
 			name="twitter:description"
-			content="Daniel Lopez is a front end developer with a creative background in web and graphic design. His focus is on delivering a pleasing digital experience, enhancing the connection between user and product."
+			content="Daniel Lopez is an experience designer with a creative background in web and graphic design. His focus is on delivering a intuitive digital experiences, enhancing the connection between user and product."
 		/>
 		<meta name="twitter:image" content="/edl-portfolio-img.jpg" />
 		<script>
-			// update/add color theme in local storage
-			// add or remove classs on body
 			if (
 				localStorage.theme === 'dark' ||
 				(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
@@ -52,9 +50,9 @@
 			async
 			defer
 		></script>
-		%svelte.head%
+		%sveltekit.head%
 	</head>
 	<body>
-		<div id="svelte">%svelte.body%</div>
+	<div id="svelte">%sveltekit.body%</div>
 	</body>
 </html>

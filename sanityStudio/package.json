@@ -1,36 +1,46 @@
 {
-	"name": "edwindanlopez-portofolio",
-	"private": true,
-	"version": "1.0.0",
-	"description": "",
-	"main": "package.json",
-	"author": "Daniel Lopez <hello@edwindanlopez.com>",
-	"license": "UNLICENSED",
-	"scripts": {
-		"start": "sanity start",
-		"build": "sanity build"
-	},
-	"keywords": [
-		"sanity"
-	],
-	"dependencies": {
-		"@sanity/base": "^2.21.7",
-		"@sanity/code-input": "^2.21.10",
-		"@sanity/core": "^2.21.7",
-		"@sanity/default-layout": "^2.21.7",
-		"@sanity/default-login": "^2.21.7",
-		"@sanity/desk-tool": "^2.21.7",
-		"@sanity/vision": "^2.21.7",
-		"prop-types": "^15.7",
-		"react": "^17.0",
-		"react-dom": "^17.0",
-		"styled-components": "^5.2.0"
-	},
-	"devDependencies": {
-		"@typescript-eslint/eslint-plugin": "^5.10.0",
-		"@typescript-eslint/parser": "^5.10.0",
-		"eslint-config-sanity": "^5.1.0",
-		"eslint-plugin-react": "^7.28.0",
-		"typescript": "^4.5.5"
-	}
+  "name": "edwindanlopez-portofolio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "package.json",
+  "author": "Daniel Lopez <hello@edwindanlopez.com>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "sanity dev",
+    "start": "sanity start",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "deploy-graphql": "sanity graphql deploy"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@sanity/code-input": "^4.1.2",
+    "@sanity/vision": "^3.25.0",
+    "@types/react": "18.2.48",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sanity": "^3.25.0",
+    "styled-components": "^6.1.8"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.19.0",
+    "@typescript-eslint/parser": "^6.19.0",
+    "eslint-config-sanity": "^7.0.1",
+    "eslint-plugin-react": "^7.28.0",
+    "typescript": "^5.1.6",
+    "@sanity/eslint-config-studio": "^3.0.1",
+    "@types/react": "^18.0.25",
+    "eslint": "^8.6.0",
+    "prettier": "^3.0.2"
+  },
+  "prettier": {
+    "semi": false,
+    "printWidth": 100,
+    "bracketSpacing": false,
+    "singleQuote": true
+  }
 }
