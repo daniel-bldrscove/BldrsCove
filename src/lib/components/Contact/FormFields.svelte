@@ -7,8 +7,8 @@
 	import googleRecaptcha from '$lib/utilities/googleRecaptcha';
 	import contactFormSchema from '$lib/utilities/validatorsSchema';
 
-	export let submitted;
-	export let submissionSuccess;
+	export let submitted = false;
+	export let submissionSuccess = null;
 	export let error;
 	let submitting = false;
 	let fullName = '';
@@ -45,6 +45,11 @@
 	};
 
 	const handleSubmit = function () {
+		if (!fullName || !email || !message) {
+			disabled = true;
+			submitting = false;
+			return;
+		}
 		submitting = true;
 		return googleRecaptcha(variables)
 			.then(async (captcha) => {
