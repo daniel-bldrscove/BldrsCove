@@ -3,11 +3,11 @@ import * as Yup from 'yup';
 const characterLimit = 220;
 
 const contactFormSchema = Yup.object({
-	fullName: Yup.string().max(20, 'Must be 20 characters or less').required('Required'),
-	email: Yup.string().email('Invalid email address').required('Required'),
+	fullName: Yup.string().required('Required').max(20, 'Must be 20 characters or less'),
+	email: Yup.string().required('Required').email('Invalid email address'),
 	message: Yup.string()
-		.max(characterLimit, `Must be ${characterLimit} characters or less`)
-		.required('Required'),
+		.required('Required')
+		.max(characterLimit, `Must be ${characterLimit} characters or less`),
 });
 
 export default contactFormSchema;
