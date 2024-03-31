@@ -81,7 +81,7 @@
 
 	onMount(() => {
 		// initialize handleSubmit method to window in order to run recaptcha on submit
-		window.onsubmit = () => handleSubmit;
+		window.handleSubmit = () => handleSubmit;
 	});
 </script>
 
