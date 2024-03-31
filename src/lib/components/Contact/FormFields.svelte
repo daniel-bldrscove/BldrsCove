@@ -15,7 +15,7 @@
 	let message = '';
 	let email = '';
 
-	$: disabled = true;
+	let disabled = true;
 	$: messageLength = message.length;
 	$: contactFormSchema
 		.isValid({
